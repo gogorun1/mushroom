@@ -56,6 +56,8 @@ PLACE_FR = 6753
 
 MIN_IDF = 3
 MIN_ZONE = 2
+PHOTOS_PER_SPECIES = 6
+REPORT_PHOTOS = 3
 
 
 def load_content():
@@ -142,10 +144,14 @@ def ranked(counter_sets, by_name, classes, minimum, limit=None):
 
 
 def fetch_photos(species_names, by_name):
+    """One photo per observation, top-voted French research-grade observations first."""
     cache_path = CACHE / "photos.json"
     cache = json.loads(cache_path.read_text()) if cache_path.exists() else {}
     for name in species_names:
-        if name in cache or "taxon_id" not in by_name[name]:
+        cached = cache.get(name)
+        if isinstance(cached, dict) and cached.get("requested") == PHOTOS_PER_SPECIES:
+            continue
+        if "taxon_id" not in by_name[name]:
             continue
         results = inat_fetch.get(
             inat_fetch.API_V1,
@@ -156,7 +162,7 @@ def fetch_photos(species_names, by_name):
             photos="true",
             photo_license=CC_LICENSES,
             order_by="votes",
-            per_page=3,
+            per_page=PHOTOS_PER_SPECIES,
         )["results"]
         photos = []
         for obs in results:
@@ -169,11 +175,11 @@ def fetch_photos(species_names, by_name):
                         "observation": f"https://www.inaturalist.org/observations/{obs['id']}",
                     }
                 )
-        cache[name] = photos
+        cache[name] = {"requested": PHOTOS_PER_SPECIES, "photos": photos}
         print(f"photos: {name} ({len(photos)})", file=sys.stderr)
     CACHE.mkdir(parents=True, exist_ok=True)
     cache_path.write_text(json.dumps(cache, ensure_ascii=False, indent=1))
-    return cache
+    return {name: entry["photos"] for name, entry in cache.items() if isinstance(entry, dict)}
 
 
 def zh(entry):
@@ -348,7 +354,7 @@ def render(agg, by_name, zones, photos, month, generated_at, n_obs):
         w(f"- **危险易混种**：{lookalike_text(e, by_name)}")
         if e.get("notes"):
             w(f"- **注意**：{e['notes']}")
-        pics = photos.get(name, [])
+        pics = photos.get(name, [])[:REPORT_PHOTOS]
         if pics:
             w("")
             w(" ".join(f"[![{e['zh']}]({p['url']})]({p['observation']})" for p in pics))

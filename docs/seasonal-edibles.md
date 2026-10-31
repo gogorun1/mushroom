@@ -422,9 +422,9 @@
 - **危险易混种**：纹缘盔孢伞（致命）、簇生垂幕菇（有毒）
 - **注意**：必须彻底煮熟；部分人即使煮熟也不耐受。
 
-[![蜜环菌类（榛蘑）](https://inaturalist-open-data.s3.amazonaws.com/photos/119677564/small.jpg)](https://www.inaturalist.org/observations/73316781) [![蜜环菌类（榛蘑）](https://inaturalist-open-data.s3.amazonaws.com/photos/170582781/small.jpeg)](https://www.inaturalist.org/observations/102084668) [![蜜环菌类（榛蘑）](https://inaturalist-open-data.s3.amazonaws.com/photos/11129324/small.jpeg)](https://www.inaturalist.org/observations/8370413)
+[![蜜环菌类（榛蘑）](https://inaturalist-open-data.s3.amazonaws.com/photos/119677564/small.jpg)](https://www.inaturalist.org/observations/73316781) [![蜜环菌类（榛蘑）](https://inaturalist-open-data.s3.amazonaws.com/photos/581688939/small.jpg)](https://www.inaturalist.org/observations/321627117) [![蜜环菌类（榛蘑）](https://inaturalist-open-data.s3.amazonaws.com/photos/578153013/small.jpg)](https://www.inaturalist.org/observations/319813509)
 
-<sub>(c) natomik, some rights reserved (CC BY)；(c) Jean-Marie Frenoux, some rights reserved (CC BY-NC)；(c) David Renoult, some rights reserved (CC BY-NC)</sub>
+<sub>(c) natomik, some rights reserved (CC BY)；(c) Crap Fou, some rights reserved (CC BY)；(c) yellowplant, some rights reserved (CC BY)</sub>
 
 [在 iNat 上看法兰西岛的全部研究级照片](https://www.inaturalist.org/observations?place_id=10577&taxon_id=55930&quality_grade=research&photos=true)
 
@@ -462,9 +462,9 @@
   4. 肉白色，切开不变色，味道温和
 - **危险易混种**：撒旦牛肝菌（有毒）、苦粉孢牛肝菌（不推荐）
 
-[![美味牛肝菌](https://inaturalist-open-data.s3.amazonaws.com/photos/93541229/small.jpeg)](https://www.inaturalist.org/observations/58582656) [![美味牛肝菌](https://inaturalist-open-data.s3.amazonaws.com/photos/569942080/small.jpg)](https://www.inaturalist.org/observations/315496112) [![美味牛肝菌](https://inaturalist-open-data.s3.amazonaws.com/photos/234171906/small.jpeg)](https://www.inaturalist.org/observations/137144079)
+[![美味牛肝菌](https://inaturalist-open-data.s3.amazonaws.com/photos/569942080/small.jpg)](https://www.inaturalist.org/observations/315496112) [![美味牛肝菌](https://inaturalist-open-data.s3.amazonaws.com/photos/93541229/small.jpeg)](https://www.inaturalist.org/observations/58582656) [![美味牛肝菌](https://inaturalist-open-data.s3.amazonaws.com/photos/234171906/small.jpeg)](https://www.inaturalist.org/observations/137144079)
 
-<sub>(c) yohema, some rights reserved (CC BY-NC)；(c) Nicolas HELITAS, some rights reserved (CC BY-NC)；(c) mouscaillot, some rights reserved (CC BY-NC)</sub>
+<sub>(c) Nicolas HELITAS, some rights reserved (CC BY-NC)；(c) yohema, some rights reserved (CC BY-NC)；(c) mouscaillot, some rights reserved (CC BY-NC)</sub>
 
 [在 iNat 上看法兰西岛的全部研究级照片](https://www.inaturalist.org/observations?place_id=10577&taxon_id=48701&quality_grade=research&photos=true)
 
@@ -499,9 +499,9 @@
 - **危险易混种**：—
 - **注意**：只吃幼嫩的部分。
 
-[![宽鳞多孔菌](https://inaturalist-open-data.s3.amazonaws.com/photos/129374411/small.jpeg)](https://www.inaturalist.org/observations/79014755) [![宽鳞多孔菌](https://inaturalist-open-data.s3.amazonaws.com/photos/518183079/small.jpg)](https://www.inaturalist.org/observations/288158743) [![宽鳞多孔菌](https://inaturalist-open-data.s3.amazonaws.com/photos/133328421/small.jpg)](https://www.inaturalist.org/observations/81293860)
+[![宽鳞多孔菌](https://inaturalist-open-data.s3.amazonaws.com/photos/715475825/small.jpg)](https://www.inaturalist.org/observations/390525081) [![宽鳞多孔菌](https://inaturalist-open-data.s3.amazonaws.com/photos/222760828/small.jpg)](https://www.inaturalist.org/observations/130944686) [![宽鳞多孔菌](https://inaturalist-open-data.s3.amazonaws.com/photos/76376334/small.jpg)](https://www.inaturalist.org/observations/48145252)
 
-<sub>(c) framty, some rights reserved (CC BY-NC)；(c) jfv1810, some rights reserved (CC BY-NC)；(c) patoumorin, some rights reserved (CC BY-NC)</sub>
+<sub>(c) pierrenoel, some rights reserved (CC BY-NC)；(c) ahmedm, some rights reserved (CC BY-NC)；(c) Matthieu Gauvain, some rights reserved (CC BY-NC)</sub>
 
 [在 iNat 上看法兰西岛的全部研究级照片](https://www.inaturalist.org/observations?place_id=10577&taxon_id=940028&quality_grade=research&photos=true)
 
@@ -557,7 +557,7 @@
 - **危险易混种**：—
 - **注意**：没煮透会引起胃肠不适。
 
-[![疣柄牛肝菌属](https://inaturalist-open-data.s3.amazonaws.com/photos/156052765/small.jpeg)](https://www.inaturalist.org/observations/94097901) [![疣柄牛肝菌属](https://inaturalist-open-data.s3.amazonaws.com/photos/570397959/small.jpg)](https://www.inaturalist.org/observations/315732543) [![疣柄牛肝菌属](https://inaturalist-open-data.s3.amazonaws.com/photos/584076024/small.jpg)](https://www.inaturalist.org/observations/322831933)
+[![疣柄牛肝菌属](https://inaturalist-open-data.s3.amazonaws.com/photos/156052765/small.jpeg)](https://www.inaturalist.org/observations/94097901) [![疣柄牛肝菌属](https://inaturalist-open-data.s3.amazonaws.com/photos/570397959/small.jpg)](https://www.inaturalist.org/observations/315732543) [![疣柄牛肝菌属](https://inaturalist-open-data.s3.amazonaws.com/photos/751338328/small.jpg)](https://www.inaturalist.org/observations/408709088)
 
 <sub>(c) stanparis2211, some rights reserved (CC BY-NC)；(c) Myra, some rights reserved (CC BY-NC)；(c) victor laborde, some rights reserved (CC BY)</sub>
 
@@ -616,9 +616,9 @@
   3. 柄黄色、中空、常扁
 - **危险易混种**：—
 
-[![管形喇叭菌](https://inaturalist-open-data.s3.amazonaws.com/photos/330238342/small.jpeg)](https://www.inaturalist.org/observations/188645290) [![管形喇叭菌](https://inaturalist-open-data.s3.amazonaws.com/photos/172170685/small.jpeg)](https://www.inaturalist.org/observations/102933261) [![管形喇叭菌](https://inaturalist-open-data.s3.amazonaws.com/photos/335954892/small.jpeg)](https://www.inaturalist.org/observations/191495514)
+[![管形喇叭菌](https://inaturalist-open-data.s3.amazonaws.com/photos/330238342/small.jpeg)](https://www.inaturalist.org/observations/188645290) [![管形喇叭菌](https://inaturalist-open-data.s3.amazonaws.com/photos/172170685/small.jpeg)](https://www.inaturalist.org/observations/102933261) [![管形喇叭菌](https://inaturalist-open-data.s3.amazonaws.com/photos/575903572/small.jpg)](https://www.inaturalist.org/observations/318637040)
 
-<sub>(c) kiaora, some rights reserved (CC BY-NC)；(c) bogsuckers, some rights reserved (CC BY)；(c) François-Xavier Taxil, some rights reserved (CC BY-NC)</sub>
+<sub>(c) kiaora, some rights reserved (CC BY-NC)；(c) bogsuckers, some rights reserved (CC BY)；(c) victor laborde, some rights reserved (CC BY)</sub>
 
 [在 iNat 上看法兰西岛的全部研究级照片](https://www.inaturalist.org/observations?place_id=10577&taxon_id=350511&quality_grade=research&photos=true)
 
@@ -635,9 +635,9 @@
   4. 没有菌环
 - **危险易混种**：—
 
-[![糙皮侧耳（平菇）](https://inaturalist-open-data.s3.amazonaws.com/photos/229371599/small.jpeg)](https://www.inaturalist.org/observations/134554269) [![糙皮侧耳（平菇）](https://inaturalist-open-data.s3.amazonaws.com/photos/607168181/small.jpg)](https://www.inaturalist.org/observations/334354349) [![糙皮侧耳（平菇）](https://inaturalist-open-data.s3.amazonaws.com/photos/546765125/small.jpg)](https://www.inaturalist.org/observations/303356399)
+[![糙皮侧耳（平菇）](https://inaturalist-open-data.s3.amazonaws.com/photos/229371599/small.jpeg)](https://www.inaturalist.org/observations/134554269) [![糙皮侧耳（平菇）](https://inaturalist-open-data.s3.amazonaws.com/photos/607168181/small.jpg)](https://www.inaturalist.org/observations/334354349) [![糙皮侧耳（平菇）](https://inaturalist-open-data.s3.amazonaws.com/photos/167097962/small.jpeg)](https://www.inaturalist.org/observations/100140062)
 
-<sub>(c) Lili M Stiff, some rights reserved (CC BY-NC)；(c) Guinberteau Jacques, some rights reserved (CC BY-NC)；(c) Rémy Poncet, some rights reserved (CC BY-NC)</sub>
+<sub>(c) Lili M Stiff, some rights reserved (CC BY-NC)；(c) Guinberteau Jacques, some rights reserved (CC BY-NC)；(c) bogsuckers, some rights reserved (CC BY)</sub>
 
 [在 iNat 上看法兰西岛的全部研究级照片](https://www.inaturalist.org/observations?place_id=10577&taxon_id=1196165&quality_grade=research&photos=true)
 
@@ -654,9 +654,9 @@
   4. 孢子印粉红色
 - **危险易混种**：鳞柄白鹅膏（致命）、春生鹅膏（致命）、毒鹅膏（致命）
 
-[![黏盖草菇](https://inaturalist-open-data.s3.amazonaws.com/photos/108251316/small.jpeg)](https://www.inaturalist.org/observations/67059897) [![黏盖草菇](https://inaturalist-open-data.s3.amazonaws.com/photos/172293375/small.jpeg)](https://www.inaturalist.org/observations/102999598) [![黏盖草菇](https://inaturalist-open-data.s3.amazonaws.com/photos/105025804/small.jpeg)](https://www.inaturalist.org/observations/65272221)
+[![黏盖草菇](https://inaturalist-open-data.s3.amazonaws.com/photos/108251316/small.jpeg)](https://www.inaturalist.org/observations/67059897) [![黏盖草菇](https://inaturalist-open-data.s3.amazonaws.com/photos/172293375/small.jpeg)](https://www.inaturalist.org/observations/102999598) [![黏盖草菇](https://inaturalist-open-data.s3.amazonaws.com/photos/28863698/small.jpeg)](https://www.inaturalist.org/observations/18841856)
 
-<sub>(c) benoitteyssendier, some rights reserved (CC BY-NC)；(c) eliot13, some rights reserved (CC BY-NC)；(c) janek42, some rights reserved (CC BY-NC)</sub>
+<sub>(c) benoitteyssendier, some rights reserved (CC BY-NC)；(c) eliot13, some rights reserved (CC BY-NC)；no rights reserved</sub>
 
 [在 iNat 上看法兰西岛的全部研究级照片](https://www.inaturalist.org/observations?place_id=10577&taxon_id=348720&quality_grade=research&photos=true)
 
@@ -672,9 +672,9 @@
   3. 肉白、脆，碰伤处变橙
 - **危险易混种**：—
 
-[![齿菌属（卷缘齿菌等）](https://inaturalist-open-data.s3.amazonaws.com/photos/151052352/small.jpeg)](https://www.inaturalist.org/observations/91332770) [![齿菌属（卷缘齿菌等）](https://inaturalist-open-data.s3.amazonaws.com/photos/244564242/small.jpeg)](https://www.inaturalist.org/observations/142630034) [![齿菌属（卷缘齿菌等）](https://inaturalist-open-data.s3.amazonaws.com/photos/103655447/small.jpg)](https://www.inaturalist.org/observations/64470720)
+[![齿菌属（卷缘齿菌等）](https://inaturalist-open-data.s3.amazonaws.com/photos/151052352/small.jpeg)](https://www.inaturalist.org/observations/91332770) [![齿菌属（卷缘齿菌等）](https://inaturalist-open-data.s3.amazonaws.com/photos/175271232/small.jpg)](https://www.inaturalist.org/observations/104583266) [![齿菌属（卷缘齿菌等）](https://inaturalist-open-data.s3.amazonaws.com/photos/432269554/small.jpeg)](https://www.inaturalist.org/observations/242472511)
 
-<sub>(c) zorille, some rights reserved (CC BY-NC)；(c) Karim Haddad, some rights reserved (CC BY)；(c) mibnaturalist, some rights reserved (CC BY-NC)</sub>
+<sub>(c) zorille, some rights reserved (CC BY-NC)；(c) Lou Valence, some rights reserved (CC BY-NC)；(c) Yasin GUNDESLI, some rights reserved (CC BY-NC)</sub>
 
 [在 iNat 上看法兰西岛的全部研究级照片](https://www.inaturalist.org/observations?place_id=10577&taxon_id=48422&quality_grade=research&photos=true)
 
@@ -689,9 +689,9 @@
   2. 下面是白色细孔
 - **危险易混种**：—
 
-[![灰树花（舞茸）](https://inaturalist-open-data.s3.amazonaws.com/photos/442961632/small.jpeg)](https://www.inaturalist.org/observations/247960442) [![灰树花（舞茸）](https://inaturalist-open-data.s3.amazonaws.com/photos/169986688/small.jpeg)](https://www.inaturalist.org/observations/101761244) [![灰树花（舞茸）](https://inaturalist-open-data.s3.amazonaws.com/photos/749205903/small.jpg)](https://www.inaturalist.org/observations/407669123)
+[![灰树花（舞茸）](https://inaturalist-open-data.s3.amazonaws.com/photos/749205903/small.jpg)](https://www.inaturalist.org/observations/407669123) [![灰树花（舞茸）](https://inaturalist-open-data.s3.amazonaws.com/photos/169986688/small.jpeg)](https://www.inaturalist.org/observations/101761244) [![灰树花（舞茸）](https://inaturalist-open-data.s3.amazonaws.com/photos/442961632/small.jpeg)](https://www.inaturalist.org/observations/247960442)
 
-<sub>(c) yellowplant, some rights reserved (CC BY)；(c) Guy Durand, some rights reserved (CC BY-NC)；(c) Danny mauger, some rights reserved (CC BY-NC)</sub>
+<sub>(c) Danny mauger, some rights reserved (CC BY-NC)；(c) Guy Durand, some rights reserved (CC BY-NC)；(c) yellowplant, some rights reserved (CC BY)</sub>
 
 [在 iNat 上看法兰西岛的全部研究级照片](https://www.inaturalist.org/observations?place_id=10577&taxon_id=53714&quality_grade=research&photos=true)
 
@@ -727,9 +727,9 @@
   4. 肉很薄
 - **危险易混种**：—
 
-[![灰喇叭菌](https://inaturalist-open-data.s3.amazonaws.com/photos/348620812/small.jpeg)](https://www.inaturalist.org/observations/197873106) [![灰喇叭菌](https://inaturalist-open-data.s3.amazonaws.com/photos/102534481/small.jpg)](https://www.inaturalist.org/observations/63843601) [![灰喇叭菌](https://inaturalist-open-data.s3.amazonaws.com/photos/451117715/small.jpeg)](https://www.inaturalist.org/observations/252048770)
+[![灰喇叭菌](https://inaturalist-open-data.s3.amazonaws.com/photos/348620812/small.jpeg)](https://www.inaturalist.org/observations/197873106) [![灰喇叭菌](https://inaturalist-open-data.s3.amazonaws.com/photos/102534481/small.jpg)](https://www.inaturalist.org/observations/63843601) [![灰喇叭菌](https://inaturalist-open-data.s3.amazonaws.com/photos/742996232/small.jpg)](https://www.inaturalist.org/observations/404578752)
 
-<sub>(c) jltasset, some rights reserved (CC BY-NC)；(c) davodie, some rights reserved (CC BY-NC)；(c) Clément panisse, some rights reserved (CC BY-NC)</sub>
+<sub>(c) jltasset, some rights reserved (CC BY-NC)；(c) davodie, some rights reserved (CC BY-NC)；(c) Pierre-Jules Berrou, some rights reserved (CC BY-NC)</sub>
 
 [在 iNat 上看法兰西岛的全部研究级照片](https://www.inaturalist.org/observations?place_id=10577&taxon_id=48607&quality_grade=research&photos=true)
 
@@ -764,9 +764,9 @@
   3. 肉白色，切开不变色
 - **危险易混种**：撒旦牛肝菌（有毒）、苦粉孢牛肝菌（不推荐）
 
-[![铜色牛肝菌](https://inaturalist-open-data.s3.amazonaws.com/photos/550260255/small.jpg)](https://www.inaturalist.org/observations/305198992) [![铜色牛肝菌](https://inaturalist-open-data.s3.amazonaws.com/photos/567649542/small.jpg)](https://www.inaturalist.org/observations/314286025) [![铜色牛肝菌](https://inaturalist-open-data.s3.amazonaws.com/photos/563526485/small.jpg)](https://www.inaturalist.org/observations/312137004)
+[![铜色牛肝菌](https://inaturalist-open-data.s3.amazonaws.com/photos/550260255/small.jpg)](https://www.inaturalist.org/observations/305198992) [![铜色牛肝菌](https://inaturalist-open-data.s3.amazonaws.com/photos/563526485/small.jpg)](https://www.inaturalist.org/observations/312137004) [![铜色牛肝菌](https://inaturalist-open-data.s3.amazonaws.com/photos/567649542/small.jpg)](https://www.inaturalist.org/observations/314286025)
 
-<sub>(c) QUARTIER Thomas, some rights reserved (CC BY-NC)；(c) jeninini, some rights reserved (CC BY-NC)；(c) albertgabriel, some rights reserved (CC BY-NC)</sub>
+<sub>(c) QUARTIER Thomas, some rights reserved (CC BY-NC)；(c) albertgabriel, some rights reserved (CC BY-NC)；(c) jeninini, some rights reserved (CC BY-NC)</sub>
 
 [在 iNat 上看法兰西岛的全部研究级照片](https://www.inaturalist.org/observations?place_id=10577&taxon_id=333772&quality_grade=research&photos=true)
 
@@ -801,9 +801,9 @@
   3. 管孔白色变黄绿，不变蓝
 - **危险易混种**：撒旦牛肝菌（有毒）、苦粉孢牛肝菌（不推荐）
 
-[![网纹牛肝菌](https://inaturalist-open-data.s3.amazonaws.com/photos/241374907/small.jpg)](https://www.inaturalist.org/observations/140959875) [![网纹牛肝菌](https://inaturalist-open-data.s3.amazonaws.com/photos/236110008/small.jpeg)](https://www.inaturalist.org/observations/138171526) [![网纹牛肝菌](https://inaturalist-open-data.s3.amazonaws.com/photos/242709789/small.jpeg)](https://www.inaturalist.org/observations/141645476)
+[![网纹牛肝菌](https://inaturalist-open-data.s3.amazonaws.com/photos/241374907/small.jpg)](https://www.inaturalist.org/observations/140959875) [![网纹牛肝菌](https://inaturalist-open-data.s3.amazonaws.com/photos/236110008/small.jpeg)](https://www.inaturalist.org/observations/138171526) [![网纹牛肝菌](https://inaturalist-open-data.s3.amazonaws.com/photos/290849188/small.jpeg)](https://www.inaturalist.org/observations/167864190)
 
-<sub>(c) pascale_lusigny, some rights reserved (CC BY-NC)；(c) Guinberteau Jacques, some rights reserved (CC BY-NC)；(c) bogsuckers, some rights reserved (CC BY)</sub>
+<sub>(c) pascale_lusigny, some rights reserved (CC BY-NC)；(c) Guinberteau Jacques, some rights reserved (CC BY-NC)；(c) mathieu_pages, some rights reserved (CC BY-NC)</sub>
 
 [在 iNat 上看法兰西岛的全部研究级照片](https://www.inaturalist.org/observations?place_id=10577&taxon_id=350216&quality_grade=research&photos=true)
 
@@ -819,9 +819,9 @@
   3. 孢子印锈褐色
 - **危险易混种**：纹缘盔孢伞（致命）、簇生垂幕菇（有毒）
 
-[![毛柄库恩菇](https://inaturalist-open-data.s3.amazonaws.com/photos/572212564/small.jpg)](https://www.inaturalist.org/observations/316695612) [![毛柄库恩菇](https://inaturalist-open-data.s3.amazonaws.com/photos/169414135/small.jpeg)](https://www.inaturalist.org/observations/101439955) [![毛柄库恩菇](https://inaturalist-open-data.s3.amazonaws.com/photos/358006058/small.jpeg)](https://www.inaturalist.org/observations/202690607)
+[![毛柄库恩菇](https://inaturalist-open-data.s3.amazonaws.com/photos/572212564/small.jpg)](https://www.inaturalist.org/observations/316695612) [![毛柄库恩菇](https://inaturalist-open-data.s3.amazonaws.com/photos/48996206/small.jpeg)](https://www.inaturalist.org/observations/31312846) [![毛柄库恩菇](https://inaturalist-open-data.s3.amazonaws.com/photos/421231348/small.jpeg)](https://www.inaturalist.org/observations/236748206)
 
-<sub>(c) yellowplant, some rights reserved (CC BY)；(c) Cándido Sos, some rights reserved (CC BY-NC)；(c) Léa Loyauté, some rights reserved (CC BY-NC)</sub>
+<sub>(c) yellowplant, some rights reserved (CC BY)；(c) CORDENOS Thierry, some rights reserved (CC BY-NC)；(c) leforain, some rights reserved (CC BY-NC)</sub>
 
 [在 iNat 上看法兰西岛的全部研究级照片](https://www.inaturalist.org/observations?place_id=10577&taxon_id=153033&quality_grade=research&photos=true)
 
@@ -839,9 +839,9 @@
   5. 切开柄基部不会变铬黄色
 - **危险易混种**：黄斑蘑菇（有毒）、鳞柄白鹅膏（致命）、春生鹅膏（致命）、毒鹅膏（致命）
 
-[![野蘑菇类（草地蘑菇）](https://inaturalist-open-data.s3.amazonaws.com/photos/321626629/small.jpeg)](https://www.inaturalist.org/observations/184269546) [![野蘑菇类（草地蘑菇）](https://inaturalist-open-data.s3.amazonaws.com/photos/48367783/small.jpeg)](https://www.inaturalist.org/observations/30937113) [![野蘑菇类（草地蘑菇）](https://inaturalist-open-data.s3.amazonaws.com/photos/24786512/small.jpeg)](https://www.inaturalist.org/observations/16471396)
+[![野蘑菇类（草地蘑菇）](https://inaturalist-open-data.s3.amazonaws.com/photos/321626629/small.jpeg)](https://www.inaturalist.org/observations/184269546) [![野蘑菇类（草地蘑菇）](https://inaturalist-open-data.s3.amazonaws.com/photos/48367783/small.jpeg)](https://www.inaturalist.org/observations/30937113) [![野蘑菇类（草地蘑菇）](https://inaturalist-open-data.s3.amazonaws.com/photos/55776999/small.jpg)](https://www.inaturalist.org/observations/35376082)
 
-<sub>(c) Konrad and Roland Greinwald, some rights reserved (CC BY-NC)；(c) Mathieu Sauzay, some rights reserved (CC BY)；(c) Bodo Nuñez Oberg, some rights reserved (CC BY-NC)</sub>
+<sub>(c) Konrad and Roland Greinwald, some rights reserved (CC BY-NC)；(c) Mathieu Sauzay, some rights reserved (CC BY)；(c) ahmedm, some rights reserved (CC BY-NC)</sub>
 
 [在 iNat 上看法兰西岛的全部研究级照片](https://www.inaturalist.org/observations?place_id=10577&taxon_id=143563&quality_grade=research&photos=true)
 
@@ -857,9 +857,9 @@
   3. 柄坚韧，可以拧几圈都不断
 - **危险易混种**：白色小杯伞（含毒蕈碱） †（有毒）
 
-[![硬柄小皮伞（仙环菇）](https://inaturalist-open-data.s3.amazonaws.com/photos/383525175/small.jpeg)](https://www.inaturalist.org/observations/216837032) [![硬柄小皮伞（仙环菇）](https://inaturalist-open-data.s3.amazonaws.com/photos/586327317/small.jpg)](https://www.inaturalist.org/observations/323990805) [![硬柄小皮伞（仙环菇）](https://inaturalist-open-data.s3.amazonaws.com/photos/551389534/small.jpg)](https://www.inaturalist.org/observations/305794760)
+[![硬柄小皮伞（仙环菇）](https://inaturalist-open-data.s3.amazonaws.com/photos/383525175/small.jpeg)](https://www.inaturalist.org/observations/216837032) [![硬柄小皮伞（仙环菇）](https://inaturalist-open-data.s3.amazonaws.com/photos/334326593/small.jpeg)](https://www.inaturalist.org/observations/190680748) [![硬柄小皮伞（仙环菇）](https://inaturalist-open-data.s3.amazonaws.com/photos/242138579/small.jpeg)](https://www.inaturalist.org/observations/141352749)
 
-<sub>(c) Alain Roujas, some rights reserved (CC BY-NC)；(c) Slaven Kljucanin, some rights reserved (CC BY)；(c) Xavier HURIEZ, some rights reserved (CC BY-NC)</sub>
+<sub>(c) Alain Roujas, some rights reserved (CC BY-NC)；(c) Jean-Marie Frenoux, some rights reserved (CC BY-NC)；(c) Alain Michaud, some rights reserved (CC BY-NC)</sub>
 
 [在 iNat 上看法兰西岛的全部研究级照片](https://www.inaturalist.org/observations?place_id=10577&taxon_id=118240&quality_grade=research&photos=true)
 
@@ -913,9 +913,9 @@
   4. 肉像粉笔一样整齐断开（红菇的共同特征）
 - **危险易混种**：毒鹅膏（致命）
 
-[![变绿红菇（青头菌）](https://inaturalist-open-data.s3.amazonaws.com/photos/159798606/small.jpeg)](https://www.inaturalist.org/observations/96205914) [![变绿红菇（青头菌）](https://inaturalist-open-data.s3.amazonaws.com/photos/329773934/small.jpeg)](https://www.inaturalist.org/observations/188421033) [![变绿红菇（青头菌）](https://inaturalist-open-data.s3.amazonaws.com/photos/322479521/small.jpeg)](https://www.inaturalist.org/observations/184721637)
+[![变绿红菇（青头菌）](https://inaturalist-open-data.s3.amazonaws.com/photos/159798606/small.jpeg)](https://www.inaturalist.org/observations/96205914) [![变绿红菇（青头菌）](https://inaturalist-open-data.s3.amazonaws.com/photos/329773934/small.jpeg)](https://www.inaturalist.org/observations/188421033) [![变绿红菇（青头菌）](https://inaturalist-open-data.s3.amazonaws.com/photos/240334153/small.jpeg)](https://www.inaturalist.org/observations/140404660)
 
-<sub>(c) Collin Gilles, some rights reserved (CC BY-NC)；(c) bogsuckers, some rights reserved (CC BY)；(c) tibovigneron, some rights reserved (CC BY-NC)</sub>
+<sub>(c) Collin Gilles, some rights reserved (CC BY-NC)；(c) bogsuckers, some rights reserved (CC BY)；(c) vallespir, some rights reserved (CC BY-NC)</sub>
 
 [在 iNat 上看法兰西岛的全部研究级照片](https://www.inaturalist.org/observations?place_id=10577&taxon_id=1640754&quality_grade=research&photos=true)
 
@@ -930,9 +930,9 @@
   2. 分枝扁平、波浪状
 - **危险易混种**：—
 
-[![绣球菌](https://inaturalist-open-data.s3.amazonaws.com/photos/172864240/small.jpeg)](https://www.inaturalist.org/observations/103305436) [![绣球菌](https://inaturalist-open-data.s3.amazonaws.com/photos/169858196/small.jpeg)](https://www.inaturalist.org/observations/101697558) [![绣球菌](https://inaturalist-open-data.s3.amazonaws.com/photos/563169773/small.jpg)](https://www.inaturalist.org/observations/311948643)
+[![绣球菌](https://inaturalist-open-data.s3.amazonaws.com/photos/172864240/small.jpeg)](https://www.inaturalist.org/observations/103305436) [![绣球菌](https://inaturalist-open-data.s3.amazonaws.com/photos/428056625/small.jpeg)](https://www.inaturalist.org/observations/240276329) [![绣球菌](https://inaturalist-open-data.s3.amazonaws.com/photos/445338078/small.jpeg)](https://www.inaturalist.org/observations/249157424)
 
-<sub>(c) François-Xavier Taxil, some rights reserved (CC BY-NC)；(c) Roland Muller, some rights reserved (CC BY-NC)；(c) kiaora, some rights reserved (CC BY-NC)</sub>
+<sub>(c) François-Xavier Taxil, some rights reserved (CC BY-NC)；(c) jltasset, some rights reserved (CC BY-NC)；(c) gabrielehf, some rights reserved (CC BY-NC)</sub>
 
 [在 iNat 上看法兰西岛的全部研究级照片](https://www.inaturalist.org/observations?place_id=10577&taxon_id=63014&quality_grade=research&photos=true)
 
@@ -948,9 +948,9 @@
 - **危险易混种**：毒鹅膏（致命）、橙黄硬皮马勃（有毒）
 - **注意**：内部一旦发黄或出现任何轮廓就不能吃。小个体要按鹅膏卵的标准检查。
 
-[![大秃马勃](https://inaturalist-open-data.s3.amazonaws.com/photos/346650403/small.jpeg)](https://www.inaturalist.org/observations/196898607) [![大秃马勃](https://inaturalist-open-data.s3.amazonaws.com/photos/96032779/small.jpeg)](https://www.inaturalist.org/observations/60073774) [![大秃马勃](https://inaturalist-open-data.s3.amazonaws.com/photos/568505296/small.jpg)](https://www.inaturalist.org/observations/314744301)
+[![大秃马勃](https://inaturalist-open-data.s3.amazonaws.com/photos/346650403/small.jpeg)](https://www.inaturalist.org/observations/196898607) [![大秃马勃](https://inaturalist-open-data.s3.amazonaws.com/photos/96032779/small.jpeg)](https://www.inaturalist.org/observations/60073774) [![大秃马勃](https://inaturalist-open-data.s3.amazonaws.com/photos/26873872/small.jpg)](https://www.inaturalist.org/observations/17640695)
 
-<sub>(c) David LALOI, some rights reserved (CC BY-NC)；(c) ceciliaglonzapata, some rights reserved (CC BY-NC)；(c) delgoet, some rights reserved (CC BY-NC)</sub>
+<sub>(c) David LALOI, some rights reserved (CC BY-NC)；(c) ceciliaglonzapata, some rights reserved (CC BY-NC)；(c) Antoun ARMALÉ, some rights reserved (CC BY)</sub>
 
 [在 iNat 上看法兰西岛的全部研究级照片](https://www.inaturalist.org/observations?place_id=10577&taxon_id=57692&quality_grade=research&photos=true)
 
