@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>法兰西岛当季蘑菇课表</title>
+<style>
+  :root {
+    --bg: #f7f5f0; --fg: #1f1d1a; --muted: #6b665d; --line: #e2ddd2; --card: #fff;
+    --deadly: #b3261e; --toxic: #d9480f; --avoid: #7a7468; --expert: #6741d9; --cook: #b7791f; --edible: #2f7d32;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.55 -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; }
+  a { color: inherit; }
+  header { position: sticky; top: 0; z-index: 2; background: var(--bg); border-bottom: 1px solid var(--line); padding: 10px 14px; }
+  h1 { font-size: 18px; margin: 0 0 8px; }
+  .controls { display: flex; flex-wrap: wrap; gap: 8px; }
+  .controls label { display: flex; flex-direction: column; font-size: 12px; color: var(--muted); }
+  select, button { font: inherit; font-size: 15px; padding: 6px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--fg); }
+  button { cursor: pointer; }
+  button.primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+  .modes { display: flex; gap: 6px; align-items: flex-end; }
+  .modes button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+  main { max-width: 920px; margin: 0 auto; padding: 12px 14px 40px; }
+  .warn { background: #fff4e5; border: 1px solid #f0c48a; border-radius: 10px; padding: 10px 12px; font-size: 14px; }
+  .warn strong { color: var(--deadly); }
+  .summary { color: var(--muted); font-size: 14px; margin: 12px 0 0; }
+  h2 { font-size: 17px; margin: 26px 0 4px; }
+  h2 + .hint { color: var(--muted); font-size: 13px; margin: 0 0 10px; }
+  .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+  .card { background: var(--card); border: 1px solid var(--line); border-left: 5px solid var(--edible); border-radius: 12px; overflow: hidden; scroll-margin-top: 140px; }
+  .card.deadly { border-left-color: var(--deadly); } .card.toxic { border-left-color: var(--toxic); }
+  .card.avoid { border-left-color: var(--avoid); } .card.expert { border-left-color: var(--expert); }
+  .card.cook { border-left-color: var(--cook); }
+  .card.quiz { border-left-color: var(--line); }
+  .photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--line); }
+  .photos.one { grid-template-columns: 1fr; } .photos.two { grid-template-columns: 1fr 1fr; }
+  .photos img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; background: #ddd; }
+  .photos > :first-child:last-child img { aspect-ratio: 4 / 3; }
+  .body { padding: 10px 12px 12px; }
+  .title { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .title h3 { font-size: 17px; margin: 0; }
+  .badge { font-size: 12px; font-weight: 600; color: #fff; border-radius: 999px; padding: 1px 8px; background: var(--edible); white-space: nowrap; }
+  .badge.deadly { background: var(--deadly); } .badge.toxic { background: var(--toxic); } .badge.avoid { background: var(--avoid); }
+  .badge.expert { background: var(--expert); } .badge.cook { background: var(--cook); }
+  .tag { font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 0 7px; }
+  .names { color: var(--muted); font-size: 13px; margin: 2px 0 6px; }
+  .why { font-size: 13px; color: var(--deadly); margin: 0 0 6px; }
+  .months { display: grid; grid-template-columns: repeat(12, 1fr); gap: 2px; margin: 6px 0 8px; }
+  .months span { font-size: 10px; text-align: center; border-radius: 3px; padding: 1px 0; color: var(--muted); background: #f0ede6; }
+  .months span.lv1 { background: #d9e8d4; } .months span.lv2 { background: #9ac48f; color: #fff; } .months span.lv3 { background: #4f8f3f; color: #fff; }
+  .months span.now { outline: 2px solid var(--fg); outline-offset: -2px; }
+  dl { margin: 0; font-size: 14px; } dt { font-weight: 600; margin-top: 6px; } dd { margin: 0; }
+  ol { margin: 2px 0 0; padding-left: 20px; font-size: 14px; }
+  .note { font-size: 13px; background: #fbf7ee; border-radius: 6px; padding: 6px 8px; margin: 8px 0 0; }
+  .credit { font-size: 11px; color: var(--muted); margin: 8px 0 0; }
+  .quiz .answer { display: none; }
+  .quiz.revealed .answer { display: block; }
+  .quiz .reveal-row { display: flex; gap: 8px; margin-top: 4px; }
+  .quiz.revealed .reveal-btn { display: none; }
+  .grade { display: none; gap: 8px; margin-top: 10px; }
+  .quiz.revealed .grade { display: flex; }
+  .grade button.chosen { background: var(--fg); color: var(--bg); }
+  .score { font-size: 14px; color: var(--muted); }
+  footer { color: var(--muted); font-size: 12px; max-width: 920px; margin: 0 auto; padding: 0 14px 30px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>法兰西岛当季蘑菇课表</h1>
+  <div class="controls">
+    <label>月份<select id="month"></select></label>
+    <label>地点<select id="zone"></select></label>
+    <label>生境<select id="habitat"></select></label>
+    <div class="modes">
+      <button id="mode-learn" aria-pressed="true">学习</button>
+      <button id="mode-quiz" aria-pressed="false">自测</button>
+    </div>
+  </div>
+</header>
+<main>
+  <p class="warn"><strong>可食性只是训练标签，不是食用许可。</strong>任何要下锅的蘑菇都要先当面鉴定（SMF 周一 14:30–19:00，或药剂师）。吃了不舒服：巴黎中毒中心 <a href="tel:+33140054848">01 40 05 48 48</a>；昏迷或呼吸困难打 15 或 112。</p>
+  <p class="summary" id="summary"></p>
+  <div id="deck"></div>
+</main>
+<footer id="footer"></footer>
+<script id="data" type="application/json">__DATA__</script>
+<script>
+"use strict";
+const D = JSON.parse(document.getElementById("data").textContent);
+const S = D.species;
+const M = D.meta;
+const EDIBLE = new Set(M.edible);
+const DANGER = new Set(M.danger);
+const SEVERITY = { deadly: 0, toxic: 1, avoid: 2, expert: 3, cook: 4, edible: 5 };
+const SEASON_OF = {};
+for (const s of M.seasons) for (const m of s.months) SEASON_OF[m] = s;
+const DECK_EDIBLES = 8, DECK_DANGERS = 4, PREVIEW_MIN_TOTAL = 5;
+
+const esc = (t) => String(t ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const zh = (n) => S[n].zh + (S[n].zh_check ? " †" : "");
+const slug = (n) => "sp-" + n.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+
+const monthly = {};
+for (let m = 1; m <= 12; m++) for (const [n, c] of Object.entries(D.months[m] || {})) (monthly[n] ||= Array(13).fill(0))[m] = c;
+const profile = (n) => monthly[n] || Array(13).fill(0);
+const isPeak = (n, m) => { const p = profile(n); const top = Math.max(...p); return top > 0 && p[m] >= 0.5 * top; };
+
+const lookalikeOf = {};
+for (const [n, s] of Object.entries(S)) for (const l of s.lookalikes || []) (lookalikeOf[l] ||= []).push(n);
+
+function pool(month, zone) {
+  if (zone === "idf") return { counts: D.months[month] || {}, min: D.thresholds.idf };
+  const z = D.zones[zone].seasons[SEASON_OF[month].key];
+  const counts = {};
+  for (const r of [...z.edible, ...z.danger]) counts[r.name] = r.observer_days;
+  return { counts, min: D.thresholds.zone, total: z.total_observer_days };
+}
+
+function ranked(counts, min, classes) {
+  return Object.entries(counts)
+    .filter(([n, c]) => c >= min && S[n] && classes.has(S[n].edibility))
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+}
+
+function buildDeck(month, zone, habitat) {
+  const here = pool(month, zone);
+  const idf = pool(month, "idf");
+  const habOk = (n) => !habitat || S[n].habitat_types.includes(habitat);
+
+  const edibles = ranked(here.counts, here.min, EDIBLE).filter(([n]) => habOk(n)).slice(0, DECK_EDIBLES)
+    .map(([n, c]) => ({ name: n, count: c, filled: false }));
+  if (zone !== "idf") {
+    for (const [n, c] of ranked(idf.counts, idf.min, EDIBLE)) {
+      if (edibles.length >= DECK_EDIBLES) break;
+      if (habOk(n) && !edibles.some((e) => e.name === n)) edibles.push({ name: n, count: c, filled: true });
+    }
+  }
+  const inDeck = new Set(edibles.map((e) => e.name));
+
+  const dangers = new Map();
+  const addDanger = (n, reason) => {
+    if (inDeck.has(n)) return;
+    if (!dangers.has(n)) dangers.set(n, { name: n, count: here.counts[n] || 0, reasons: [] });
+    dangers.get(n).reasons.push(reason);
+  };
+  for (const e of edibles) for (const l of S[e.name].lookalikes || []) addDanger(l, "lookalike");
+  for (const [n] of ranked(here.counts, here.min, DANGER).slice(0, DECK_DANGERS)) addDanger(n, "common");
+  const dangerList = [...dangers.values()].sort((a, b) =>
+    SEVERITY[S[a.name].edibility] - SEVERITY[S[b.name].edibility] || b.count - a.count || a.name.localeCompare(b.name));
+  for (const d of dangerList) inDeck.add(d.name);
+
+  const next = (month % 12) + 1;
+  const preview = Object.keys(S)
+    .filter((n) => EDIBLE.has(S[n].edibility) && !inDeck.has(n) && habOk(n))
+    .filter((n) => isPeak(n, next) && !isPeak(n, month) && profile(n).reduce((a, b) => a + b, 0) >= PREVIEW_MIN_TOTAL)
+    .map((n) => ({ name: n, count: idf.counts[n] || 0 }));
+
+  return { edibles, dangers: dangerList, preview, total: here.total, next };
+}
+
+function monthsStrip(n, month) {
+  const p = profile(n); const top = Math.max(...p);
+  let out = "";
+  for (let m = 1; m <= 12; m++) {
+    const r = top ? p[m] / top : 0;
+    const lv = r >= 0.5 ? 3 : r >= 0.2 ? 2 : r > 0 ? 1 : 0;
+    out += `<span class="lv${lv}${m === month ? " now" : ""}" title="${m} 月：${p[m]} 人日">${m}</span>`;
+  }
+  return `<div class="months" aria-label="法兰西岛月历">${out}</div>`;
+}
+
+function link(n, deckNames) {
+  return deckNames.has(n) ? `<a href="#${slug(n)}">${esc(zh(n))}</a>` : esc(zh(n));
+}
+
+function card(item, ctx, quiz) {
+  const n = item.name, s = S[n];
+  const photos = s.photos || [];
+  const cls = photos.length === 1 ? " one" : photos.length === 2 ? " two" : "";
+  const imgs = photos.map((p) => {
+    const img = `<img loading="lazy" src="${esc(p.url.replace("/small.", "/medium."))}" alt="${quiz ? "待认的蘑菇" : esc(s.zh)}">`;
+    return quiz ? `<span>${img}</span>` : `<a href="${esc(p.observation)}" target="_blank" rel="noopener">${img}</a>`;
+  }).join("");
+  const label = M.edibility_label[s.edibility];
+  const extra = [];
+  if (item.filled) extra.push(`<span class="tag">全境补位 · ${ctx.month} 月全境 ${item.count} 人日</span>`);
+  else if (ctx.countLabel && item.count) extra.push(`<span class="tag">${ctx.countLabel} ${item.count} 人日</span>`);
+
+  let why = "";
+  if (item.reasons) {
+    const parts = [];
+    const eds = (lookalikeOf[n] || []).filter((e) => ctx.edibleNames.has(e));
+    if (item.reasons.includes("lookalike") && eds.length) parts.push("易混：" + eds.map((e) => link(e, ctx.deckNames)).join("、"));
+    if (item.reasons.includes("common")) parts.push("这里这季最常见的危险种之一");
+    why = `<p class="why">${parts.join("；")}</p>`;
+  }
+  const looks = (s.lookalikes || []).length
+    ? `<dt>危险易混种</dt><dd>${s.lookalikes.map((l) => link(l, ctx.deckNames) + `（${M.edibility_label[S[l].edibility]}）`).join("、")}</dd>` : "";
+  const reverse = !EDIBLE.has(s.edibility) && (lookalikeOf[n] || []).length
+    ? `<dt>会被误认成</dt><dd>${lookalikeOf[n].map((e) => link(e, ctx.deckNames)).join("、")}</dd>` : "";
+  const credit = photos.map((p) => esc(p.attribution)).join("；");
+  const inat = s.taxon_id
+    ? `<a href="https://www.inaturalist.org/observations?place_id=10577&taxon_id=${s.taxon_id}&quality_grade=research&photos=true" target="_blank" rel="noopener">iNat 上的法兰西岛照片</a>` : "";
+
+  const answer = `
+    <div class="title"><h3>${esc(zh(n))}</h3><span class="badge ${s.edibility}">${label}</span>${extra.join("")}</div>
+    <p class="names"><i>${esc(n)}</i> · ${esc(s.fr)} · ${esc(s.en)}</p>
+    ${why}
+    ${monthsStrip(n, ctx.month)}
+    <dl>
+      <dt>环境</dt><dd>${esc(s.habitat)}</dd>
+      <dt>生境类型 · 宿主 / 基物</dt><dd>${esc(s.habitat_types.join("、"))} · ${esc(s.hosts.join("、"))}</dd>
+      <dt>细节（按可靠程度排序）</dt><dd><ol>${s.features.map((f) => `<li>${esc(f)}</li>`).join("")}</ol></dd>
+      ${looks}${reverse}
+    </dl>
+    ${s.notes ? `<p class="note">注意：${esc(s.notes)}</p>` : ""}
+    <p class="credit">${credit}${credit && inat ? " · " : ""}${inat}</p>`;
+
+  if (!quiz) return `<article class="card ${s.edibility}" id="${slug(n)}">${photos.length ? `<div class="photos${cls}">${imgs}</div>` : ""}<div class="body">${answer}</div></article>`;
+  return `<article class="card quiz" data-name="${esc(n)}">${photos.length ? `<div class="photos${cls}">${imgs}</div>` : ""}<div class="body">
+      <div class="reveal-row"><button class="reveal-btn primary">显示答案</button></div>
+      <div class="answer">${answer}</div>
+      <div class="grade"><button data-grade="ok">认对了</button><button data-grade="miss">没认出</button></div>
+    </div></article>`;
+}
+
+const $ = (id) => document.getElementById(id);
+const state = { mode: "learn" };
+
+function readHash() {
+  const p = new URLSearchParams(location.hash.slice(1));
+  const nowMonth = Number(new Intl.DateTimeFormat("en", { timeZone: "Europe/Paris", month: "numeric" }).format(new Date()));
+  const m = Number(p.get("m"));
+  return { month: m >= 1 && m <= 12 ? m : nowMonth, zone: D.zones[p.get("z")] ? p.get("z") : "idf",
+           habitat: M.habitat_types.includes(p.get("h")) ? p.get("h") : "", mode: p.get("mode") === "quiz" ? "quiz" : "learn" };
+}
+
+function writeHash() {
+  const p = new URLSearchParams({ m: $("month").value, z: $("zone").value });
+  if ($("habitat").value) p.set("h", $("habitat").value);
+  if (state.mode === "quiz") p.set("mode", "quiz");
+  history.replaceState(null, "", "#" + p.toString());
+}
+
+function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+  return a;
+}
+
+function render() {
+  const month = Number($("month").value), zone = $("zone").value, habitat = $("habitat").value;
+  const deck = buildDeck(month, zone, habitat);
+  const place = zone === "idf" ? "法兰西岛全境（不含巴黎市内）" : D.zones[zone].label;
+  const when = zone === "idf" ? `${month} 月` : SEASON_OF[month].label;
+  const ctx = {
+    month,
+    countLabel: zone === "idf" ? `${month} 月全境` : "这片林子这季",
+    edibleNames: new Set(deck.edibles.map((e) => e.name)),
+    deckNames: new Set([...deck.edibles, ...deck.dangers].map((e) => e.name)),
+  };
+  const sample = deck.total != null ? `；这片林子这季共 ${deck.total} 人日的真菌记录${deck.total < 50 ? "，样本小，只当参考" : ""}` : "";
+  $("summary").textContent = `${place} · ${when}${habitat ? " · " + habitat : ""}：${deck.edibles.length} 个可食种，${deck.dangers.length} 个危险或不推荐的种${sample}。`;
+
+  if (state.mode === "quiz") {
+    const items = shuffle([...deck.dangers, ...deck.edibles]);
+    $("deck").innerHTML = `<h2>自测：看图认种</h2><p class="hint">先自己说出名字和能不能吃，再点"显示答案"。顺序已打乱。</p>
+      <p class="score" id="score"></p><div class="grid">${items.map((i) => card(i, ctx, true)).join("")}</div>`;
+    updateScore();
+    return;
+  }
+  let html = `<h2>先认毒：危险种和不推荐的种（${deck.dangers.length}）</h2>
+    <p class="hint">包括课表里可食种的易混种，以及这里这季最常见的危险种。按严重程度排。</p>
+    <div class="grid">${deck.dangers.map((i) => card(i, ctx, false)).join("")}</div>
+    <h2>当季最常见的可食种（${deck.edibles.length}）</h2>
+    <p class="hint">按人日排，不按好不好吃排。"新手不吃"的种也列出来，因为在林子里一定会碰到。</p>
+    <div class="grid">${deck.edibles.map((i) => card(i, ctx, false)).join("")}</div>`;
+  if (deck.preview.length) {
+    html += `<h2>预习：${deck.next} 月进入高峰（${deck.preview.length}）</h2><p class="hint">按法兰西岛全境的月历。</p>
+      <div class="grid">${deck.preview.map((i) => card(i, { ...ctx, countLabel: "" }, false)).join("")}</div>`;
+  }
+  $("deck").innerHTML = html;
+}
+
+function updateScore() {
+  const cards = [...document.querySelectorAll(".quiz")];
+  const ok = cards.filter((c) => c.dataset.grade === "ok").length;
+  const done = cards.filter((c) => c.dataset.grade).length;
+  const el = $("score");
+  if (el) el.textContent = `已答 ${done} / ${cards.length}，认对 ${ok}。`;
+}
+
+document.addEventListener("click", (ev) => {
+  const c = ev.target.closest(".quiz");
+  if (!c) return;
+  if (ev.target.classList.contains("reveal-btn")) c.classList.add("revealed");
+  const g = ev.target.dataset.grade;
+  if (g) {
+    c.dataset.grade = g;
+    c.querySelectorAll(".grade button").forEach((b) => b.classList.toggle("chosen", b.dataset.grade === g));
+    updateScore();
+  }
+});
+
+function setMode(mode) {
+  state.mode = mode;
+  $("mode-learn").setAttribute("aria-pressed", mode === "learn");
+  $("mode-quiz").setAttribute("aria-pressed", mode === "quiz");
+  writeHash(); render();
+}
+
+function init() {
+  const h = readHash();
+  for (let m = 1; m <= 12; m++) $("month").add(new Option(`${m} 月 · ${SEASON_OF[m].label}`, m));
+  $("zone").add(new Option("法兰西岛全境", "idf"));
+  for (const [id, z] of Object.entries(D.zones)) $("zone").add(new Option(z.label, id));
+  $("habitat").add(new Option("全部生境", ""));
+  for (const t of M.habitat_types) $("habitat").add(new Option(t, t));
+  $("month").value = h.month; $("zone").value = h.zone; $("habitat").value = h.habitat;
+  for (const id of ["month", "zone", "habitat"]) $(id).addEventListener("change", () => { writeHash(); render(); });
+  $("mode-learn").addEventListener("click", () => setMode("learn"));
+  $("mode-quiz").addEventListener("click", () => setMode("quiz"));
+  $("footer").innerHTML = `数据：iNaturalist 法兰西岛研究级真菌观察 ${D.observations} 条，拉取于 ${esc(D.generated_at)}；"人日"指同一人同一天同一种只算一次。
+    选全境时按月份排；选森林片区时按季节排，片区可食种不足 ${DECK_EDIBLES} 个时用全境补位。中文名带 † 的待核对。
+    照片均为 CC 授权，署名见每张卡，点图片打开原观察。<a href="https://github.com/gogorun1/mushroom/blob/main/docs/product-plan.md">产品 plan</a>`;
+  setMode(h.mode);
+}
+init();
+</script>
+</body>
+</html>
