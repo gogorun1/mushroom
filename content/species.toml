@@ -1,0 +1,1060 @@
+# 物种档案（人工维护）
+#
+# name       iNat 学名；可以是种，也可以是属（属条目覆盖该属下没有单独条目的种）
+# edibility  edible 可食 / cook 需彻底煮熟 / expert 新手不吃 / avoid 不推荐 / toxic 有毒 / deadly 致命
+# habitat    生境（地点、季节、基物）
+# habitat_types 生境类型：阔叶林 / 针叶林 / 草地林缘 / 树木腐木，用于按生境分类
+# hosts      共生或寄生的树种 / 基物，用于"环境题"
+# features   识别要点，按可靠程度排序，用于"细节题"
+# lookalikes 危险易混种的 name，必须在本文件中也有条目
+# zh_check   中文名待核对
+#
+# 可食性只是训练标签，不是食用许可：任何蘑菇吃之前都要当面鉴定。
+
+# ───────────────────────── 可食 / 需熟食 / 新手不吃 ─────────────────────────
+
+[[species]]
+name = "Boletus edulis"
+zh = "美味牛肝菌"
+fr = "Cèpe de Bordeaux"
+en = "Penny bun"
+edibility = "edible"
+habitat = "阔叶林和针叶林地上，夏末到秋季，雨后一两周最多"
+habitat_types = ["阔叶林", "针叶林"]
+hosts = ["橡树", "山毛榉", "栗树", "松", "云杉"]
+features = [
+  "盖褐色，像烤面包，边缘常有一圈白色细边",
+  "下面是管孔不是菌褶：幼时白色，后变黄绿，按压不变蓝",
+  "菌柄粗壮，上部有白色细网纹",
+  "肉白色，切开不变色，味道温和",
+]
+lookalikes = ["Rubroboletus satanas", "Tylopilus felleus"]
+
+[[species]]
+name = "Boletus reticulatus"
+zh = "网纹牛肝菌"
+zh_check = true
+fr = "Cèpe d'été"
+en = "Summer cep"
+edibility = "edible"
+habitat = "阔叶林，初夏到秋季，比美味牛肝菌出得早"
+habitat_types = ["阔叶林"]
+hosts = ["橡树", "山毛榉"]
+features = [
+  "盖淡褐色、干燥，常龟裂，没有白色细边",
+  "整根菌柄都布满明显网纹",
+  "管孔白色变黄绿，不变蓝",
+]
+lookalikes = ["Rubroboletus satanas", "Tylopilus felleus"]
+
+[[species]]
+name = "Boletus aereus"
+zh = "铜色牛肝菌"
+fr = "Cèpe bronzé"
+en = "Bronze bolete"
+edibility = "edible"
+habitat = "温暖、干燥的阔叶林，夏季到初秋"
+habitat_types = ["阔叶林"]
+hosts = ["橡树", "栗树"]
+features = [
+  "盖深褐到近黑色，绒质",
+  "菌柄褐色，有网纹",
+  "肉白色，切开不变色",
+]
+lookalikes = ["Rubroboletus satanas", "Tylopilus felleus"]
+
+[[species]]
+name = "Boletus pinophilus"
+zh = "松林牛肝菌"
+zh_check = true
+fr = "Cèpe des pins"
+en = "Pine bolete"
+edibility = "edible"
+habitat = "松林为主，偏酸性的沙质土，夏末到秋季"
+habitat_types = ["针叶林"]
+hosts = ["松", "云杉"]
+features = [
+  "盖红褐色到酒红色",
+  "菌柄带红褐色调，有网纹",
+  "管孔白色变黄绿，不变蓝",
+]
+lookalikes = ["Rubroboletus satanas", "Tylopilus felleus"]
+
+[[species]]
+name = "Imleria badia"
+zh = "褐绒盖牛肝菌"
+zh_check = true
+fr = "Bolet bai"
+en = "Bay bolete"
+edibility = "edible"
+habitat = "针叶林为主，也在阔叶林，酸性土，秋季"
+habitat_types = ["针叶林", "阔叶林"]
+hosts = ["松", "云杉", "山毛榉"]
+features = [
+  "盖栗褐色，湿时黏",
+  "管孔黄色，按压会变蓝",
+  "菌柄没有网纹，只有纵向条纹",
+]
+lookalikes = ["Rubroboletus satanas"]
+
+[[species]]
+name = "Neoboletus erythropus"
+zh = "红脚牛肝菌"
+zh_check = true
+fr = "Bolet à pied rouge"
+en = "Scarlet-stemmed bolete"
+edibility = "cook"
+habitat = "酸性土的阔叶林和针叶林，夏末到秋季"
+habitat_types = ["阔叶林", "针叶林"]
+hosts = ["山毛榉", "橡树", "云杉"]
+features = [
+  "盖深褐色，绒质",
+  "管孔红色",
+  "菌柄黄底布满红色细点，没有网纹",
+  "切开立刻变深蓝",
+]
+lookalikes = ["Rubroboletus satanas"]
+notes = "必须彻底煮熟。"
+
+[[species]]
+name = "Leccinum"
+zh = "疣柄牛肝菌属"
+fr = "Bolets rudes"
+en = "Scaber stalks"
+edibility = "cook"
+habitat = "和特定树种共生：桦树、杨树、橡树；夏秋"
+habitat_types = ["阔叶林"]
+hosts = ["桦树", "杨树", "橡树"]
+features = [
+  "菌柄上有黑褐色的粗糙小鳞片（\"疣\"）",
+  "管孔白色到灰色",
+  "肉切开可能变粉、变灰或变蓝黑",
+]
+lookalikes = []
+notes = "没煮透会引起胃肠不适。"
+
+[[species]]
+name = "Suillus"
+zh = "乳牛肝菌属"
+fr = "Bolets à anneau, nonnettes"
+en = "Slippery jacks"
+edibility = "edible"
+habitat = "只长在针叶树下：松、落叶松；秋季"
+habitat_types = ["针叶林"]
+hosts = ["松", "落叶松"]
+features = [
+  "盖表面很黏滑",
+  "管孔黄色",
+  "有的种有菌环（褐环乳牛肝菌、厚环乳牛肝菌），有的柄上有颗粒点",
+]
+lookalikes = []
+notes = "去掉黏滑的表皮；部分人吃了会胃肠不适。"
+
+[[species]]
+name = "Cantharellus cibarius"
+zh = "鸡油菌"
+fr = "Girolle"
+en = "Golden chanterelle"
+edibility = "edible"
+habitat = "阔叶林和针叶林，苔藓丰富的酸性土，夏季到秋季，雨后"
+habitat_types = ["阔叶林", "针叶林"]
+hosts = ["橡树", "山毛榉", "松"]
+features = [
+  "全身蛋黄色",
+  "盖下面是钝的、会分叉的褶棱，一直延伸到柄上，不是薄刀片一样的真菌褶",
+  "肉白色、实心，可以像鸡肉一样纵向撕开",
+  "有杏子的果香",
+]
+lookalikes = ["Hygrophoropsis aurantiaca", "Omphalotus olearius"]
+
+[[species]]
+name = "Cantharellus"
+zh = "鸡油菌属（其他种）"
+fr = "Chanterelles"
+en = "Chanterelles"
+edibility = "edible"
+habitat = "同鸡油菌"
+habitat_types = ["阔叶林", "针叶林"]
+hosts = ["橡树", "山毛榉", "松"]
+features = [
+  "颜色从浅黄到带紫色鳞片不等",
+  "盖下面是钝的分叉褶棱",
+  "肉白色、实心",
+]
+lookalikes = ["Hygrophoropsis aurantiaca", "Omphalotus olearius"]
+
+[[species]]
+name = "Craterellus cornucopioides"
+zh = "灰喇叭菌"
+fr = "Trompette de la mort"
+en = "Black trumpet"
+edibility = "edible"
+habitat = "阔叶林潮湿的落叶层，成群，夏末到晚秋"
+habitat_types = ["阔叶林"]
+hosts = ["山毛榉", "橡树"]
+features = [
+  "喇叭形，中空一直通到底部",
+  "灰黑色",
+  "外侧光滑或略有皱纹，没有菌褶",
+  "肉很薄",
+]
+lookalikes = []
+
+[[species]]
+name = "Craterellus tubaeformis"
+zh = "管形喇叭菌"
+zh_check = true
+fr = "Chanterelle en tube"
+en = "Yellowfoot"
+edibility = "edible"
+habitat = "针叶林和阔叶林潮湿的苔藓里，晚秋成大群"
+habitat_types = ["针叶林", "阔叶林"]
+hosts = ["松", "云杉", "山毛榉"]
+features = [
+  "盖褐色，中央凹陷，常穿孔",
+  "下面是灰黄色的分叉褶棱",
+  "柄黄色、中空、常扁",
+]
+lookalikes = []
+
+[[species]]
+name = "Hydnum"
+zh = "齿菌属（卷缘齿菌等）"
+fr = "Pied de mouton"
+en = "Hedgehog mushrooms"
+edibility = "edible"
+habitat = "阔叶林和针叶林地上，常排成弧形或圈，秋季"
+habitat_types = ["阔叶林", "针叶林"]
+hosts = ["山毛榉", "橡树", "云杉"]
+features = [
+  "盖下面是密集的小肉刺，不是菌褶也不是管孔",
+  "盖奶油色到橙黄色",
+  "肉白、脆，碰伤处变橙",
+]
+lookalikes = []
+
+[[species]]
+name = "Lepista nuda"
+zh = "紫丁香蘑"
+fr = "Pied bleu"
+en = "Wood blewit"
+edibility = "cook"
+habitat = "落叶堆、针叶腐殖质、堆肥、林缘，晚秋到初冬，耐霜"
+habitat_types = ["阔叶林", "针叶林", "草地林缘"]
+hosts = ["落叶堆", "腐殖质"]
+features = [
+  "全身淡紫到紫褐色，老了褪成褐色",
+  "菌褶紫色，容易和盖肉分开",
+  "没有菌环，也没有蛛网状菌幕",
+  "有果香或香水味",
+  "孢子印粉白到淡粉色",
+]
+lookalikes = ["Cortinarius"]
+notes = "生食有毒，必须煮熟。"
+
+[[species]]
+name = "Macrolepiota procera"
+zh = "高大环柄菇"
+fr = "Coulemelle"
+en = "Parasol mushroom"
+edibility = "edible"
+habitat = "林缘、林间空地、草地边缘等向阳处，夏末到秋季"
+habitat_types = ["草地林缘"]
+hosts = ["草地", "林缘"]
+features = [
+  "盖直径 10–30 cm，有褐色鳞片",
+  "菌柄高，有褐色蛇皮纹",
+  "厚的双层菌环，可以沿柄上下滑动",
+  "柄基部膨大成球，但没有囊状菌托",
+  "菌褶白色，离生",
+]
+lookalikes = ["Amanita phalloides", "Amanita pantherina", "Lepiota", "Chlorophyllum rachodes"]
+notes = "只吃盖；盖小于 10 cm 的环柄菇一律不吃。"
+
+[[species]]
+name = "Coprinus comatus"
+zh = "毛头鬼伞（鸡腿菇）"
+fr = "Coprin chevelu"
+en = "Shaggy ink cap"
+edibility = "edible"
+habitat = "草地、路边、翻动过的土，夏季到秋季"
+habitat_types = ["草地林缘"]
+hosts = ["草地", "路边"]
+features = [
+  "白色高圆柱形盖，表面有向上翻卷的鳞片",
+  "菌褶从白变粉再变黑，最后自溶成墨汁",
+  "柄中空，有一个可以移动的小环",
+]
+lookalikes = ["Coprinopsis atramentaria"]
+notes = "只吃菌褶全白的幼体，采后当天吃。"
+
+[[species]]
+name = "Agaricus campestris"
+zh = "野蘑菇类（草地蘑菇）"
+zh_check = true
+fr = "Rosé des prés"
+en = "Field mushroom"
+edibility = "edible"
+habitat = "有牲畜或施过肥的牧场草地，不在林中；夏末到秋季"
+habitat_types = ["草地林缘"]
+hosts = ["牧场草地"]
+features = [
+  "盖白色",
+  "菌褶幼时粉红，成熟变巧克力褐色，从来不是白色",
+  "菌环薄，容易脱落",
+  "柄基部没有菌托",
+  "切开柄基部不会变铬黄色",
+]
+lookalikes = ["Agaricus xanthodermus", "Amanita virosa", "Amanita verna", "Amanita phalloides"]
+
+[[species]]
+name = "Agaricus arvensis"
+zh = "野蘑菇类（大型白蘑菇）"
+zh_check = true
+fr = "Agaric des jachères"
+en = "Horse mushroom"
+edibility = "edible"
+habitat = "草地、林缘，夏末到秋季"
+habitat_types = ["草地林缘"]
+hosts = ["草地", "林缘"]
+features = [
+  "盖白色，碰伤后慢慢变淡黄，但柄基部切开不会立刻变铬黄",
+  "有大茴香或苦杏仁味",
+  "菌褶灰粉色，后变褐",
+  "菌环大、双层，下面有齿轮状结构",
+]
+lookalikes = ["Agaricus xanthodermus", "Amanita virosa", "Amanita phalloides"]
+
+[[species]]
+name = "Russula virescens"
+zh = "变绿红菇（青头菌）"
+fr = "Russule verdoyante"
+en = "Greencracked brittlegill"
+edibility = "edible"
+habitat = "阔叶林，夏季到初秋"
+habitat_types = ["阔叶林"]
+hosts = ["橡树", "山毛榉"]
+features = [
+  "盖绿色，表皮龟裂成小块",
+  "菌褶白色，脆",
+  "柄白色，没有菌环，也没有菌托",
+  "肉像粉笔一样整齐断开（红菇的共同特征）",
+]
+lookalikes = ["Amanita phalloides"]
+
+[[species]]
+name = "Russula cyanoxantha"
+zh = "花盖红菇"
+fr = "Russule charbonnière"
+en = "Charcoal burner"
+edibility = "edible"
+habitat = "阔叶林，夏季到秋季"
+habitat_types = ["阔叶林"]
+hosts = ["山毛榉", "橡树"]
+features = [
+  "盖颜色多变，紫、蓝、绿混杂",
+  "菌褶白色，摸起来柔软有弹性、不易碎（红菇里少见）",
+  "柄白色，没有菌环和菌托",
+]
+lookalikes = ["Amanita phalloides"]
+
+[[species]]
+name = "Lactarius deliciosus"
+zh = "松乳菇"
+fr = "Lactaire délicieux"
+en = "Saffron milkcap"
+edibility = "edible"
+habitat = "松树下，常在草地边的幼松林，秋季"
+habitat_types = ["针叶林"]
+hosts = ["松"]
+features = [
+  "盖橙色，有同心环纹",
+  "伤口流出胡萝卜橙色乳汁，之后慢慢变绿",
+  "柄上有橙色凹斑",
+  "碰伤处变绿",
+]
+lookalikes = ["Lactarius torminosus"]
+
+[[species]]
+name = "Lactarius volemus"
+zh = "多汁乳菇"
+fr = "Lactaire à lait abondant"
+en = "Weeping milkcap"
+edibility = "edible"
+habitat = "阔叶林和针叶林，夏季到秋季"
+habitat_types = ["阔叶林", "针叶林"]
+hosts = ["橡树", "山毛榉", "云杉"]
+features = [
+  "盖橙褐色，干燥",
+  "伤口流出大量白色乳汁，之后变褐",
+  "有鱼腥味",
+]
+lookalikes = []
+
+[[species]]
+name = "Armillaria"
+zh = "蜜环菌类（榛蘑）"
+fr = "Armillaires"
+en = "Honey fungus"
+edibility = "cook"
+habitat = "活树、树桩或树根上大簇丛生，秋季"
+habitat_types = ["树木腐木"]
+hosts = ["阔叶树桩", "活树", "针叶树桩"]
+features = [
+  "盖蜂蜜黄到褐色，中央有细小的深色鳞片",
+  "柄上有白色或黄色菌环",
+  "孢子印白色",
+  "常几十朵挤成一大簇",
+]
+lookalikes = ["Galerina marginata", "Hypholoma fasciculare"]
+notes = "必须彻底煮熟；部分人即使煮熟也不耐受。"
+
+[[species]]
+name = "Pleurotus ostreatus"
+zh = "糙皮侧耳（平菇）"
+fr = "Pleurote en huître"
+en = "Oyster mushroom"
+edibility = "edible"
+habitat = "阔叶树倒木、树桩、受伤的活树上，覆瓦状叠生；晚秋到冬季，霜后也有"
+habitat_types = ["树木腐木"]
+hosts = ["山毛榉", "杨树", "阔叶倒木"]
+features = [
+  "贝壳形或扇形，灰褐到蓝灰色",
+  "菌褶白色，一直延伸到很短的侧生柄",
+  "孢子印白色到淡紫灰",
+  "没有菌环",
+]
+lookalikes = []
+
+[[species]]
+name = "Flammulina"
+zh = "金针菇类（野生冬菇）"
+fr = "Collybie à pied velouté"
+en = "Velvet shank"
+edibility = "expert"
+habitat = "阔叶树枯木或树桩上成簇，冬季，能耐霜冻；法兰西岛记录多为 F. velutipes 与 F. elastica，两者野外难分"
+habitat_types = ["树木腐木"]
+hosts = ["柳", "杨树", "榆树", "白蜡树"]
+features = [
+  "野生的和超市里白色细长的金针菇长得完全不一样",
+  "盖橙褐色，湿时黏滑",
+  "柄下部深褐色，天鹅绒状",
+  "没有菌环",
+  "孢子印白色",
+]
+lookalikes = ["Galerina marginata"]
+
+[[species]]
+name = "Laetiporus sulphureus"
+zh = "硫色绚孔菌（硫磺菌）"
+fr = "Polypore soufré"
+en = "Chicken of the woods"
+edibility = "cook"
+habitat = "活的或死的阔叶树上，覆瓦状；春末到秋季"
+habitat_types = ["树木腐木"]
+hosts = ["橡树", "樱桃树", "柳", "刺槐"]
+features = [
+  "硫黄色到橙色的大型架状",
+  "下面是硫黄色细孔，没有菌褶",
+  "幼时肉多汁，老了干硬像粉笔",
+]
+lookalikes = []
+notes = "只吃幼嫩的边缘，彻底煮熟；不吃长在紫杉上的；部分人不耐受。"
+
+[[species]]
+name = "Fistulina hepatica"
+zh = "牛舌菌"
+fr = "Fistuline hépatique"
+en = "Beefsteak fungus"
+edibility = "edible"
+habitat = "橡树、栗树的树干基部或伤口，夏末到秋季"
+habitat_types = ["树木腐木"]
+hosts = ["橡树", "栗树"]
+features = [
+  "舌形，红褐色，肉多汁",
+  "切开有红白相间的纹理，渗出红色汁液，像生牛肉",
+  "下面是彼此分离的小管",
+]
+lookalikes = []
+
+[[species]]
+name = "Sparassis crispa"
+zh = "绣球菌"
+fr = "Sparassis crépu"
+en = "Cauliflower mushroom"
+edibility = "edible"
+habitat = "松树根部或树桩旁，秋季"
+habitat_types = ["树木腐木", "针叶林"]
+hosts = ["松"]
+features = [
+  "像一大团奶油色的卷曲面条",
+  "分枝扁平、波浪状",
+]
+lookalikes = []
+
+[[species]]
+name = "Grifola frondosa"
+zh = "灰树花（舞茸）"
+fr = "Polypore en touffe"
+en = "Hen of the woods"
+edibility = "edible"
+habitat = "老橡树基部，秋季"
+habitat_types = ["树木腐木"]
+hosts = ["橡树"]
+features = [
+  "一大丛灰褐色的小扇形盖叠在一起",
+  "下面是白色细孔",
+]
+lookalikes = []
+
+[[species]]
+name = "Auricularia auricula-judae"
+zh = "木耳"
+fr = "Oreille de Judas"
+en = "Jelly ear"
+edibility = "edible"
+habitat = "主要在接骨木枯枝上，也在其他阔叶树；全年，潮湿时最多"
+habitat_types = ["树木腐木"]
+hosts = ["接骨木", "阔叶枯枝"]
+features = [
+  "耳朵形，胶质，有弹性",
+  "红褐色，外侧有细绒毛",
+  "干了缩硬，泡水恢复",
+]
+lookalikes = []
+
+[[species]]
+name = "Calvatia gigantea"
+zh = "大秃马勃"
+fr = "Vesse-de-loup géante"
+en = "Giant puffball"
+edibility = "edible"
+habitat = "草地、林缘、花园等营养丰富的地方，夏季到秋季"
+habitat_types = ["草地林缘"]
+hosts = ["草地", "林缘"]
+features = [
+  "足球大小的白色球体，没有柄",
+  "竖着切开，内部必须纯白、均匀，像豆腐",
+]
+lookalikes = []
+notes = "内部一旦发黄或出现任何轮廓就不能吃。"
+
+[[species]]
+name = "Lycoperdon perlatum"
+zh = "网纹马勃"
+fr = "Vesse-de-loup perlée"
+en = "Common puffball"
+edibility = "expert"
+habitat = "林下地上，夏季到秋季成群"
+habitat_types = ["阔叶林", "针叶林"]
+hosts = ["林下地面"]
+features = [
+  "白色到奶油色，梨形",
+  "表面有容易蹭掉的小锥刺",
+  "幼时竖切内部纯白；成熟后顶部开孔喷出褐色孢子粉",
+]
+lookalikes = ["Amanita phalloides", "Scleroderma citrinum"]
+notes = "必须竖切：鹅膏的\"卵\"切开能看到伞和菌褶的轮廓。"
+
+[[species]]
+name = "Morchella"
+zh = "羊肚菌属"
+fr = "Morilles"
+en = "Morels"
+edibility = "cook"
+habitat = "春季（3–5 月），白蜡树、榆树、苹果树下，河岸、碎石地、火烧地、园林覆盖物"
+habitat_types = ["草地林缘", "阔叶林"]
+hosts = ["白蜡树", "榆树", "苹果树"]
+features = [
+  "盖上是蜂窝状的凹坑",
+  "纵切后从盖顶到柄底是一个完整的空腔",
+  "盖的下缘直接连在柄上",
+]
+lookalikes = ["Gyromitra esculenta"]
+notes = "生食有毒，必须彻底煮熟。"
+
+[[species]]
+name = "Calocybe gambosa"
+zh = "香杏丽蘑（圣乔治蘑菇）"
+zh_check = true
+fr = "Tricholome de la Saint-Georges"
+en = "St George's mushroom"
+edibility = "expert"
+habitat = "春季（4–5 月）的草地、林缘、灌丛，常成圈"
+habitat_types = ["草地林缘"]
+hosts = ["山楂", "黑刺李", "草地"]
+features = [
+  "白色到奶油色，肉厚",
+  "菌褶白色，很密",
+  "强烈的面粉味",
+  "孢子印白色",
+]
+lookalikes = ["Inosperma erubescens", "Entoloma sinuatum", "Amanita verna"]
+
+[[species]]
+name = "Marasmius oreades"
+zh = "硬柄小皮伞（仙环菇）"
+fr = "Marasme des Oréades"
+en = "Fairy ring champignon"
+edibility = "expert"
+habitat = "草坪、牧场，排成蘑菇圈；春季到秋季雨后"
+habitat_types = ["草地林缘"]
+hosts = ["草坪", "牧场"]
+features = [
+  "小型淡黄褐色盖，中央有钝突起",
+  "菌褶稀疏、宽",
+  "柄坚韧，可以拧几圈都不断",
+]
+lookalikes = ["Clitocybe rivulosa"]
+
+[[species]]
+name = "Cerioporus squamosus"
+zh = "宽鳞多孔菌"
+fr = "Polypore écailleux"
+en = "Dryad's saddle"
+edibility = "edible"
+habitat = "阔叶树活树或树桩上，春季到初夏"
+habitat_types = ["树木腐木"]
+hosts = ["榆树", "槭树", "山毛榉"]
+features = [
+  "大型扇形，奶油色盖上有褐色鳞片，像野鸡羽毛",
+  "下面是白色大孔",
+  "有黄瓜或西瓜皮的味道",
+]
+lookalikes = []
+notes = "只吃幼嫩的部分。"
+
+[[species]]
+name = "Amanita rubescens"
+zh = "赭盖鹅膏"
+fr = "Amanite rougissante"
+en = "Blusher"
+edibility = "expert"
+habitat = "阔叶林和针叶林，很常见，夏季到秋季"
+habitat_types = ["阔叶林", "针叶林"]
+hosts = ["橡树", "山毛榉", "松"]
+features = [
+  "盖红褐色，带灰白色碎鳞片",
+  "伤口和虫咬处变粉红到酒红色，柄基部最明显",
+  "菌环上面有条纹",
+]
+lookalikes = ["Amanita pantherina"]
+notes = "生食有毒；鹅膏属新手一律不吃。"
+
+[[species]]
+name = "Amanita caesarea"
+zh = "橙盖鹅膏"
+fr = "Amanite des Césars"
+en = "Caesar's mushroom"
+edibility = "expert"
+habitat = "温暖地区的阔叶林，夏末到初秋；法兰西岛少见"
+habitat_types = ["阔叶林"]
+hosts = ["橡树", "栗树"]
+features = [
+  "盖橙红色，光滑，通常没有白色鳞片",
+  "菌褶、菌柄、菌环都是黄色",
+  "基部有白色的大囊状菌托",
+]
+lookalikes = ["Amanita muscaria"]
+notes = "鹅膏属新手一律不吃。"
+
+[[species]]
+name = "Volvopluteus gloiocephalus"
+zh = "黏盖草菇"
+fr = "Volvaire visqueuse"
+en = "Stubble rosegill"
+edibility = "expert"
+habitat = "草地、田边、堆肥、翻动过的土，夏季到晚秋"
+habitat_types = ["草地林缘"]
+hosts = ["草地", "堆肥"]
+features = [
+  "盖灰白色，湿时黏",
+  "菌褶离生，幼时白色、后变粉红",
+  "没有菌环，基部有囊状菌托",
+  "孢子印粉红色",
+]
+lookalikes = ["Amanita virosa", "Amanita verna", "Amanita phalloides"]
+
+[[species]]
+name = "Kuehneromyces mutabilis"
+zh = "毛柄库恩菇"
+fr = "Pholiote changeante"
+en = "Sheathed woodtuft"
+edibility = "expert"
+habitat = "阔叶树桩上簇生，春季到秋季"
+habitat_types = ["树木腐木"]
+hosts = ["阔叶树桩"]
+features = [
+  "盖黄褐色，湿时中央深、边缘浅",
+  "菌环以下的柄上有褐色翻起的鳞片",
+  "孢子印锈褐色",
+]
+lookalikes = ["Galerina marginata"]
+
+[[species]]
+name = "Clitopilus prunulus"
+zh = "斜盖伞"
+fr = "Meunier"
+en = "The miller"
+edibility = "expert"
+habitat = "林中草地、林缘，夏季到秋季"
+habitat_types = ["草地林缘", "阔叶林"]
+hosts = ["林缘草地"]
+features = [
+  "白色到灰白色，摸起来像麂皮",
+  "菌褶延生，后变粉色",
+  "强烈的面粉味",
+  "孢子印粉色",
+]
+lookalikes = ["Clitocybe rivulosa"]
+
+# ───────────────────────── 不推荐 ─────────────────────────
+
+[[species]]
+name = "Clitocybe nebularis"
+zh = "烟云杯伞"
+fr = "Clitocybe nébuleux"
+en = "Clouded agaric"
+edibility = "avoid"
+habitat = "落叶厚的林地，成圈，晚秋"
+habitat_types = ["阔叶林", "针叶林"]
+hosts = ["落叶堆"]
+features = ["盖灰色，有白霜", "菌褶奶油色，微延生", "强烈的特殊气味"]
+lookalikes = ["Entoloma sinuatum"]
+notes = "可食性有争议，不少人吃了胃肠不适。"
+
+[[species]]
+name = "Hygrophoropsis aurantiaca"
+zh = "橙黄拟蜡伞（假鸡油菌）"
+fr = "Fausse girolle"
+en = "False chanterelle"
+edibility = "avoid"
+habitat = "针叶腐殖质或腐木上，秋季到晚秋"
+habitat_types = ["针叶林", "树木腐木"]
+hosts = ["松", "腐木"]
+features = ["比鸡油菌更橙", "真菌褶，薄而密，反复二叉分枝", "肉软，不能纵向撕开"]
+lookalikes = []
+
+[[species]]
+name = "Chlorophyllum rachodes"
+zh = "粗鳞青褶伞"
+zh_check = true
+fr = "Lépiote déguenillée"
+en = "Shaggy parasol"
+edibility = "avoid"
+habitat = "林中腐殖质丰富处、花园、堆肥"
+habitat_types = ["草地林缘", "阔叶林"]
+hosts = ["腐殖质"]
+features = ["柄光滑没有蛇皮纹", "切开肉变橙红", "鳞片粗大翻起"]
+lookalikes = []
+notes = "部分人胃肠中毒。"
+
+[[species]]
+name = "Xerocomellus chrysenteron"
+zh = "红裂绒盖牛肝菌"
+zh_check = true
+fr = "Bolet à chair jaune"
+en = "Red cracking bolete"
+edibility = "avoid"
+habitat = "阔叶林和针叶林，非常常见"
+habitat_types = ["阔叶林"]
+hosts = ["橡树", "山毛榉"]
+features = ["盖龟裂，裂缝里露出粉红色", "管孔黄色，按压变蓝"]
+lookalikes = []
+notes = "品质差，容易霉变。"
+
+[[species]]
+name = "Tylopilus felleus"
+zh = "苦粉孢牛肝菌"
+fr = "Bolet amer"
+en = "Bitter bolete"
+edibility = "avoid"
+habitat = "酸性土的阔叶林和针叶林"
+habitat_types = ["阔叶林", "针叶林"]
+hosts = ["橡树", "山毛榉", "松"]
+features = ["管孔变粉红色", "柄上是深色粗网纹", "极苦"]
+lookalikes = []
+notes = "不毒，但一朵就能让整锅发苦。"
+
+[[species]]
+name = "Hericium erinaceus"
+zh = "猴头菌"
+fr = "Hydne hérisson"
+en = "Lion's mane"
+edibility = "avoid"
+habitat = "老阔叶树的伤口上"
+habitat_types = ["树木腐木"]
+hosts = ["山毛榉", "橡树"]
+features = ["白色团块上垂着长刺"]
+lookalikes = []
+notes = "在欧洲稀有，不要采。"
+
+# ───────────────────────── 有毒 / 致命 ─────────────────────────
+
+[[species]]
+name = "Amanita phalloides"
+zh = "毒鹅膏"
+fr = "Amanite phalloïde"
+en = "Death cap"
+edibility = "deadly"
+habitat = "阔叶林，橡树、山毛榉下，夏末到秋季"
+habitat_types = ["阔叶林"]
+hosts = ["橡树", "山毛榉"]
+features = ["盖橄榄绿到黄绿，也有近白色的", "菌褶白色", "有菌环", "基部有白色囊状菌托（常埋在土里）"]
+lookalikes = []
+notes = "鹅膏毒素：潜伏 6–24 小时，之后可能有假愈期，肝衰竭。"
+
+[[species]]
+name = "Amanita verna"
+zh = "春生鹅膏"
+fr = "Amanite printanière"
+en = "Fool's mushroom"
+edibility = "deadly"
+habitat = "春季到初夏的阔叶林"
+habitat_types = ["阔叶林"]
+hosts = ["橡树", "山毛榉"]
+features = ["通体白色", "菌褶白色", "有菌环和囊状菌托"]
+lookalikes = []
+notes = "鹅膏毒素。"
+
+[[species]]
+name = "Amanita virosa"
+zh = "鳞柄白鹅膏"
+fr = "Amanite vireuse"
+en = "Destroying angel"
+edibility = "deadly"
+habitat = "酸性土的阔叶林和针叶林，夏末到秋季"
+habitat_types = ["阔叶林", "针叶林"]
+hosts = ["山毛榉", "桦树", "云杉"]
+features = ["通体白色", "柄上有絮状鳞片", "有菌环和囊状菌托"]
+lookalikes = []
+notes = "鹅膏毒素。"
+
+[[species]]
+name = "Amanita pantherina"
+zh = "豹斑鹅膏"
+fr = "Amanite panthère"
+en = "Panther cap"
+edibility = "toxic"
+habitat = "阔叶林和针叶林，夏季到秋季"
+habitat_types = ["阔叶林", "针叶林"]
+hosts = ["山毛榉", "橡树", "松"]
+features = ["盖褐色，带纯白色小疣", "盖缘有条纹", "伤口不变红", "基部菌托呈\"袜口\"状边缘"]
+lookalikes = []
+notes = "豹斑综合征，重症需住院。"
+
+[[species]]
+name = "Amanita muscaria"
+zh = "毒蝇鹅膏"
+fr = "Amanite tue-mouches"
+en = "Fly agaric"
+edibility = "toxic"
+habitat = "桦树、松树、云杉下，秋季"
+habitat_types = ["阔叶林", "针叶林"]
+hosts = ["桦树", "松", "云杉"]
+features = ["盖红色带白色疣，雨后疣可能被冲掉、颜色褪成橙色", "菌褶和菌柄白色"]
+lookalikes = []
+
+[[species]]
+name = "Lepiota"
+zh = "环柄菇属（小型，多种含鹅膏毒素）"
+fr = "Petites lépiotes"
+en = "Dapperlings"
+edibility = "deadly"
+habitat = "林地、花园、腐殖质"
+habitat_types = ["阔叶林", "草地林缘"]
+hosts = ["腐殖质"]
+features = ["盖小于 10 cm", "盖上有褐色或粉褐色鳞片", "菌褶白色"]
+lookalikes = []
+
+[[species]]
+name = "Galerina marginata"
+zh = "纹缘盔孢伞"
+fr = "Galère marginée"
+en = "Funeral bell"
+edibility = "deadly"
+habitat = "针叶或阔叶腐木上，秋季到冬季"
+habitat_types = ["树木腐木"]
+hosts = ["腐木", "树桩"]
+features = ["小型褐色盖", "有菌环，环以下是银白色纤维", "孢子印锈褐色"]
+lookalikes = []
+notes = "鹅膏毒素。"
+
+[[species]]
+name = "Cortinarius"
+zh = "丝膜菌属（含致命种）"
+fr = "Cortinaires"
+en = "Webcaps"
+edibility = "deadly"
+habitat = "林地，夏季到秋季"
+habitat_types = ["阔叶林", "针叶林"]
+hosts = ["橡树", "山毛榉", "松", "桦树"]
+features = ["幼时有蛛网状菌幕", "柄上留下锈色丝痕", "孢子印锈褐色"]
+lookalikes = []
+notes = "部分种含奥来毒素，肾损伤可能在几天到两三周后才出现。"
+
+[[species]]
+name = "Inosperma erubescens"
+zh = "变红丝盖伞"
+zh_check = true
+fr = "Inocybe de Patouillard"
+en = "Deadly fibrecap"
+edibility = "toxic"
+habitat = "春末到夏季，阔叶林缘、公园，常在石灰质土"
+habitat_types = ["阔叶林", "草地林缘"]
+hosts = ["山毛榉", "椴树"]
+features = ["盖有放射状纤维，边缘常开裂", "碰伤或变老后变红"]
+lookalikes = []
+notes = "毒蕈碱，严重时可致命。"
+
+[[species]]
+name = "Inocybe"
+zh = "丝盖伞属"
+fr = "Inocybes"
+en = "Fibrecaps"
+edibility = "toxic"
+habitat = "林地，夏季到秋季"
+habitat_types = ["阔叶林", "针叶林"]
+hosts = ["林地"]
+features = ["盖有放射状纤维", "孢子印褐色", "常有土腥或精液味"]
+lookalikes = []
+notes = "很多种含毒蕈碱。"
+
+[[species]]
+name = "Clitocybe rivulosa"
+zh = "白色小杯伞（含毒蕈碱）"
+zh_check = true
+fr = "Petits clitocybes blancs"
+en = "Fool's funnel"
+edibility = "toxic"
+habitat = "草坪、牧场，常和硬柄小皮伞长在一起"
+habitat_types = ["草地林缘"]
+hosts = ["草坪"]
+features = ["白色到灰白色，像撒了一层霜", "菌褶密、延生", "孢子印白色"]
+lookalikes = []
+notes = "毒蕈碱。"
+
+[[species]]
+name = "Entoloma sinuatum"
+zh = "毒粉褶菌"
+fr = "Entolome livide"
+en = "Livid pinkgill"
+edibility = "toxic"
+habitat = "阔叶林，常在石灰质土，秋季"
+habitat_types = ["阔叶林"]
+hosts = ["橡树", "山毛榉"]
+features = ["大型灰白色盖", "菌褶幼时黄色、后变粉", "孢子印粉色", "面粉味"]
+lookalikes = []
+notes = "重症胃肠炎，常需住院。"
+
+[[species]]
+name = "Agaricus xanthodermus"
+zh = "黄斑蘑菇"
+fr = "Agaric jaunissant"
+en = "Yellow stainer"
+edibility = "toxic"
+habitat = "草地、花园、林缘，夏季到秋季"
+habitat_types = ["草地林缘"]
+hosts = ["草地", "林缘"]
+features = ["切开柄基部立刻变铬黄色", "有墨水或苯酚味"]
+lookalikes = []
+
+[[species]]
+name = "Rubroboletus satanas"
+zh = "撒旦牛肝菌"
+fr = "Bolet de Satan"
+en = "Satan's bolete"
+edibility = "toxic"
+habitat = "石灰质土的温暖阔叶林，夏季到初秋"
+habitat_types = ["阔叶林"]
+hosts = ["橡树", "山毛榉"]
+features = ["盖灰白色", "管孔红色", "柄基部膨大，有红色网纹", "切开变蓝", "老了有腐臭味"]
+lookalikes = []
+notes = "重症胃肠炎。"
+
+[[species]]
+name = "Hypholoma fasciculare"
+zh = "簇生垂幕菇"
+fr = "Hypholome en touffe"
+en = "Sulphur tuft"
+edibility = "toxic"
+habitat = "树桩和腐木上大簇丛生，几乎全年"
+habitat_types = ["树木腐木"]
+hosts = ["树桩", "腐木"]
+features = ["硫黄色", "菌褶黄绿色，后变紫黑", "没有菌环", "味苦"]
+lookalikes = []
+
+[[species]]
+name = "Gyromitra esculenta"
+zh = "鹿花菌"
+fr = "Gyromitre"
+en = "False morel"
+edibility = "deadly"
+habitat = "春季针叶林，沙质土"
+habitat_types = ["针叶林"]
+hosts = ["松"]
+features = ["盖是脑回状褶皱，不是凹坑", "纵切内部有棉絮状分隔"]
+lookalikes = []
+notes = "鹿花菌素。"
+
+[[species]]
+name = "Omphalotus olearius"
+zh = "类脐菇"
+fr = "Clitocybe de l'olivier"
+en = "Jack-o'-lantern"
+edibility = "toxic"
+habitat = "树桩或树根上成簇，温暖地区"
+habitat_types = ["树木腐木"]
+hosts = ["橡树", "橄榄树"]
+features = ["鲜橙色", "真菌褶，延生", "成簇长在木头上"]
+lookalikes = []
+
+[[species]]
+name = "Coprinopsis atramentaria"
+zh = "墨汁鬼伞"
+fr = "Coprin noir d'encre"
+en = "Common ink cap"
+edibility = "toxic"
+habitat = "树桩旁、草地、埋在土里的木头上，成簇"
+habitat_types = ["草地林缘", "树木腐木"]
+hosts = ["埋木", "草地"]
+features = ["盖灰色，没有翻卷的鳞片", "菌褶变黑自溶"]
+lookalikes = []
+notes = "和酒同食（前后几天内）会中毒。"
+
+[[species]]
+name = "Lactarius torminosus"
+zh = "毛头乳菇"
+fr = "Lactaire à toison"
+en = "Woolly milkcap"
+edibility = "toxic"
+habitat = "桦树下"
+habitat_types = ["阔叶林"]
+hosts = ["桦树"]
+features = ["盖粉橙色，边缘有长毛", "乳汁白色，不变色"]
+lookalikes = []
+
+[[species]]
+name = "Scleroderma citrinum"
+zh = "橙黄硬皮马勃"
+fr = "Scléroderme vulgaire"
+en = "Common earthball"
+edibility = "toxic"
+habitat = "酸性土的林地"
+habitat_types = ["阔叶林"]
+hosts = ["橡树", "桦树"]
+features = ["外皮厚而硬，有鳞片", "内部很早就是紫黑色"]
+lookalikes = []
+
+[[species]]
+name = "Paxillus involutus"
+zh = "卷边桩菇"
+fr = "Paxille enroulé"
+en = "Brown rollrim"
+edibility = "toxic"
+habitat = "桦树、橡树下，非常常见"
+habitat_types = ["阔叶林"]
+hosts = ["桦树", "橡树"]
+features = ["盖缘向内卷", "菌褶延生，碰伤变褐"]
+lookalikes = []
+notes = "曾被当作可食；可引发免疫性溶血，可致命。"
