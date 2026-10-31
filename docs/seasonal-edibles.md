@@ -596,7 +596,7 @@
   3. 柄下部深褐色，天鹅绒状
   4. 没有菌环
   5. 孢子印白色
-- **危险易混种**：纹缘盔孢伞（致命）
+- **危险易混种**：纹缘盔孢伞（致命）、簇生垂幕菇（有毒）
 
 [![金针菇类（野生冬菇）](https://inaturalist-open-data.s3.amazonaws.com/photos/601824941/small.jpg)](https://www.inaturalist.org/observations/331715474) [![金针菇类（野生冬菇）](https://inaturalist-open-data.s3.amazonaws.com/photos/464699909/small.jpeg)](https://www.inaturalist.org/observations/258652678) [![金针菇类（野生冬菇）](https://inaturalist-open-data.s3.amazonaws.com/photos/453482691/small.jpeg)](https://www.inaturalist.org/observations/253282338)
 
@@ -817,7 +817,7 @@
   1. 盖黄褐色，湿时中央深、边缘浅
   2. 菌环以下的柄上有褐色翻起的鳞片
   3. 孢子印锈褐色
-- **危险易混种**：纹缘盔孢伞（致命）
+- **危险易混种**：纹缘盔孢伞（致命）、簇生垂幕菇（有毒）
 
 [![毛柄库恩菇](https://inaturalist-open-data.s3.amazonaws.com/photos/572212564/small.jpg)](https://www.inaturalist.org/observations/316695612) [![毛柄库恩菇](https://inaturalist-open-data.s3.amazonaws.com/photos/169414135/small.jpeg)](https://www.inaturalist.org/observations/101439955) [![毛柄库恩菇](https://inaturalist-open-data.s3.amazonaws.com/photos/358006058/small.jpeg)](https://www.inaturalist.org/observations/202690607)
 
@@ -945,8 +945,8 @@
 - **细节（按可靠程度排序）**：
   1. 足球大小的白色球体，没有柄
   2. 竖着切开，内部必须纯白、均匀，像豆腐
-- **危险易混种**：—
-- **注意**：内部一旦发黄或出现任何轮廓就不能吃。
+- **危险易混种**：毒鹅膏（致命）、橙黄硬皮马勃（有毒）
+- **注意**：内部一旦发黄或出现任何轮廓就不能吃。小个体要按鹅膏卵的标准检查。
 
 [![大秃马勃](https://inaturalist-open-data.s3.amazonaws.com/photos/346650403/small.jpeg)](https://www.inaturalist.org/observations/196898607) [![大秃马勃](https://inaturalist-open-data.s3.amazonaws.com/photos/96032779/small.jpeg)](https://www.inaturalist.org/observations/60073774) [![大秃马勃](https://inaturalist-open-data.s3.amazonaws.com/photos/568505296/small.jpg)](https://www.inaturalist.org/observations/314744301)
 

@@ -442,7 +442,7 @@ features = [
   "没有菌环",
   "孢子印白色",
 ]
-lookalikes = ["Galerina marginata"]
+lookalikes = ["Galerina marginata", "Hypholoma fasciculare"]
 
 [[species]]
 name = "Laetiporus sulphureus"
@@ -536,8 +536,8 @@ features = [
   "足球大小的白色球体，没有柄",
   "竖着切开，内部必须纯白、均匀，像豆腐",
 ]
-lookalikes = []
-notes = "内部一旦发黄或出现任何轮廓就不能吃。"
+lookalikes = ["Amanita phalloides", "Scleroderma citrinum"]
+notes = "内部一旦发黄或出现任何轮廓就不能吃。小个体要按鹅膏卵的标准检查。"
 
 [[species]]
 name = "Lycoperdon perlatum"
@@ -689,7 +689,7 @@ features = [
   "菌环以下的柄上有褐色翻起的鳞片",
   "孢子印锈褐色",
 ]
-lookalikes = ["Galerina marginata"]
+lookalikes = ["Galerina marginata", "Hypholoma fasciculare"]
 
 [[species]]
 name = "Clitopilus prunulus"
