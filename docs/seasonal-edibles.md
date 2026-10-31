@@ -635,9 +635,9 @@
   4. 没有菌环
 - **危险易混种**：—
 
-[![糙皮侧耳（平菇）](https://inaturalist-open-data.s3.amazonaws.com/photos/229371599/small.jpeg)](https://www.inaturalist.org/observations/134554269) [![糙皮侧耳（平菇）](https://inaturalist-open-data.s3.amazonaws.com/photos/607168181/small.jpg)](https://www.inaturalist.org/observations/334354349) [![糙皮侧耳（平菇）](https://inaturalist-open-data.s3.amazonaws.com/photos/167097962/small.jpeg)](https://www.inaturalist.org/observations/100140062)
+[![糙皮侧耳（平菇）](https://inaturalist-open-data.s3.amazonaws.com/photos/229371599/small.jpeg)](https://www.inaturalist.org/observations/134554269) [![糙皮侧耳（平菇）](https://inaturalist-open-data.s3.amazonaws.com/photos/40594503/small.jpg)](https://www.inaturalist.org/observations/26159410) [![糙皮侧耳（平菇）](https://inaturalist-open-data.s3.amazonaws.com/photos/111595951/small.jpeg)](https://www.inaturalist.org/observations/68855799)
 
-<sub>(c) Lili M Stiff, some rights reserved (CC BY-NC)；(c) Guinberteau Jacques, some rights reserved (CC BY-NC)；(c) bogsuckers, some rights reserved (CC BY)</sub>
+<sub>(c) Lili M Stiff, some rights reserved (CC BY-NC)；(c) ahmedm, some rights reserved (CC BY-NC)；(c) laurenthoff, some rights reserved (CC BY-NC)</sub>
 
 [在 iNat 上看法兰西岛的全部研究级照片](https://www.inaturalist.org/observations?place_id=10577&taxon_id=1196165&quality_grade=research&photos=true)
 

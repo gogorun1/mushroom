@@ -8,6 +8,7 @@
 # features   识别要点，按可靠程度排序，用于"细节题"
 # lookalikes 危险易混种的 name，必须在本文件中也有条目
 # zh_check   中文名待核对
+# skip_photos 不用的 iNat 照片 id（照片 URL 里 /photos/ 后面的数字）：照片上写着种名，或拍的其实是别的种
 #
 # 可食性只是训练标签，不是食用许可：任何蘑菇吃之前都要当面鉴定。
 
@@ -425,6 +426,7 @@ features = [
   "没有菌环",
 ]
 lookalikes = []
+skip_photos = [607168181]  # 水印写着 Pleurotus eryngii
 
 [[species]]
 name = "Flammulina"
@@ -983,6 +985,7 @@ habitat_types = ["树木腐木"]
 hosts = ["树桩", "腐木"]
 features = ["硫黄色", "菌褶黄绿色，后变紫黑", "没有菌环", "味苦"]
 lookalikes = []
+skip_photos = [173393743]  # 纸上手写了学名
 
 [[species]]
 name = "Gyromitra esculenta"
