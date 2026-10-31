@@ -457,7 +457,7 @@ SMF 的入会资料写的是"会员可带自己的采集物来"鉴定，会员�
 - **内容管线**：Python 标准库脚本，不引第三方依赖。
 - **Anki 过渡卡组**（可选）：用同一份内容包，按季节生成 Anki 可直接导入的文本文件和图片（物种页 + 并排对比 + 判别题），PWA 做好之前就能在 Anki / AnkiDroid 上用 FSRS 先练。Anki 做不了非对称计分和"不确定"选项，所以只是过渡。
 - **网页版课表（已完成，PWA 之前的过渡）**：[`web/index.html`](../web/index.html) 是单文件页面，[`scripts/build_site.py`](../scripts/build_site.py) 把 `data/seasonal_edibles.json` 内嵌进去，生成 `site/index.html`。功能是按 §5.1 组卷（月份 × 片区 × 生境），加物种页和"看图 → 显示答案"的自测；还没有 FSRS、计分和离线缓存。
-- **托管**：Vercel 静态托管（[`vercel.json`](../vercel.json)：不安装、不构建，直接发布 `site/`）；也可以用 GitHub Pages 或本地打开。页面设了 `noindex`。每张图都显示署名和授权；NC 授权的图只用于个人非商业用途。
+- **托管**：GitHub Pages。[`.github/workflows/pages.yml`](../.github/workflows/pages.yml) 在 push 到 `main` 时生成并发布 `site/`；本地运行 `build_site.py` 后也能直接打开。页面设了 `noindex`。每张图都显示署名和授权；NC 授权的图只用于个人非商业用途。
 
 ## 11. 里程碑（按交付物排，不按日期）
 
