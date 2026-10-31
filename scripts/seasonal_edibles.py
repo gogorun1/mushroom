@@ -364,7 +364,11 @@ def render(agg, by_name, zones, photos, month, generated_at, n_obs):
     return "\n".join(lines) + "\n"
 
 
-def to_json(agg, by_name, zones, generated_at, n_obs):
+SPECIES_FIELDS = ("zh", "zh_check", "fr", "en", "edibility", "habitat", "habitat_types", "hosts",
+                  "features", "lookalikes", "notes", "taxon_id", "inat_name")
+
+
+def to_json(agg, by_name, zones, photos, generated_at, n_obs):
     def table(sets, classes, minimum):
         return [{"name": n, "zh": by_name[n]["zh"], "edibility": by_name[n]["edibility"], "observer_days": c}
                 for n, c in ranked(sets, by_name, classes, minimum)]
@@ -373,6 +377,11 @@ def to_json(agg, by_name, zones, generated_at, n_obs):
         "generated_at": generated_at,
         "observations": n_obs,
         "metric": "observer_days",
+        "thresholds": {"idf": MIN_IDF, "zone": MIN_ZONE},
+        "species": {
+            name: {**{k: e[k] for k in SPECIES_FIELDS if k in e}, "photos": photos.get(name, [])}
+            for name, e in by_name.items()
+        },
         "seasons": {
             key: {
                 "label": lbl,
@@ -417,11 +426,9 @@ def main():
     generated_at = fetched.strftime("%Y-%m-%d %H:%M（巴黎时间）")
 
     agg = classify(observations, species, zones, excluded)
-    edible_seen = [s["name"] for s in species if s["edibility"] in EDIBLE and any(
-        agg["idf_month"][m].get(s["name"]) for m in range(1, 13))]
-    photos = {} if args.no_photos else fetch_photos(edible_seen, by_name)
+    photos = {} if args.no_photos else fetch_photos([s["name"] for s in species], by_name)
 
-    OUT_JSON.write_text(json.dumps(to_json(agg, by_name, zones, generated_at, len(observations)),
+    OUT_JSON.write_text(json.dumps(to_json(agg, by_name, zones, photos, generated_at, len(observations)),
                                    ensure_ascii=False, indent=1) + "\n")
     OUT_MD.write_text(render(agg, by_name, zones, photos, args.month, generated_at, len(observations)))
     print(f"wrote {OUT_JSON.relative_to(ROOT)} and {OUT_MD.relative_to(ROOT)}", file=sys.stderr)
