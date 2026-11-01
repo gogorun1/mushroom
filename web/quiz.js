@@ -265,7 +265,19 @@
         answer: t.id, scoring: "knowledge" };
     }
 
+    // Real photos with one spot circled; only marks with curated wrong options (content/term_photos.toml) are asked.
+    const PHOTO_MARKS = {};
+    for (const p of D.term_photos || []) for (const m of p.marks) if (m.others) (PHOTO_MARKS[m.term] ||= []).push({ photo: p, mark: m });
+
+    function photoPartQuestion({ photo, mark }) {
+      const others = shuffle(mark.others).slice(0, 3);
+      return { type: "photopart", kind: "term", target: mark.term, prompt: "照片上圈出来的地方，对应哪个词？", mark: { photo, mark },
+        options: shuffle([mark.term, ...others]).map((id) => ({ key: id, label: G.BY_ID[id].name })), answer: mark.term,
+        scoring: "knowledge" };
+    }
+
     function termQuestion(id) {
+      if (PHOTO_MARKS[id] && rng() < 0.5) return photoPartQuestion(pick(PHOTO_MARKS[id]));
       const parts = PARTS_BY_TERM[id];
       if (parts && rng() < 0.6) return partQuestion(pick(parts));
       return G.BY_ID[id] && !G.NO_QUIZ.has(G.BY_ID[id].group) ? defQuestion(G.BY_ID[id]) : null;
@@ -274,7 +286,8 @@
     const weakness = (st) => 0.5 + 2 * (st ? (st.wrong + 0.5 * st.unsure + 1) / (st.right + st.wrong + st.unsure + 2) : 0.5);
 
     function termQuestions(count, stats) {
-      const ids = weightedOrder(QUIZ_TERMS.map((t) => t.id), (id) => weakness((stats.terms || {})[id]) * (PARTS_BY_TERM[id] ? 1.5 : 1));
+      const visual = (id) => PARTS_BY_TERM[id] || PHOTO_MARKS[id];
+      const ids = weightedOrder(QUIZ_TERMS.map((t) => t.id), (id) => weakness((stats.terms || {})[id]) * (visual(id) ? 1.5 : 1));
       return ids.slice(0, count).map(termQuestion).filter(Boolean);
     }
 
@@ -410,9 +423,9 @@
       return s;
     }
 
-    return { makeRound, grade, record, summarize, mistakes, speciesPool, clash, lookalikes, shape, mentionsName,
-      PART_QUESTIONS, QUIZ_TERMS, ROUND_SIZE };
+    return { makeRound, grade, record, summarize, mistakes, speciesPool, clash, lookalikes, shape, mentionsName, photoPartQuestion,
+      PART_QUESTIONS, PHOTO_MARKS, QUIZ_TERMS, ROUND_SIZE };
   }
 
-  window.Quiz = { create, rngFrom, EDIBILITY_POINTS, EDIBILITY_ANSWER, SHAPES, CONFUSABLE };
+  window.Quiz = { create, rngFrom, EDIBILITY_POINTS, EDIBILITY_ANSWER, SHAPES, CONFUSABLE, RELATED_TERMS };
 })();

@@ -43,7 +43,7 @@
   const fmtPoints = (x) => (x > 0 ? `+${x}` : x < 0 ? `−${-x}` : "0");
   const TERM_OF_CLASS = { expert: "expert", cook: "cook", avoid: "avoid" };
   const TYPE_LABEL = { photo2name: "看图认种", name2photo: "看名字找图", pair: "易混种二选一", edibility: "能不能吃",
-    text2name: "按特征认种", season: "季节", habitat: "生境", part: "部位", term2def: "术语", def2term: "术语" };
+    text2name: "按特征认种", season: "季节", habitat: "生境", part: "部位", photopart: "看照片认术语", term2def: "术语", def2term: "术语" };
 
   function badge(n, tappable) {
     const cls = S[n].edibility;
@@ -315,7 +315,7 @@
           <li><b>能不能吃</b>：只看照片，选可食、有毒或不确定·不吃。</li>
           <li><b>按特征认种</b>：读几条特征，选是哪一种。</li>
           <li><b>季节和生境</b>：这个月、这种地方最可能碰到哪一种。</li>
-          <li><b>术语和部位</b>：看图说出部位的名字，或者选词的意思。</li>
+          <li><b>术语和部位</b>：示意图上高亮、或者实物照片上圈出了一处，说出它叫什么；或者选词的意思。</li>
         </ul>
         <h2>计分</h2>
         <table class="scores">
@@ -339,6 +339,7 @@
   }
 
   function media(q, r) {
+    if (q.mark) return markFigure(q.mark.photo, q.mark.mark, { reveal: !!r, height: 340 });
     if (q.photo) return photoFigure(q.photo, !!r);
     if (q.lines) return `<ul class="clues">${q.lines.map((l) => `<li>${linkify(l)}</li>`).join("")}</ul>`;
     if (q.svg) return `<figure class="fig card">${r ? G.svg(q.diagram, { highlight: q.part }) : q.svg}</figure>`;
@@ -463,6 +464,7 @@
       ${feedback}`;
     const nextQ = rd.questions[rd.i + 1];
     if (nextQ) for (const p of [nextQ.photo, ...nextQ.options.map((o) => o.photo)]) if (p) new Image().src = photoAt(p, "medium");
+    if (nextQ && nextQ.mark) new Image().src = photoAt(nextQ.mark.photo, "large");
   }
 
   function answer(key) {
