@@ -1,0 +1,159 @@
+{
+ "generated_at": "2026-11-01 13:50（巴黎时间）",
+ "models": [
+  {
+   "species": "Amanita phalloides",
+   "uid": "f0b9d92ab0b741e0b2e3e2cf4bddcdca",
+   "name": "3_12_2022 Amanita phalloides (red)",
+   "author": "cesar.lomas",
+   "author_url": "https://sketchfab.com/cesar.lomas",
+   "url": "https://sketchfab.com/3d-models/3-12-2022-amanita-phalloides-red-f0b9d92ab0b741e0b2e3e2cf4bddcdca",
+   "poster": "https://media.sketchfab.com/models/f0b9d92ab0b741e0b2e3e2cf4bddcdca/thumbnails/7ea151aaaae240f5b5970cc1fb50eed2/450cf4d1702a4f5a8f29a75542ea3140.jpeg",
+   "mb": 7,
+   "note": "一朵连底挖出来的毒鹅膏：黄绿色的菌盖，白色菌柄，基部包着白色袋状的菌托。这朵上看不到菌环。"
+  },
+  {
+   "species": "Amanita muscaria",
+   "uid": "8b804eac1165473fbf80a57caf82b8cb",
+   "name": "Musmirė  - Amanita muscaria",
+   "author": "Mantas Talmantas",
+   "author_url": "https://sketchfab.com/mantasT",
+   "url": "https://sketchfab.com/3d-models/musmire-amanita-muscaria-8b804eac1165473fbf80a57caf82b8cb",
+   "poster": "https://media.sketchfab.com/models/8b804eac1165473fbf80a57caf82b8cb/thumbnails/94d2317783824b359a61f13d48fdcf57/15e016f1dcc34534b1b640b76ca81ae9.jpeg",
+   "mb": 2,
+   "note": "一朵还没完全张开的毒蝇鹅膏：红色菌盖上满是白色的疣，菌柄白色，基部膨大，埋在落叶里。"
+  },
+  {
+   "species": "Amanita rubescens",
+   "uid": "03c4d57714314821975e2c9d696ed305",
+   "name": "Amanita rubescens - Real fungi 3D scan",
+   "author": "Vincent Lagardère",
+   "author_url": "https://sketchfab.com/v.lagardere",
+   "url": "https://sketchfab.com/3d-models/amanita-rubescens-real-fungi-3d-scan-03c4d57714314821975e2c9d696ed305",
+   "poster": "https://media.sketchfab.com/models/03c4d57714314821975e2c9d696ed305/thumbnails/94c28e83a777455fa9ec8afbd73ac739/254c58b454d0403593085f30e6ef065f.jpeg",
+   "mb": 18,
+   "note": "褐色菌盖上有细碎的疣，菌褶白色，菌柄上部有一圈大菌环，下半截带红褐色。基部膨大，但没有豹斑鹅膏那种像袜口的边。"
+  },
+  {
+   "species": "Boletus edulis",
+   "uid": "d4ce6c6ce6e5449485936f9efb46a97c",
+   "name": "Boletus edulis mushroom",
+   "author": "JevinJones",
+   "author_url": "https://sketchfab.com/JevinJ",
+   "url": "https://sketchfab.com/3d-models/boletus-edulis-mushroom-d4ce6c6ce6e5449485936f9efb46a97c",
+   "poster": "https://media.sketchfab.com/models/d4ce6c6ce6e5449485936f9efb46a97c/thumbnails/5fb1b52120db4721bda4154baa55633f/15db1b6052ff4d40866315fea3bef836.jpeg",
+   "mb": 3,
+   "note": "作者标的是美味牛肝菌：褐色圆钝的菌盖，粗壮的菌柄；转到下面是一整片黄绿色的菌孔，不是菌褶。菌柄上的网纹扫描看不清。"
+  },
+  {
+   "species": "Coprinus comatus",
+   "uid": "07a6c14615904394a705b199fcbd30ea",
+   "name": "Schopftintling",
+   "author": "Margaritha Vogt",
+   "author_url": "https://sketchfab.com/margaritha.vogt",
+   "url": "https://sketchfab.com/3d-models/schopftintling-07a6c14615904394a705b199fcbd30ea",
+   "poster": "https://media.sketchfab.com/models/07a6c14615904394a705b199fcbd30ea/thumbnails/767f6f1134b24a33848c04a1dea79ad4/8f01cc2ca5c84cffa213eb71adff38c7.jpeg",
+   "mb": 8,
+   "note": "高高的菌盖上翻着一片片鳞片。转到下面看：菌柄顶端有一圈小菌环，菌褶已经开始变黑。基部的金属针是扫描时固定用的。"
+  },
+  {
+   "species": "Hydnum",
+   "uid": "d68a9bff24f94898a230c39e833cdbbc",
+   "name": "Semmelstoppelpilz",
+   "author": "Margaritha Vogt",
+   "author_url": "https://sketchfab.com/margaritha.vogt",
+   "url": "https://sketchfab.com/3d-models/semmelstoppelpilz-d68a9bff24f94898a230c39e833cdbbc",
+   "poster": "https://media.sketchfab.com/models/d68a9bff24f94898a230c39e833cdbbc/thumbnails/7c8172dc0081401ebcb52d9969bfad54/56bf6e3861704c39ba91e19dfb12fb1f.jpeg",
+   "mb": 22,
+   "note": "作者标的是卷缘齿菌：转到侧面看菌盖下面，是密密的肉刺，不是菌褶也不是菌孔。"
+  },
+  {
+   "species": "Laetiporus sulphureus",
+   "uid": "2b5ba04f3c184046b858cf80b0c35cd9",
+   "name": "Laetiporus sulphureus - Real fungus 3D scan",
+   "author": "Vincent Lagardère",
+   "author_url": "https://sketchfab.com/v.lagardere",
+   "url": "https://sketchfab.com/3d-models/laetiporus-sulphureus-real-fungus-3d-scan-2b5ba04f3c184046b858cf80b0c35cd9",
+   "poster": "https://media.sketchfab.com/models/2b5ba04f3c184046b858cf80b0c35cd9/thumbnails/d7e47a019f0a4532900d7b5f882d4163/bd88d79a015b45f480a516c138b5b815.jpeg",
+   "mb": 14,
+   "note": "从树上切下来的一簇：橙黄色的架状菌盖一层叠一层，没有菌柄。"
+  },
+  {
+   "species": "Lycoperdon perlatum",
+   "uid": "61a036a5ea6e412b9f3e82abbf04c339",
+   "name": "Flaschenstäubling",
+   "author": "Margaritha Vogt",
+   "author_url": "https://sketchfab.com/margaritha.vogt",
+   "url": "https://sketchfab.com/3d-models/flaschenstaubling-61a036a5ea6e412b9f3e82abbf04c339",
+   "poster": "https://media.sketchfab.com/models/61a036a5ea6e412b9f3e82abbf04c339/thumbnails/716265879b5b48d09370cc3c950d7c4d/0408533718a54f02964c47f3f2894278.jpeg",
+   "mb": 18,
+   "note": "作者标的是网纹马勃：梨形，头部满是小疣粒。马勃能不能吃要竖切看里面，模型上看不到。"
+  },
+  {
+   "species": "Scleroderma citrinum",
+   "uid": "343751289e3a4d20a97b5f719509bceb",
+   "name": "Common Earthball 01",
+   "author": "Piotr Jędrzejko",
+   "author_url": "https://sketchfab.com/khargulec",
+   "url": "https://sketchfab.com/3d-models/common-earthball-01-343751289e3a4d20a97b5f719509bceb",
+   "poster": "https://media.sketchfab.com/models/343751289e3a4d20a97b5f719509bceb/thumbnails/e27567db26894fa6b8ebe131fca3041d/640x360.jpeg",
+   "mb": 15,
+   "note": "两个橙黄硬皮马勃：外皮厚，裂成一块块粗鳞，比马勃表面的小疣粒粗得多。"
+  },
+  {
+   "species": "Agaricus campestris",
+   "uid": "7a487225141042538325e5c8fa373740",
+   "name": "Field Mushroom (Agaricus campestris) photoscan",
+   "author": "Paleobiome",
+   "author_url": "https://sketchfab.com/paleobiome",
+   "url": "https://sketchfab.com/3d-models/field-mushroom-agaricus-campestris-photoscan-7a487225141042538325e5c8fa373740",
+   "poster": "https://media.sketchfab.com/models/7a487225141042538325e5c8fa373740/thumbnails/6056a8f0f02a41dba248599ff1eef7cb/88eebdb4f734470683dee73f9574ca7e.jpeg",
+   "mb": 7,
+   "note": "一朵张开的草地蘑菇：菌盖白色，菌褶巧克力褐色，菌柄短而白。这朵上看不出菌环。"
+  },
+  {
+   "species": "Pleurotus ostreatus",
+   "uid": "bd916927d45149f7b389edc42c49a99d",
+   "name": "Oyster Mushroom / Fungi",
+   "author": "Al",
+   "author_url": "https://sketchfab.com/alrawlinson",
+   "url": "https://sketchfab.com/3d-models/oyster-mushroom-fungi-bd916927d45149f7b389edc42c49a99d",
+   "poster": "https://media.sketchfab.com/models/bd916927d45149f7b389edc42c49a99d/thumbnails/627ccf2e14f14c68a45a0c7791fd0933/2f5648d8426e43c9af065609ad729699.jpeg",
+   "mb": 8,
+   "note": "一段木头上层层叠叠的几丛侧耳，扇形的菌盖长在木头侧面。作者只写了平菇，没写到种。"
+  },
+  {
+   "species": "Morchella",
+   "uid": "548d1aadb20c4bf3b0100ed9b2fa96ce",
+   "name": "Morel Fungi",
+   "author": "kevjumba",
+   "author_url": "https://sketchfab.com/kevinmullin99",
+   "url": "https://sketchfab.com/3d-models/morel-fungi-548d1aadb20c4bf3b0100ed9b2fa96ce",
+   "poster": "https://media.sketchfab.com/models/548d1aadb20c4bf3b0100ed9b2fa96ce/thumbnails/6885b4c0621d43688ff21554ff60666a/a9f1a29d9beb4392acca61224d968fc0.jpeg",
+   "mb": 8,
+   "note": "菌盖是规整的蜂窝状凹坑，下沿直接连着菌柄；转到下面能看到切口，里面是空的。"
+  },
+  {
+   "species": "Gyromitra esculenta",
+   "uid": "43cb2430c21c407399fb6380ddb617ab",
+   "name": "Gyromitra esculenta, beefsteak mushroom, morel",
+   "author": "Mantas Talmantas",
+   "author_url": "https://sketchfab.com/mantasT",
+   "url": "https://sketchfab.com/3d-models/gyromitra-esculenta-beefsteak-mushroom-morel-43cb2430c21c407399fb6380ddb617ab",
+   "poster": "https://media.sketchfab.com/models/43cb2430c21c407399fb6380ddb617ab/thumbnails/9395c769174d4e48be45b7d5bf559e24/b38b8321d7bf4e2da72f18ca5d4f2b9e.jpeg",
+   "mb": 5,
+   "note": "红褐色的菌盖皱成一团，像脑子，不是羊肚菌那种规整的蜂窝。"
+  },
+  {
+   "species": "Lactarius deliciosus",
+   "uid": "a81e04a679804aa892c6f1d2e7a7485c",
+   "name": "Mushroom Mízcalo Níscalo Robellón 5k 300K",
+   "author": "Ximo Vilaplana",
+   "author_url": "https://sketchfab.com/ximovilaplana",
+   "url": "https://sketchfab.com/3d-models/mushroom-mizcalo-niscalo-robellon-5k-300k-a81e04a679804aa892c6f1d2e7a7485c",
+   "poster": "https://media.sketchfab.com/models/a81e04a679804aa892c6f1d2e7a7485c/thumbnails/2199ba0045f44da6956addc21ddb924e/794e348b41d04b0f9b611ca35e27f8a0.jpeg",
+   "mb": 3,
+   "note": "橙色漏斗形的菌盖上有绿色的斑。模型里菌褶的颜色偏暗，实物是橙色的。"
+  }
+ ]
+}

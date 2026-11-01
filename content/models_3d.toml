@@ -1,0 +1,100 @@
+# 物种页的 3D 模型（人工维护）
+#
+# 每条是 Sketchfab 上一个真实标本的 3D 扫描。物种页上只显示一张封面图，点了才加载 Sketchfab 的
+# 播放器和模型。用 scripts/models_3d.py 核对模型还在、作者还允许嵌入，并拉取名称和作者，
+# 输出 data/models_3d.json。
+#
+# 只收这样的模型：
+#   - 扫描的是实物，不是手工建模；
+#   - 从模型上能认出就是这个种（或这个属的条目），不能只信标题——Sketchfab 上标错的很多；
+#   - 不超过 25 MB。
+# 每个模型都转着看过正面、背面、底面和顶面，note 只写模型上确实看得到的东西。
+#
+# species  物种页的学名（content/species.toml 里的条目）
+# uid      Sketchfab 模型 id（模型网址最后那 32 位）
+# mb       点开后的下载量，MB，向上取整。在 Chrome 里按 700×700 窗口、贴图上限 1024 px 实测
+# note     模型下面的说明：这个标本上看什么、哪里和实物不一样
+
+[[model]]
+species = "Amanita phalloides"
+uid = "f0b9d92ab0b741e0b2e3e2cf4bddcdca"
+mb = 7
+note = "一朵连底挖出来的毒鹅膏：黄绿色的菌盖，白色菌柄，基部包着白色袋状的菌托。这朵上看不到菌环。"
+
+[[model]]
+species = "Amanita muscaria"
+uid = "8b804eac1165473fbf80a57caf82b8cb"
+mb = 2
+note = "一朵还没完全张开的毒蝇鹅膏：红色菌盖上满是白色的疣，菌柄白色，基部膨大，埋在落叶里。"
+
+[[model]]
+species = "Amanita rubescens"
+uid = "03c4d57714314821975e2c9d696ed305"
+mb = 18
+note = "褐色菌盖上有细碎的疣，菌褶白色，菌柄上部有一圈大菌环，下半截带红褐色。基部膨大，但没有豹斑鹅膏那种像袜口的边。"
+
+[[model]]
+species = "Boletus edulis"
+uid = "d4ce6c6ce6e5449485936f9efb46a97c"
+mb = 3
+note = "作者标的是美味牛肝菌：褐色圆钝的菌盖，粗壮的菌柄；转到下面是一整片黄绿色的菌孔，不是菌褶。菌柄上的网纹扫描看不清。"
+
+[[model]]
+species = "Coprinus comatus"
+uid = "07a6c14615904394a705b199fcbd30ea"
+mb = 8
+note = "高高的菌盖上翻着一片片鳞片。转到下面看：菌柄顶端有一圈小菌环，菌褶已经开始变黑。基部的金属针是扫描时固定用的。"
+
+[[model]]
+species = "Hydnum"
+uid = "d68a9bff24f94898a230c39e833cdbbc"
+mb = 22
+note = "作者标的是卷缘齿菌：转到侧面看菌盖下面，是密密的肉刺，不是菌褶也不是菌孔。"
+
+[[model]]
+species = "Laetiporus sulphureus"
+uid = "2b5ba04f3c184046b858cf80b0c35cd9"
+mb = 14
+note = "从树上切下来的一簇：橙黄色的架状菌盖一层叠一层，没有菌柄。"
+
+[[model]]
+species = "Lycoperdon perlatum"
+uid = "61a036a5ea6e412b9f3e82abbf04c339"
+mb = 18
+note = "作者标的是网纹马勃：梨形，头部满是小疣粒。马勃能不能吃要竖切看里面，模型上看不到。"
+
+[[model]]
+species = "Scleroderma citrinum"
+uid = "343751289e3a4d20a97b5f719509bceb"
+mb = 15
+note = "两个橙黄硬皮马勃：外皮厚，裂成一块块粗鳞，比马勃表面的小疣粒粗得多。"
+
+[[model]]
+species = "Agaricus campestris"
+uid = "7a487225141042538325e5c8fa373740"
+mb = 7
+note = "一朵张开的草地蘑菇：菌盖白色，菌褶巧克力褐色，菌柄短而白。这朵上看不出菌环。"
+
+[[model]]
+species = "Pleurotus ostreatus"
+uid = "bd916927d45149f7b389edc42c49a99d"
+mb = 8
+note = "一段木头上层层叠叠的几丛侧耳，扇形的菌盖长在木头侧面。作者只写了平菇，没写到种。"
+
+[[model]]
+species = "Morchella"
+uid = "548d1aadb20c4bf3b0100ed9b2fa96ce"
+mb = 8
+note = "菌盖是规整的蜂窝状凹坑，下沿直接连着菌柄；转到下面能看到切口，里面是空的。"
+
+[[model]]
+species = "Gyromitra esculenta"
+uid = "43cb2430c21c407399fb6380ddb617ab"
+mb = 5
+note = "红褐色的菌盖皱成一团，像脑子，不是羊肚菌那种规整的蜂窝。"
+
+[[model]]
+species = "Lactarius deliciosus"
+uid = "a81e04a679804aa892c6f1d2e7a7485c"
+mb = 3
+note = "橙色漏斗形的菌盖上有绿色的斑。模型里菌褶的颜色偏暗，实物是橙色的。"

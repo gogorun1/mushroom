@@ -147,6 +147,24 @@ test("photo marks render as a cropped, dimmed photo with the spot circled", () =
   assert.equal(G.photoIndex(PHOTOS)[m.term].filter((x) => x.mark === m).length, 1);
 });
 
+// ---- 3D models ----
+
+test("3D models are credited Sketchfab scans on species pages, small enough to load on a phone", () => {
+  assert.ok(D.models_3d.length > 0, "no 3D models");
+  const seen = new Set();
+  for (const m of D.models_3d) {
+    const where = `3D model for ${m.species}`;
+    assert.ok(S[m.species], `${where}: no species page`);
+    assert.ok(!seen.has(m.species), `${where}: listed twice`);
+    seen.add(m.species);
+    assert.match(m.uid, /^[0-9a-f]{32}$/, where);
+    assert.ok(m.url.startsWith("https://sketchfab.com/3d-models/") && m.url.endsWith(m.uid), `${where}: page ${m.url}`);
+    assert.ok(m.poster.startsWith(`https://media.sketchfab.com/models/${m.uid}/thumbnails/`), `${where}: poster ${m.poster}`);
+    assert.ok(m.name && m.author && m.author_url && m.note, `${where}: missing credit or note`);
+    assert.ok(m.mb > 0 && m.mb <= 25, `${where}: ${m.mb} MB`);
+  }
+});
+
 // ---- deck ----
 
 test("decks follow plan §5.1", () => {
