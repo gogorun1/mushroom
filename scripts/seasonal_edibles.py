@@ -56,6 +56,8 @@ PLACE_FR = 6753
 
 MIN_IDF = 3
 MIN_ZONE = 2
+PHOTOS_PER_SPECIES = 6
+REPORT_PHOTOS = 3
 
 
 def load_content():
@@ -142,26 +144,40 @@ def ranked(counter_sets, by_name, classes, minimum, limit=None):
 
 
 def fetch_photos(species_names, by_name):
+    """One photo per observation, top-voted French research-grade observations first.
+
+    A genus entry leaves out the species that have their own entry, so it does not reuse their photos.
+    skip_photos in species.toml drops photos that show the name or another species.
+    """
     cache_path = CACHE / "photos.json"
     cache = json.loads(cache_path.read_text()) if cache_path.exists() else {}
     for name in species_names:
-        if name in cache or "taxon_id" not in by_name[name]:
+        entry = by_name[name]
+        if "taxon_id" not in entry:
             continue
-        results = inat_fetch.get(
-            inat_fetch.API_V1,
-            "observations",
-            taxon_id=by_name[name]["taxon_id"],
-            place_id=PLACE_FR,
-            quality_grade="research",
-            photos="true",
-            photo_license=CC_LICENSES,
-            order_by="votes",
-            per_page=3,
-        )["results"]
+        skip = sorted(entry.get("skip_photos", []))
+        without = sorted(by_name[n]["taxon_id"] for n in species_names
+                         if n.startswith(name + " ") and "taxon_id" in by_name[n])
+        request = {"requested": PHOTOS_PER_SPECIES, "skip": skip, "without": without}
+        cached = cache.get(name)
+        if isinstance(cached, dict) and all(cached.get(k, []) == v for k, v in request.items()):
+            continue
+        params = {
+            "taxon_id": entry["taxon_id"],
+            "place_id": PLACE_FR,
+            "quality_grade": "research",
+            "photos": "true",
+            "photo_license": CC_LICENSES,
+            "order_by": "votes",
+            "per_page": PHOTOS_PER_SPECIES + len(skip),
+        }
+        if without:
+            params["without_taxon_id"] = ",".join(map(str, without))
+        results = inat_fetch.get(inat_fetch.API_V1, "observations", **params)["results"]
         photos = []
         for obs in results:
             photo = next((p for p in obs.get("photos", []) if p.get("license_code")), None)
-            if photo:
+            if photo and photo["id"] not in skip:
                 photos.append(
                     {
                         "url": photo["url"].replace("/square.", "/small."),
@@ -169,11 +185,11 @@ def fetch_photos(species_names, by_name):
                         "observation": f"https://www.inaturalist.org/observations/{obs['id']}",
                     }
                 )
-        cache[name] = photos
-        print(f"photos: {name} ({len(photos)})", file=sys.stderr)
+        cache[name] = {**request, "photos": photos[:PHOTOS_PER_SPECIES]}
+        print(f"photos: {name} ({len(cache[name]['photos'])})", file=sys.stderr)
     CACHE.mkdir(parents=True, exist_ok=True)
     cache_path.write_text(json.dumps(cache, ensure_ascii=False, indent=1))
-    return cache
+    return {name: entry["photos"] for name, entry in cache.items() if isinstance(entry, dict)}
 
 
 def zh(entry):
@@ -348,7 +364,7 @@ def render(agg, by_name, zones, photos, month, generated_at, n_obs):
         w(f"- **危险易混种**：{lookalike_text(e, by_name)}")
         if e.get("notes"):
             w(f"- **注意**：{e['notes']}")
-        pics = photos.get(name, [])
+        pics = photos.get(name, [])[:REPORT_PHOTOS]
         if pics:
             w("")
             w(" ".join(f"[![{e['zh']}]({p['url']})]({p['observation']})" for p in pics))
