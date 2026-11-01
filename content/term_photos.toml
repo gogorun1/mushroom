@@ -1,0 +1,324 @@
+# 术语的实物照片（人工维护）
+#
+# 每张照片是一条 iNaturalist 观察里的 CC 授权照片，用 scripts/term_photos.py 拉取署名和尺寸，
+# 输出 data/term_photos.json。不用 ND（禁止演绎）授权的照片，因为网页会在照片上画高亮、裁切。
+# 鉴定到种的观察必须是研究级；只鉴定到属或组的观察，说明文字也只说到属或组。
+#
+# id       iNat 照片 id（照片 URL 里 /photos/ 后面的数字）
+# obs      这张照片所在的 iNat 观察 id
+# taxon    观察现在的学名，拉取时核对；iNat 上改了鉴定会报错
+# zh       中文名
+# mark.X   在照片上标出术语 X（glossary.js 里的 id）：
+#   at     高亮椭圆 [中心 x, 中心 y, 半宽, 半高]，都按照片宽、高的比例（0–1）
+#   view   可选，术语卡里只显示这一块 [左, 上, 右, 下]，比例；不写就显示整张
+#   note   照片下面的说明：这张照片上看什么
+#   others 可选，自测题「照片上圈出来的地方，对应哪个词？」的错误选项（术语 id）。只挑在这张照片上
+#          明显不对的词：圈里也能看到的部位、意思相近的词都不要写。不写就不出这道题；
+#          同一处圈了两个词的，只给其中一个写。
+#
+# 一个术语有几张照片时，按这个文件里的先后顺序显示。
+
+[[photo]]
+id = 336113435
+obs = 191574224
+taxon = "Amanita phalloides"
+zh = "毒鹅膏"
+mark.cap = { at = [0.63, 0.21, 0.23, 0.15], note = "菌盖斜着朝向镜头，黄绿色的盖面只露出上沿" }
+mark.gills = { at = [0.63, 0.25, 0.19, 0.10], note = "菌盖下面密密的白色菌褶", others = ["pores", "ridges", "spines", "volva"] }
+mark.ring = { at = [0.60, 0.37, 0.05, 0.06], view = [0.35, 0.1, 0.85, 0.6], note = "菌柄顶端垂下的白色菌环", others = ["volva", "warts", "scales"] }
+mark.stem = { at = [0.55, 0.55, 0.05, 0.15], note = "白色菌柄", others = ["cap", "gills", "warts", "scales"] }
+mark.volva = { at = [0.47, 0.81, 0.12, 0.14], note = "菌柄基部白色袋状的菌托，沾着土；整朵挖出来才看得到", others = ["ring", "warts", "gills", "cap"] }
+
+[[photo]]
+id = 436489309
+obs = 244691483
+taxon = "Amanita phalloides"
+zh = "毒鹅膏"
+mark.ring = { at = [0.51, 0.52, 0.17, 0.15], note = "裙子一样垂下的白色菌环，上面是菌褶", others = ["volva", "warts", "scales"] }
+
+[[photo]]
+id = 434860038
+obs = 243795579
+taxon = "Amanita phalloides"
+zh = "毒鹅膏"
+mark.sac-volva = { at = [0.50, 0.70, 0.17, 0.12], view = [0.1, 0.27, 0.9, 0.86], note = "边缘不贴着柄、像袋子一样张开的菌托", others = ["ring", "warts", "gills", "cap"] }
+
+[[photo]]
+id = 165670069
+obs = 99389943
+taxon = "Amanita pantherina"
+zh = "豹斑鹅膏"
+mark.volva = { at = [0.495, 0.56, 0.12, 0.15], note = "豹斑鹅膏的菌托紧贴在球茎上，只在上缘留一圈像袜口的边，不像毒鹅膏那样张开成袋", others = ["ring", "warts", "gills", "cap"] }
+mark.base = { at = [0.495, 0.56, 0.12, 0.15], note = "柄基部膨大成圆球（球茎），上缘一圈袜口一样的菌托边" }
+
+[[photo]]
+id = 165924070
+obs = 99522582
+taxon = "Amanita muscaria"
+zh = "毒蝇鹅膏"
+mark.warts = { at = [0.50, 0.55, 0.13, 0.09], view = [0.08, 0.24, 0.9, 0.84], note = "红色盖面上一粒粒白色的疣，是外菌幕的残片，能擦掉", others = ["scales", "cracked", "zonate"] }
+
+[[photo]]
+id = 165670015
+obs = 99389943
+taxon = "Amanita pantherina"
+zh = "豹斑鹅膏"
+mark.warts = { at = [0.50, 0.46, 0.13, 0.19], note = "豹斑鹅膏褐色盖面上的白色小疣", others = ["scales", "cracked", "zonate"] }
+mark.striations = { at = [0.50, 0.135, 0.13, 0.05], view = [0.25, 0.03, 0.75, 0.45], note = "盖边缘一圈细密的放射状条纹", others = ["zonate", "cracked", "reticulation"] }
+
+[[photo]]
+id = 243839624
+obs = 142247048
+taxon = "Macrolepiota procera"
+zh = "高大环柄菇"
+mark.scales = { at = [0.72, 0.50, 0.14, 0.17], note = "盖面表皮裂成一块块褐色鳞片", others = ["warts", "striations", "reticulation"] }
+
+[[photo]]
+id = 243839595
+obs = 142247048
+taxon = "Macrolepiota procera"
+zh = "高大环柄菇"
+mark.snakeskin = { at = [0.52, 0.65, 0.15, 0.20], view = [0.0, 0.3, 1.0, 0.95], note = "柄上一段段褐色的蛇皮纹", others = ["reticulation", "scrobicules", "warts"] }
+
+[[photo]]
+id = 241373450
+obs = 140959146
+taxon = "Boletus edulis"
+zh = "美味牛肝菌"
+mark.pores = { at = [0.40, 0.38, 0.22, 0.17], note = "盖下面海绵一样密密的细孔", others = ["gills", "ridges", "spines"] }
+
+[[photo]]
+id = 165337393
+obs = 99210625
+taxon = "Boletus edulis"
+zh = "美味牛肝菌"
+mark.reticulation = { at = [0.65, 0.45, 0.25, 0.20], note = "柄上部白色的细网纹", others = ["snakeskin", "scrobicules", "warts"] }
+
+[[photo]]
+id = 710242017
+obs = 387839560
+taxon = "Rubroboletus satanas"
+zh = "撒旦牛肝菌"
+mark.reticulation = { at = [0.57, 0.33, 0.20, 0.15], note = "撒旦牛肝菌柄上是红色网纹", others = ["snakeskin", "scrobicules", "warts"] }
+
+[[photo]]
+id = 310447075
+obs = 178412172
+taxon = "Neoboletus erythropus"
+zh = "红脚牛肝菌"
+mark.pores = { at = [0.47, 0.42, 0.25, 0.12], note = "红脚牛肝菌的管孔是红色的", others = ["gills", "ridges", "spines"] }
+
+[[photo]]
+id = 240286687
+obs = 137261088
+taxon = "Neoboletus erythropus"
+zh = "红脚牛肝菌"
+mark.staining = { at = [0.32, 0.55, 0.14, 0.20], note = "切开后黄色的菌肉几秒内变成深蓝", others = ["latex", "deliquesce", "gelatinous"] }
+
+[[photo]]
+id = 227400858
+obs = 133499697
+taxon = "Boletus reticulatus"
+zh = "网纹牛肝菌"
+mark.tubes = { at = [0.45, 0.24, 0.10, 0.15], note = "切开的盖：白色菌肉下面一层竖着排列的菌管", others = ["gills", "ridges", "spines"] }
+
+[[photo]]
+id = 226888154
+obs = 133222101
+taxon = "Boletus reticulatus"
+zh = "网纹牛肝菌"
+mark.cracked = { at = [0.35, 0.55, 0.18, 0.15], note = "盖面表皮裂成一小块一小块", others = ["zonate", "viscid", "warts", "striations"] }
+
+[[photo]]
+id = 215688565
+obs = 127072179
+taxon = "Cantharellus cibarius"
+zh = "鸡油菌"
+mark.ridges = { at = [0.56, 0.45, 0.17, 0.17], note = "又钝又矮、会分叉的褶棱，一直延伸到柄上", others = ["gills", "pores", "spines"] }
+
+[[photo]]
+id = 442327131
+obs = 247638495
+taxon = "Hygrophoropsis aurantiaca"
+zh = "假鸡油菌"
+mark.forked = { at = [0.63, 0.40, 0.09, 0.11], view = [0.24, 0.15, 0.78, 0.62], note = "假鸡油菌的薄菌褶一分为二、再一分为二", others = ["ridges", "pores", "spines"] }
+
+[[photo]]
+id = 611234425
+obs = 336373691
+taxon = "Hydnum repandum"
+zh = "卷缘齿菌"
+mark.spines = { at = [0.45, 0.62, 0.20, 0.22], note = "盖下面密密的小肉刺", others = ["gills", "pores", "ridges"] }
+
+[[photo]]
+id = 748738776
+obs = 407437709
+taxon = "Cortinarius violaceus"
+zh = "紫绒丝膜菌"
+mark.cortina = { at = [0.43, 0.70, 0.25, 0.20], note = "盖缘和柄之间像蜘蛛网一样的细丝", others = ["volva", "warts", "zonate"] }
+
+[[photo]]
+id = 748739118
+obs = 407437709
+taxon = "Cortinarius violaceus"
+zh = "紫绒丝膜菌"
+mark.cortina = { at = [0.29, 0.75, 0.10, 0.20], note = "长大一些，细丝沾满锈褐色的孢子粉；菌幕消失后，柄上就留下锈褐色的丝痕", others = ["volva", "warts", "zonate"] }
+
+[[photo]]
+id = 223916481
+obs = 131560986
+taxon = "Inocybe fraudans"
+zh = "丝盖伞"
+mark.fibrillose = { at = [0.62, 0.62, 0.14, 0.18], note = "盖面从中心向外放射的细丝，边缘裂开", others = ["zonate", "viscid", "warts"] }
+
+[[photo]]
+id = 389525497
+obs = 220034941
+taxon = "Suillus luteus"
+zh = "褐环乳牛肝菌"
+mark.viscid = { at = [0.72, 0.78, 0.20, 0.20], note = "湿时盖面发亮、黏滑，像涂了一层胶", others = ["velvety", "fibrillose", "cracked"] }
+
+[[photo]]
+id = 453482691
+obs = 253282338
+taxon = "Flammulina"
+zh = "野生金针菇"
+mark.velvety = { at = [0.48, 0.76, 0.07, 0.14], note = "柄下部深褐色、像天鹅绒的细绒毛", others = ["viscid", "snakeskin", "reticulation"] }
+
+[[photo]]
+id = 282395368
+obs = 163280038
+taxon = "Auricularia auricula-judae"
+zh = "木耳"
+mark.gelatinous = { at = [0.50, 0.55, 0.24, 0.20], note = "像耳朵一样、软而有弹性的胶质", others = ["cracked", "scales", "zonate"] }
+
+[[photo]]
+id = 139297889
+obs = 84734303
+taxon = "Laetiporus sulphureus"
+zh = "硫磺菌"
+mark.bracket = { at = [0.45, 0.58, 0.24, 0.21], note = "从树干侧面长出来，像一层架子", others = ["fairy-ring", "gelatinous", "spines"] }
+
+[[photo]]
+id = 469660384
+obs = 261424483
+taxon = "Laetiporus sulphureus"
+zh = "硫磺菌"
+mark.bracket = { at = [0.52, 0.53, 0.31, 0.30], note = "很多层叠在一起，像屋顶的瓦片（覆瓦状）", others = ["fairy-ring", "gelatinous", "spines"] }
+
+[[photo]]
+id = 165970279
+obs = 99546881
+taxon = "Hypholoma fasciculare"
+zh = "簇生垂幕菇"
+mark.clustered = { at = [0.50, 0.50, 0.32, 0.18], note = "一大簇从同一块木头上挤着长出来", others = ["fairy-ring", "lateral", "gelatinous"] }
+
+[[photo]]
+id = 450809684
+obs = 251895304
+taxon = "Lactarius deliciosus"
+zh = "松乳菇"
+mark.zonate = { at = [0.56, 0.48, 0.40, 0.29], view = [0.05, 0.12, 1.0, 0.85], note = "橙色盖上一圈套一圈的深色环带", others = ["striations", "cracked", "reticulation"] }
+
+[[photo]]
+id = 442010156
+obs = 247479286
+taxon = "Lactarius deliciosus"
+zh = "松乳菇"
+mark.latex = { at = [0.52, 0.50, 0.17, 0.22], note = "切开处流出胡萝卜橙色的乳汁", others = ["deliquesce", "viscid", "gelatinous"] }
+
+[[photo]]
+id = 336498294
+obs = 191767136
+taxon = "Lactarius deliciosus"
+zh = "松乳菇"
+mark.scrobicules = { at = [0.52, 0.53, 0.15, 0.18], note = "柄上颜色较深的小凹坑", others = ["reticulation", "snakeskin", "warts"] }
+
+[[photo]]
+id = 551782025
+obs = 305998867
+taxon = "Paxillus involutus"
+zh = "卷边桩菇"
+mark.margin = { at = [0.76, 0.45, 0.11, 0.07], view = [0.45, 0.15, 1.0, 0.75], note = "盖边缘向下、向内卷起", others = ["zonate", "cracked", "lateral"] }
+mark.decurrent = { at = [0.42, 0.45, 0.12, 0.10], note = "菌褶贴到柄上后还顺着柄往下延伸", others = ["free", "adnate"] }
+
+[[photo]]
+id = 335965987
+obs = 191502489
+taxon = "Pleurotus ostreatus"
+zh = "平菇"
+mark.decurrent = { at = [0.62, 0.65, 0.08, 0.12], note = "平菇的菌褶一直延伸到柄上", others = ["free", "adnate"] }
+
+[[photo]]
+id = 344466855
+obs = 195754758
+taxon = "Pleurotus ostreatus"
+zh = "平菇"
+mark.lateral = { at = [0.50, 0.33, 0.10, 0.07], view = [0.2, 0.1, 0.8, 0.75], note = "很短的柄长在盖的一边，连着木头", others = ["ring", "volva", "warts"] }
+
+[[photo]]
+id = 436517943
+obs = 244695250
+taxon = "Agaricus xanthodermus"
+zh = "黄斑蘑菇"
+mark.base = { at = [0.465, 0.81, 0.10, 0.08], view = [0.15, 0.5, 0.8, 1.0], note = "切开柄基部：黄斑蘑菇立刻变铬黄色" }
+mark.staining = { at = [0.465, 0.81, 0.10, 0.08], view = [0.15, 0.5, 0.8, 1.0], note = "柄基部切开后立刻变铬黄色", others = ["latex", "deliquesce", "gelatinous"] }
+
+[[photo]]
+id = 236758105
+obs = 138510112
+taxon = "Coprinus comatus"
+zh = "鸡腿菇"
+mark.deliquesce = { at = [0.50, 0.30, 0.40, 0.12], view = [0.0, 0.1, 1.0, 0.8], note = "盖缘开始化成黑色墨汁", others = ["latex", "gelatinous", "pores", "spines"] }
+
+[[photo]]
+id = 96473034
+obs = 60342304
+taxon = "Coprinus comatus"
+zh = "鸡腿菇"
+mark.deliquesce = { at = [0.25, 0.60, 0.10, 0.12], note = "菌褶从边缘开始变黑", others = ["latex", "gelatinous", "pores", "spines"] }
+
+[[photo]]
+id = 757612675
+obs = 411797271
+taxon = "Amanita caesarea"
+zh = "橙盖鹅膏"
+mark.egg = { at = [0.19, 0.53, 0.17, 0.24], note = "还整个包在白色外菌幕里的幼小鹅膏，像个蛋", others = ["warts", "spores", "gelatinous"] }
+mark.veil = { at = [0.77, 0.56, 0.19, 0.27], note = "白色的外菌幕从顶上撕开，菌盖钻出来；留在下面的部分就是菌托" }
+
+[[photo]]
+id = 335810104
+obs = 191424174
+taxon = "Lycoperdon perlatum"
+zh = "网纹马勃"
+mark.section = { at = [0.68, 0.57, 0.20, 0.21], note = "马勃竖切：里面是均匀的白色，没有伞和菌褶的轮廓" }
+
+[[photo]]
+id = 551657953
+obs = 305932202
+taxon = "Caesareae"
+zh = "橙盖鹅膏类"
+mark.egg = { at = [0.33, 0.43, 0.13, 0.21], note = "鹅膏卵竖切：白色外膜里已经有菌盖、菌褶和菌柄的轮廓；马勃里面是均匀的一团", others = ["spores", "hollow", "gelatinous"] }
+mark.section = { at = [0.33, 0.43, 0.13, 0.21], note = "鹅膏卵竖切：能看到菌盖、菌褶和菌柄的轮廓" }
+
+[[photo]]
+id = 300712341
+obs = 173175179
+taxon = "Scleroderma citrinum"
+zh = "橙黄硬皮马勃"
+mark.section = { at = [0.42, 0.27, 0.20, 0.21], note = "硬皮马勃竖切：皮厚，里面很早就发黑" }
+
+[[photo]]
+id = 7214817
+obs = 5802891
+taxon = "Morchella importuna"
+zh = "梯棱羊肚菌"
+mark.section = { at = [0.44, 0.31, 0.24, 0.09], note = "羊肚菌竖切：从盖到柄是一个连通的空腔" }
+mark.hollow = { at = [0.44, 0.31, 0.24, 0.09], note = "羊肚菌从盖到柄都是空的", others = ["gelatinous", "latex", "deliquesce"] }
+
+[[photo]]
+id = 96776771
+obs = 60514927
+taxon = "Chlorophyllum molybdites"
+zh = "大青褶伞"
+mark.fairy-ring = { at = [0.50, 0.64, 0.42, 0.20], note = "蘑菇在草坪上排成一个大圈，人坐在圈里", others = ["bracket", "lateral", "gelatinous"] }
