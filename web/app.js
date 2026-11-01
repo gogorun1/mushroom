@@ -7,6 +7,8 @@
   const esc = G.esc;
   G.protect(Object.keys(S).flatMap(K.fragments));
   const linkify = G.linkify;
+  const TP = G.photoIndex(D.term_photos);
+  const PHOTO_BY_ID = Object.fromEntries((D.term_photos || []).map((p) => [p.id, p]));
 
   const SETTINGS_KEY = "mushroom.settings.v1", STATS_KEY = "mushroom.stats.v1";
   const store = {
@@ -426,7 +428,12 @@
   function explainTerm(q, r) {
     const t = G.BY_ID[q.target];
     const picked = !r.correct && q.type !== "part" && G.BY_ID[r.key];
-    const fig = q.type !== "part" && t.diagram ? `<figure class="fig">${G.svg(t.diagram, { highlight: t.part })}</figure>` : "";
+    const first = (TP[t.id] || [])[0];
+    let fig = "";
+    if (q.type === "term2def" || q.type === "def2term") {
+      fig = first ? markFigure(first.photo, first.mark, { height: 240 })
+        : t.diagram ? `<figure class="fig">${G.svg(t.diagram, { highlight: t.part })}</figure>` : "";
+    }
     return `<p><b>${esc(q.type === "part" ? q.answer : t.name)}</b>：${linkify(t.long, t.id)}</p>
       ${picked ? `<p class="muted">你选的「${esc(picked.name)}」：${esc(picked.short)}。</p>` : ""}${fig}
       <p><button type="button" class="linkish" data-term="${t.id}">打开术语卡</button></p>`;
@@ -506,28 +513,90 @@
         <a class="btn" href="#/deck">回课表</a></div>`;
   }
 
+  // ---- term photos ----
+
+  // The species page for a photo's taxon, or for its genus when only the genus has an entry.
+  function speciesOf(p) {
+    const genus = p.taxon.split(" ")[0];
+    return S[p.taxon] ? p.taxon : S[genus] ? genus : null;
+  }
+  function photoName(p) {
+    const sp = speciesOf(p);
+    return `${sp ? `<a href="${spHref(sp)}">${esc(p.zh)}</a>` : esc(p.zh)} <i>${esc(p.taxon)}</i>`;
+  }
+  const photoCredit = (p) => `${esc(p.attribution)} · <a href="${esc(p.observation)}" target="_blank" rel="noopener">iNat 原观察</a>`;
+
+  const markLabel = (p, m) => `${p.zh}的照片，圈出了${G.BY_ID[m.term].name}`;
+  const zoomButton = (p, i, svg, { hide = false, label }) => `<button type="button" class="pm" data-act="zoom-mark" data-photo="${p.id}" data-mark="${i}"${hide ? ' data-hide="1"' : ""}
+      aria-label="${esc(label)}，点开看整张">${svg}</button>`;
+
+  // One photo with one term circled, at most `height` px tall; tapping shows the whole photo.
+  // reveal = false hides what is circled, for quiz questions.
+  function markFigure(p, m, { reveal = true, height = 300 } = {}) {
+    const view = m.view || [0, 0, 1, 1];
+    const label = reveal ? markLabel(p, m) : "照片上圈出了一处";
+    return `<figure class="pm-fig" style="max-width:${Math.round(height * G.viewRatio(p, view))}px">
+      ${zoomButton(p, p.marks.indexOf(m), G.photoSvg(p, m, { src: photoAt(p, "large"), view, label }), { hide: !reveal, label })}
+      <figcaption>${reveal ? `<span class="pm-note">${linkify(m.note, m.term)}</span><span class="pm-name">${photoName(p)}</span>
+        <span class="credit">${photoCredit(p)}</span>` : `<span class="credit">${esc(p.attribution)} · 点图看整张</span>`}</figcaption>
+    </figure>`;
+  }
+
+  // Real photos of the term, then its diagram.
+  function termFigures(t, { caption = false } = {}) {
+    const list = TP[t.id] || [];
+    const photos = list.length ? `<div class="pm-list${list.length > 1 ? " multi" : ""}">${list.map((x) => markFigure(x.photo, x.mark)).join("")}</div>` : "";
+    const diagram = t.diagram ? `<figure class="fig">${G.svg(t.diagram, { highlight: t.part })}${caption ? `<figcaption>${esc(G.DIAGRAMS[t.diagram].title)}</figcaption>` : ""}</figure>` : "";
+    return photos + diagram;
+  }
+
+  // A photo with several marks: chips switch which one is circled.
+  function overviewBody(p, i) {
+    const m = p.marks[i], label = markLabel(p, m);
+    return `${zoomButton(p, i, G.photoSvg(p, m, { src: photoAt(p, "large"), label }), { label })}
+      <div class="chips" role="group" aria-label="切换圈出的部位">${p.marks.map((x, j) => `<button type="button" class="chip-btn" data-act="show-mark" data-i="${j}" aria-pressed="${j === i}">${esc(G.BY_ID[x.term].name)}</button>`).join("")}</div>
+      <p class="pm-note">${linkify(m.note, m.term)} <button type="button" class="linkish" data-term="${m.term}">${esc(G.BY_ID[m.term].name)}的术语卡</button></p>
+      <p class="credit">${photoName(p)} · ${photoCredit(p)}</p>`;
+  }
+  const overviewFigure = (p) => `<figure class="fig card pm-overview" data-photo="${p.id}">${overviewBody(p, 0)}
+      <figcaption>实物：${esc(p.zh)}的各个部位，点上面的词换一处</figcaption></figure>`;
+
+  function zoomMark(id, i, hide) {
+    const p = PHOTO_BY_ID[id], m = p && p.marks[Number(i)];
+    if (!m) return;
+    const label = hide ? "整张照片" : markLabel(p, m);
+    lightbox.innerHTML = `<figure class="lb-fig"><div class="lb-photo" style="width:min(100%, calc(80vh * ${G.viewRatio(p).toFixed(3)}))">
+        ${G.photoSvg(p, m, { src: photoAt(p, "large"), label })}</div>
+      <figcaption>${hide ? "" : `${esc(m.note)}<br>${esc(p.zh)} <i>${esc(p.taxon)}</i> · `}${esc(p.attribution)}</figcaption></figure>
+      <button type="button" class="btn small" data-act="close-zoom">关闭</button>`;
+    lightbox.hidden = false;
+    document.body.classList.add("no-scroll");
+  }
+
   // ---- glossary ----
 
   function termItem(t) {
     const haystack = [t.name, ...t.aliases, t.short, t.long].join(" ").toLowerCase();
     return `<details class="term-item" id="t-${t.id}" data-search="${esc(haystack)}">
-      <summary><span class="t-name">${esc(t.name)}</span><span class="t-short">${esc(t.short)}</span></summary>
-      <div class="t-body"><p>${linkify(t.long, t.id)}</p>${t.diagram ? `<div class="t-fig"></div>` : ""}</div>
+      <summary><span class="t-name">${esc(t.name)}${TP[t.id] ? `<span class="t-has-photo">有照片</span>` : ""}</span><span class="t-short">${esc(t.short)}</span></summary>
+      <div class="t-body"><p>${linkify(t.long, t.id)}</p>${t.diagram || TP[t.id] ? `<div class="t-fig"></div>` : ""}</div>
     </details>`;
   }
 
   function drawTermFigure(details) {
     const slot = details.querySelector(".t-fig");
     const t = G.BY_ID[details.id.slice(2)];
-    if (slot && !slot.innerHTML && t && t.diagram) slot.innerHTML = `<figure class="fig">${G.svg(t.diagram, { highlight: t.part })}</figure>`;
+    if (slot && !slot.innerHTML && t) slot.innerHTML = termFigures(t);
   }
 
   function renderTerms() {
-    const figs = Object.keys(G.DIAGRAMS).map((id) => `<figure class="fig card">${G.svg(id)}<figcaption>${esc(G.DIAGRAMS[id].title)}</figcaption></figure>`).join("");
+    const overviews = (D.term_photos || []).filter((p) => p.marks.length >= 3).map(overviewFigure).join("");
+    const figs = Object.keys(G.DIAGRAMS).map((id) => `<figure class="fig card">${G.svg(id)}<figcaption>${esc(G.DIAGRAMS[id].title)}</figcaption></figure>`
+      + (id === "anatomy" ? overviews : "")).join("");
     const groups = G.GROUPS.map((g) => `<section class="term-group"><h2>${esc(g)}</h2>${G.TERMS.filter((t) => t.group === g).map(termItem).join("")}</section>`).join("");
     view.innerHTML = `
       <h1 class="page-title">术语</h1>
-      <p class="lead">正文里带虚线下划线的词都能点开看解释。先看几张图，再查单个的词。</p>
+      <p class="lead">正文里带虚线下划线的词都能点开看解释。先看几张图，再查单个的词；标着「有照片」的词展开后有实物照片，圈出来的就是这个词说的地方，点照片看整张。</p>
       <div class="stack"><button type="button" class="btn" data-act="start" data-mode="terms">只练术语（10 题）</button></div>
       <input type="search" class="search" id="term-search" placeholder="搜索：菌管、孢子印、hêtre" aria-label="搜索术语">
       <section class="figs" id="figs"><h2>图解</h2>${figs}</section>
@@ -581,7 +650,7 @@
         <button type="button" class="btn small" data-act="close-sheet">关闭</button></div>
       <p class="lead"><b>${esc(t.short)}</b></p>
       <p>${linkify(t.long, t.id)}</p>
-      ${t.diagram ? `<figure class="fig">${G.svg(t.diagram, { highlight: t.part })}<figcaption>${esc(G.DIAGRAMS[t.diagram].title)}</figcaption></figure>` : ""}
+      ${termFigures(t, { caption: true })}
       <p><a href="#/terms/${t.id}" data-act="close-sheet">在术语表里看全部</a></p>`, t.name);
   }
 
@@ -648,7 +717,15 @@
     else if (act === "reset-stats") {
       if (confirm("清除这台设备上的所有答题记录？")) { state.stats = {}; store.set(STATS_KEY, state.stats); render(); }
     } else if (act === "zoom") zoom(el.dataset.src);
-    else if (act === "slide") {
+    else if (act === "zoom-mark") zoomMark(el.dataset.photo, el.dataset.mark, el.dataset.hide === "1");
+    else if (act === "show-mark") {
+      const fig = el.closest(".pm-overview"), p = fig && PHOTO_BY_ID[fig.dataset.photo];
+      if (p) {
+        fig.innerHTML = overviewBody(p, Number(el.dataset.i)) + fig.querySelector("figcaption").outerHTML;
+        const chip = fig.querySelector(`[data-i="${el.dataset.i}"]`);
+        if (chip) chip.focus({ preventScroll: true });
+      }
+    } else if (act === "slide") {
       const s = $("#slides");
       if (s) s.scrollBy({ left: Number(el.dataset.dir) * s.clientWidth, behavior: "smooth" });
     } else if (act === "back") {

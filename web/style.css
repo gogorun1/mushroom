@@ -309,6 +309,39 @@ button.badge { text-decoration: underline dotted rgba(255, 255, 255, 0.8); text-
 .t-body { padding: 0 14px 12px; font-size: 15px; }
 .t-body p { margin: 0 0 8px; }
 .t-fig .fig { max-width: 420px; }
+.t-has-photo {
+  display: inline-block; margin-left: 8px; padding: 0 7px; border-radius: 999px; vertical-align: 1px;
+  background: #fff4e5; color: #a64b00; font-size: 11px; font-weight: 600; line-height: 1.7;
+}
+
+/* ---- term photos: one spot circled, the rest dimmed ---- */
+
+.pm-list { display: grid; gap: 16px; margin: 0 0 12px; }
+.pm-fig { margin: 0; }
+.pm {
+  display: block; width: 100%; padding: 0; border: 0; border-radius: 10px; overflow: hidden;
+  background: var(--soft); cursor: zoom-in;
+}
+.photo-mark { display: block; width: 100%; height: auto; }
+.photo-mark .dim { fill: rgba(0, 0, 0, 0.32); }
+.photo-mark .halo { fill: none; stroke: rgba(0, 0, 0, 0.6); stroke-width: 7px; }
+.photo-mark .ring { fill: none; stroke: var(--hl); stroke-width: 3px; }
+.pm-fig figcaption { margin-top: 6px; font-size: 14px; line-height: 1.5; }
+.pm-note { display: block; }
+.pm-name { display: block; margin-top: 2px; color: var(--muted); font-size: 13px; }
+.pm-fig .credit { display: block; margin-top: 2px; }
+.question .pm-fig { margin: 0 auto; }
+.feedback .pm-fig { margin: 8px 0; }
+.sheet .pm-list { margin: 12px 0; }
+.pm-overview .pm { margin-bottom: 10px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 8px; }
+.chip-btn {
+  min-height: 36px; padding: 4px 12px; border: 1px solid var(--line); border-radius: 999px;
+  background: var(--bg); font-size: 14px;
+}
+.chip-btn[aria-pressed="true"] { background: var(--fg); border-color: var(--fg); color: #fff; font-weight: 600; }
+.pm-overview .pm-note { margin: 0; font-size: 14px; }
+.pm-overview .credit { margin-top: 4px; }
 
 /* ---- sheet and lightbox ---- */
 
@@ -343,6 +376,8 @@ button.badge { text-decoration: underline dotted rgba(255, 255, 255, 0.8); text-
 }
 .lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; }
 .lightbox .btn { position: absolute; top: calc(12px + env(safe-area-inset-top, 0px)); right: 12px; }
+.lb-fig { display: flex; flex-direction: column; align-items: center; width: 100%; margin: 0; }
+.lb-fig figcaption { max-width: 640px; padding: 8px 16px 0; color: #ddd; font-size: 13px; line-height: 1.5; text-align: center; }
 
 @keyframes fade-in { from { opacity: 0; } }
 @keyframes sheet-up { from { transform: translateY(40px); opacity: 0; } }
@@ -355,6 +390,7 @@ button.badge { text-decoration: underline dotted rgba(255, 255, 255, 0.8); text-
   .list.two { grid-template-columns: 1fr 1fr; }
   .figs { grid-template-columns: 1fr 1fr; }
   .figs h2 { grid-column: 1 / -1; }
+  .pm-list.multi { grid-template-columns: 1fr 1fr; align-items: start; }
   .q-next { flex-direction: row; justify-content: flex-end; }
   .q-next .btn { min-width: 220px; }
 }
