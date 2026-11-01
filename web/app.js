@@ -9,6 +9,7 @@
   const linkify = G.linkify;
   const TP = G.photoIndex(D.term_photos);
   const PHOTO_BY_ID = Object.fromEntries((D.term_photos || []).map((p) => [p.id, p]));
+  const MODELS = Object.fromEntries((D.models_3d || []).map((m) => [m.species, m]));
 
   const SETTINGS_KEY = "mushroom.settings.v1", STATS_KEY = "mushroom.stats.v1";
   const store = {
@@ -248,6 +249,7 @@
         </header>
         ${s.notes ? `<p class="note"><strong>注意：</strong>${linkify(s.notes)}</p>` : ""}
         <section><h2>细节（按可靠程度排序）</h2><ol class="features">${s.features.map((f) => `<li>${linkify(f)}</li>`).join("")}</ol></section>
+        ${MODELS[n] ? modelSection(MODELS[n]) : ""}
         <section><h2>环境</h2>
           <p>${linkify(s.habitat)}</p>
           <p class="meta">${termButton("habitat", "生境")}：${s.habitat_types.map((t) => linkify(t)).join("、")}<br>
@@ -271,6 +273,28 @@
         $("#photo-credit").innerHTML = creditHtml(photos[i], i + 1, photos.length);
       }, { passive: true });
     }
+  }
+
+  // A 3D scan hosted on Sketchfab. Only the poster image loads with the page; the viewer and the
+  // model (several MB) load when the reader taps it.
+  function modelSection(m) {
+    return `<section class="m3d"><h2>3D 模型</h2>
+      <div class="m3d-frame"><button type="button" class="m3d-start" data-act="load-3d" data-species="${esc(m.species)}">
+        <img src="${esc(m.poster)}" alt="" loading="lazy"><span class="m3d-play">点开转着看 · 约 ${m.mb} MB</span></button></div>
+      <p class="m3d-note">${linkify(m.note)}</p>
+      <p class="hint">真实标本的 3D 扫描，拖动可以转，双指可以放大。扫描对菌褶、菌环这类细部不一定准，细节以照片为准。</p>
+      <p class="credit">模型：<a href="${esc(m.url)}" target="_blank" rel="noopener">${esc(m.name)}</a> · <a href="${esc(m.author_url)}" target="_blank" rel="noopener">${esc(m.author)}</a> · Sketchfab</p>
+    </section>`;
+  }
+
+  function load3d(el) {
+    const m = MODELS[el.dataset.species];
+    if (!m) return;
+    const src = `https://sketchfab.com/models/${m.uid}/embed?autostart=1&dnt=1&max_texture_size=1024&ui_theme=dark`;
+    const frame = el.parentElement;
+    frame.innerHTML = `<iframe title="${esc(K.zh(m.species))}的 3D 模型" src="${esc(src)}"
+      allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen></iframe>`;
+    frame.firstElementChild.focus({ preventScroll: true });
   }
 
   // ---- quiz ----
@@ -719,6 +743,7 @@
     else if (act === "reset-stats") {
       if (confirm("清除这台设备上的所有答题记录？")) { state.stats = {}; store.set(STATS_KEY, state.stats); render(); }
     } else if (act === "zoom") zoom(el.dataset.src);
+    else if (act === "load-3d") load3d(el);
     else if (act === "zoom-mark") zoomMark(el.dataset.photo, el.dataset.mark, el.dataset.hide === "1");
     else if (act === "show-mark") {
       const fig = el.closest(".pm-overview"), p = fig && PHOTO_BY_ID[fig.dataset.photo];
