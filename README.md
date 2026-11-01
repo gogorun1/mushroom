@@ -8,7 +8,7 @@
 - [网页版](https://gogorun1.github.io/mushroom/)，按手机屏幕排版，三个页签：
   - **课表**：选月份、森林、生境，先列危险种，再列当季最常见的可食种；每个种一页，有照片、环境和识别要点；14 个种还能点开 3D 扫描模型转着看，例如 [`#/sp/Amanita phalloides`](https://gogorun1.github.io/mushroom/#/sp/Amanita%20phalloides)。链接带参数，可以收藏，例如 [`#/deck?m=11&z=fontainebleau`](https://gogorun1.github.io/mushroom/#/deck?m=11&z=fontainebleau)
   - **自测**：从当前课表出题，一轮 10 道选择题——看图选种、看名字选图、易混种二选一、能不能吃、看特征选种、季节和生境、示意图和实物照片认部位、术语释义。按 [plan §6.2](docs/product-plan.md#62-非对称计分) 计分，把有毒种当成能吃的扣分最重。答题记录存在本机，可以只练错题
-  - **术语**：菌管、菌托、菌环这类词的解释，配示意图；38 个词还配了实物照片，照片上圈出这个词说的地方，点开看整张。课表和题目里的术语都可以点开看，例如 [`#/terms/volva`](https://gogorun1.github.io/mushroom/#/terms/volva)
+  - **术语**：菌管、菌托、菌环这类词的解释，配示意图；38 个蘑菇词和全部 21 棵常见的树还配了实物照片，照片上圈出这个词说的地方，点开看整张。课表和题目里的术语都可以点开看，例如 [`#/terms/volva`](https://gogorun1.github.io/mushroom/#/terms/volva)、[`#/terms/beech`](https://gogorun1.github.io/mushroom/#/terms/beech)
 
 ## 部署（GitHub Pages）
 

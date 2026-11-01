@@ -322,3 +322,260 @@ obs = 60514927
 taxon = "Chlorophyllum molybdites"
 zh = "大青褶伞"
 mark.fairy-ring = { at = [0.50, 0.64, 0.42, 0.20], note = "蘑菇在草坪上排成一个大圈，人坐在圈里", others = ["bracket", "lateral", "gelatinous"] }
+
+# ---- 常见的树 ----
+
+# 每棵树挑叶子、树皮、果实或花里最好认的一到三样，跟 glossary.js 里这棵树的说明对得上。
+# 树不出题，所以不写 others。
+
+[[photo]]
+id = 542218503
+obs = 300916710
+taxon = "Fagus sylvatica"
+zh = "欧洲山毛榉"
+mark.beech = { at = [0.55, 0.55, 0.28, 0.20], note = "椭圆形的叶子，边缘微微起伏成波浪，侧脉一条条平行；后面是光滑的灰色树干" }
+
+[[photo]]
+id = 104450907
+obs = 64921612
+taxon = "Fagus sylvatica"
+zh = "欧洲山毛榉"
+mark.beech = { at = [0.42, 0.50, 0.09, 0.32], note = "中间这棵：树皮光滑、银灰色，没有裂纹；右边树皮粗糙开裂的是别的树" }
+
+[[photo]]
+id = 566144179
+obs = 313502710
+taxon = "Fagus sylvatica"
+zh = "欧洲山毛榉"
+mark.beech = { at = [0.59, 0.66, 0.16, 0.13], note = "长满软刺的壳，熟了裂成四瓣，里面是三角形的小坚果" }
+
+[[photo]]
+id = 562705325
+obs = 311706888
+taxon = "Quercus robur"
+zh = "夏栎"
+mark.oak = { at = [0.40, 0.52, 0.30, 0.25], note = "叶子边缘是一圈圆钝的裂片，像波浪" }
+
+[[photo]]
+id = 730785752
+obs = 398373802
+taxon = "Quercus robur"
+zh = "夏栎"
+mark.oak = { at = [0.34, 0.73, 0.18, 0.15], note = "橡子的下半截套在一个带鳞片的小碗（壳斗）里" }
+
+[[photo]]
+id = 612133792
+obs = 336808311
+taxon = "Castanea sativa"
+zh = "欧洲栗"
+mark.chestnut = { at = [0.58, 0.58, 0.32, 0.30], note = "叶子长条形，边缘一排尖锯齿，每条侧脉一直伸到齿尖" }
+
+[[photo]]
+id = 683718313
+obs = 374088574
+taxon = "Castanea sativa"
+zh = "欧洲栗"
+mark.chestnut = { at = [0.48, 0.55, 0.25, 0.33], note = "落在地上的栗子壳，满是又长又硬的刺，裂开露出褐色的栗子" }
+
+[[photo]]
+id = 462403045
+obs = 257744459
+taxon = "Betula pendula"
+zh = "垂枝桦"
+mark.birch = { at = [0.54, 0.50, 0.07, 0.38], note = "树皮白色，上面一道道黑色的横纹" }
+
+[[photo]]
+id = 373121967
+obs = 211006798
+taxon = "Betula pendula"
+zh = "垂枝桦"
+mark.birch = { at = [0.50, 0.55, 0.18, 0.35], note = "老树的下半截，白皮裂成一块块黑色的粗糙斑块" }
+
+[[photo]]
+id = 615018013
+obs = 338218892
+taxon = "Pinus sylvestris"
+zh = "欧洲赤松"
+mark.pine = { at = [0.52, 0.46, 0.41, 0.08], note = "两根针叶从同一个小鞘里长出来：两根一束" }
+
+[[photo]]
+id = 298500260
+obs = 171986850
+taxon = "Pinus sylvestris"
+zh = "欧洲赤松"
+mark.pine = { at = [0.47, 0.60, 0.15, 0.16], note = "枝头的松果，周围是一束束的长针叶" }
+
+[[photo]]
+id = 577619397
+obs = 319533905
+taxon = "Pinus sylvestris"
+zh = "欧洲赤松"
+mark.pine = { at = [0.30, 0.65, 0.15, 0.30], note = "树干上部的树皮是橙红色的，一片片薄薄地剥落" }
+
+[[photo]]
+id = 525726374
+obs = 292168578
+taxon = "Picea abies"
+zh = "欧洲云杉"
+mark.spruce = { at = [0.60, 0.50, 0.30, 0.18], note = "短而尖的针叶一根根单独长在枝上" }
+
+[[photo]]
+id = 667020192
+obs = 365340492
+taxon = "Picea abies"
+zh = "欧洲云杉"
+mark.spruce = { at = [0.60, 0.38, 0.32, 0.26], note = "长长的松果挂在枝下，尖头朝下" }
+
+[[photo]]
+id = 451045412
+obs = 252017240
+taxon = "Picea abies"
+zh = "欧洲云杉"
+mark.spruce = { at = [0.60, 0.55, 0.25, 0.42], note = "整棵树是尖尖的圆锥形，像圣诞树" }
+
+[[photo]]
+id = 280574561
+obs = 162272180
+taxon = "Larix decidua"
+zh = "欧洲落叶松"
+mark.larch = { at = [0.30, 0.42, 0.15, 0.20], note = "针叶一簇簇长在枝上的小短枝上，旁边是小松果" }
+
+[[photo]]
+id = 106608711
+obs = 66168031
+taxon = "Larix decidua"
+zh = "欧洲落叶松"
+mark.larch = { at = [0.55, 0.45, 0.35, 0.25], note = "秋天整片落叶松变成金黄色，冬天针叶会掉光" }
+
+[[photo]]
+id = 154437613
+obs = 93201590
+taxon = "Populus nigra"
+zh = "黑杨"
+mark.poplar = { at = [0.56, 0.76, 0.23, 0.24], note = "三角形的叶子挂在长长的叶柄上，风一吹就抖" }
+
+[[photo]]
+id = 104455424
+obs = 64923931
+taxon = "Fraxinus excelsior"
+zh = "欧洲白蜡树"
+mark.ash = { at = [0.55, 0.50, 0.40, 0.30], note = "一根叶柄上两两对生很多片小叶，顶端还有一片" }
+
+[[photo]]
+id = 474104620
+obs = 263864074
+taxon = "Fraxinus excelsior"
+zh = "欧洲白蜡树"
+mark.ash = { at = [0.78, 0.31, 0.12, 0.12], note = "冬天枝头的芽是黑色的" }
+
+[[photo]]
+id = 324514748
+obs = 185777880
+taxon = "Ulmus minor"
+zh = "榆树"
+mark.elm = { at = [0.47, 0.34, 0.38, 0.33], note = "边缘的大锯齿上还有小齿（重锯齿），叶子基部一边高一边低" }
+
+[[photo]]
+id = 561770587
+obs = 311209868
+taxon = "Salix alba"
+zh = "白柳"
+mark.willow = { at = [0.55, 0.45, 0.30, 0.25], note = "叶子细长，像柳叶刀" }
+
+[[photo]]
+id = 376265745
+obs = 212918491
+taxon = "Sambucus nigra"
+zh = "西洋接骨木"
+mark.elder = { at = [0.50, 0.40, 0.40, 0.30], note = "初夏开的一大盘白色小花" }
+
+[[photo]]
+id = 565764361
+obs = 313297501
+taxon = "Sambucus nigra"
+zh = "西洋接骨木"
+mark.elder = { at = [0.53, 0.56, 0.20, 0.15], note = "秋天一串串黑紫色的小浆果，果柄是红色的" }
+
+[[photo]]
+id = 208473475
+obs = 123083336
+taxon = "Tilia cordata"
+zh = "心叶椴"
+mark.lime = { at = [0.45, 0.55, 0.25, 0.20], note = "心形的叶子，边缘有细锯齿" }
+
+[[photo]]
+id = 564168715
+obs = 312481807
+taxon = "Acer pseudoplatanus"
+zh = "欧亚槭"
+mark.maple = { at = [0.20, 0.15, 0.17, 0.15], note = "两个种子连在一起，各带一片翅膀；下面是像手掌一样分裂的叶子" }
+
+[[photo]]
+id = 104455308
+obs = 64923868
+taxon = "Robinia pseudoacacia"
+zh = "刺槐"
+mark.robinia = { at = [0.81, 0.34, 0.13, 0.31], note = "枝上成对的硬刺" }
+
+[[photo]]
+id = 651998674
+obs = 357472439
+taxon = "Robinia pseudoacacia"
+zh = "刺槐"
+mark.robinia = { at = [0.62, 0.35, 0.25, 0.30], note = "春末开的一串串白花，旁边是羽状复叶" }
+
+[[photo]]
+id = 466944760
+obs = 260059884
+taxon = "Prunus avium"
+zh = "欧洲甜樱桃"
+mark.cherry = { at = [0.45, 0.40, 0.20, 0.25], note = "树皮光亮，有一道道横向的皮孔条纹" }
+
+[[photo]]
+id = 586153799
+obs = 323903553
+taxon = "Malus domestica"
+zh = "苹果"
+mark.apple = { at = [0.78, 0.34, 0.15, 0.10], note = "挂满苹果的苹果树" }
+
+[[photo]]
+id = 442562362
+obs = 247754978
+taxon = "Taxus baccata"
+zh = "欧洲红豆杉"
+mark.yew = { at = [0.29, 0.47, 0.08, 0.12], note = "扁平的深绿色针叶排成两列，红色杯状的小果" }
+
+[[photo]]
+id = 724559941
+obs = 395172894
+taxon = "Crataegus monogyna"
+zh = "单柱山楂"
+mark.hawthorn = { at = [0.35, 0.30, 0.30, 0.20], note = "秋天的红色小果，叶子深裂" }
+
+[[photo]]
+id = 278690279
+obs = 161243005
+taxon = "Crataegus monogyna"
+zh = "单柱山楂"
+mark.hawthorn = { at = [0.55, 0.40, 0.30, 0.35], note = "春天开的白花" }
+
+[[photo]]
+id = 184112465
+obs = 109258594
+taxon = "Prunus spinosa"
+zh = "黑刺李"
+mark.blackthorn = { at = [0.35, 0.40, 0.25, 0.25], note = "早春光秃秃的枝上先开满白花，叶子还没长出来" }
+
+[[photo]]
+id = 580175848
+obs = 320851510
+taxon = "Prunus spinosa"
+zh = "黑刺李"
+mark.blackthorn = { at = [0.60, 0.55, 0.25, 0.25], note = "蓝黑色的小果，表面有一层白霜" }
+
+[[photo]]
+id = 102745729
+obs = 63962591
+taxon = "Olea europaea"
+zh = "油橄榄"
+mark.olive = { at = [0.55, 0.50, 0.25, 0.17], note = "黑色的橄榄，叶子细长" }
