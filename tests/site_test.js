@@ -147,6 +147,18 @@ test("photo marks render as a cropped, dimmed photo with the spot circled", () =
   assert.equal(G.photoIndex(PHOTOS)[m.term].filter((x) => x.mark === m).length, 1);
 });
 
+test("every common tree has a photo, and tree photos are not quiz material", () => {
+  const byTerm = G.photoIndex(PHOTOS);
+  const trees = G.TERMS.filter((t) => t.group === "常见的树");
+  assert.ok(trees.length >= 20, `only ${trees.length} trees in the glossary`);
+  for (const t of trees) {
+    assert.ok(byTerm[t.id]?.length, `tree ${t.id} has no photo`);
+    for (const { mark } of byTerm[t.id]) {
+      assert.ok(!mark.others, `tree photo mark ${t.id} should not set others`);
+    }
+  }
+});
+
 // ---- 3D models ----
 
 test("3D models are credited Sketchfab scans on species pages, small enough to load on a phone", () => {
