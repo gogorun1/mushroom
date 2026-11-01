@@ -495,5 +495,33 @@
     return `<svg class="diagram${highlight ? " has-hl" : ""}" viewBox="${d.viewBox}" role="img" aria-label="${labels ? esc(d.title) : "示意图"}">${body}</svg>`;
   }
 
-  window.Glossary = { GROUPS, NO_QUIZ, TERMS, BY_ID, DIAGRAMS, linkify, protect, svg, esc };
+  // Real photos (DATA.term_photos). A mark circles one term on a photo: at = [cx, cy, rx, ry] and
+  // view = [left, top, right, bottom], both as fractions of the photo's width and height.
+  function photoIndex(photos) {
+    const by = {};
+    for (const p of photos || []) for (const m of p.marks) (by[m.term] ||= []).push({ photo: p, mark: m });
+    return by;
+  }
+
+  const W = 1000;
+  const photoHeight = (p) => Math.round((W * p.h) / p.w);
+  // Width / height of the part of the photo that is shown.
+  function viewRatio(p, view = [0, 0, 1, 1]) {
+    return ((view[2] - view[0]) * p.w) / ((view[3] - view[1]) * p.h);
+  }
+
+  // The photo with the mark circled and the rest dimmed; view crops it, label is the accessible name.
+  function photoSvg(p, m, { src, view = [0, 0, 1, 1], label = "" } = {}) {
+    const H = photoHeight(p);
+    const n = (v) => Math.round(v * 10) / 10;
+    const [cx, cy, rx, ry] = [m.at[0] * W, m.at[1] * H, m.at[2] * W, m.at[3] * H].map(n);
+    const box = [view[0] * W, view[1] * H, (view[2] - view[0]) * W, (view[3] - view[1]) * H].map(n);
+    const ring = `cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" vector-effect="non-scaling-stroke"`;
+    return `<svg class="photo-mark" viewBox="${box.join(" ")}" role="img" aria-label="${esc(label)}">`
+      + `<image href="${esc(src)}" width="${W}" height="${H}" preserveAspectRatio="none"/>`
+      + `<path class="dim" fill-rule="evenodd" d="M0,0H${W}V${H}H0Z M${n(cx - rx)},${cy}a${rx},${ry} 0 1,0 ${n(2 * rx)},0a${rx},${ry} 0 1,0 ${n(-2 * rx)},0Z"/>`
+      + `<ellipse class="halo" ${ring}/><ellipse class="ring" ${ring}/></svg>`;
+  }
+
+  window.Glossary = { GROUPS, NO_QUIZ, TERMS, BY_ID, DIAGRAMS, linkify, protect, svg, esc, photoIndex, photoSvg, viewRatio };
 })();

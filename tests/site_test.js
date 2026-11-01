@@ -104,6 +104,49 @@ test("every term definition renders", () => {
   for (const t of G.TERMS) assert.ok(G.linkify(t.long, t.id).length >= t.long.length);
 });
 
+// ---- term photos ----
+
+const PHOTOS = D.term_photos;
+const inEllipse = ([cx, cy, rx, ry], x, y) => ((x - cx) / rx) ** 2 + ((y - cy) / ry) ** 2 <= 1;
+const overlap = (a, b) => inEllipse(a, b[0], b[1]) || inEllipse(b, a[0], a[1]);
+
+test("term photos are CC licensed, credited and circle known terms inside the frame", () => {
+  assert.ok(PHOTOS.length > 0, "no term photos");
+  const ids = new Set();
+  for (const p of PHOTOS) {
+    const where = `photo ${p.id}`;
+    assert.ok(!ids.has(p.id), `${where} listed twice`);
+    ids.add(p.id);
+    assert.ok(["cc0", "cc-by", "cc-by-sa", "cc-by-nc", "cc-by-nc-sa"].includes(p.license), `${where}: licence ${p.license}`);
+    assert.ok(p.attribution && p.zh && p.taxon && p.w > 0 && p.h > 0, `${where}: missing credit or size`);
+    assert.match(p.observation, /^https:\/\/www\.inaturalist\.org\/observations\/\d+$/, where);
+    assert.match(p.url, /^https:\/\/[^/]+\/photos\/\d+\/small\.(jpe?g|png)$/i, where);
+    for (const m of p.marks) {
+      const w = `${where} ${m.term}`;
+      assert.ok(G.BY_ID[m.term], `${w}: unknown term`);
+      assert.ok(m.note, `${w}: no note`);
+      const [cx, cy, rx, ry] = m.at;
+      const [l, t, r, b] = m.view || [0, 0, 1, 1];
+      assert.ok(0 <= l && l < r && r <= 1 && 0 <= t && t < b && b <= 1, `${w}: bad view ${m.view}`);
+      assert.ok(rx > 0 && ry > 0 && cx - rx >= l && cx + rx <= r && cy - ry >= t && cy + ry <= b, `${w}: circle leaves the picture`);
+    }
+  }
+});
+
+test("photo marks render as a cropped, dimmed photo with the spot circled", () => {
+  const p = PHOTOS.find((x) => x.marks.some((m) => m.view));
+  const m = p.marks.find((x) => x.view);
+  const svg = G.photoSvg(p, m, { src: "a.jpg?x=1&y=2", view: m.view, label: "<b>" });
+  const H = Math.round((1000 * p.h) / p.w);
+  const box = svg.match(/viewBox="([^"]+)"/)[1].split(" ").map(Number);
+  const want = [m.view[0] * 1000, m.view[1] * H, (m.view[2] - m.view[0]) * 1000, (m.view[3] - m.view[1]) * H];
+  box.forEach((v, i) => assert.ok(Math.abs(v - want[i]) < 0.6, `viewBox ${box} != ${want}`));
+  assert.ok(Math.abs(G.viewRatio(p, m.view) - box[2] / box[3]) < 0.01, "ratio does not match the crop");
+  assert.ok(svg.includes('aria-label="&lt;b&gt;"') && svg.includes('href="a.jpg?x=1&amp;y=2"'), "attributes not escaped");
+  assert.equal((svg.match(/<ellipse/g) || []).length, 2);
+  assert.equal(G.photoIndex(PHOTOS)[m.term].filter((x) => x.mark === m).length, 1);
+});
+
 // ---- deck ----
 
 test("decks follow plan §5.1", () => {
@@ -143,6 +186,12 @@ function checkQuestion(Q, q, where) {
     } else {
       assert.equal(q.answer, q.target);
       for (const k of keys) assert.ok(G.BY_ID[k], `${where}: option ${k} is not a term`);
+    }
+    if (q.type === "photopart") {
+      const { photo, mark } = q.mark;
+      assert.ok(photo.marks.includes(mark) && mark.term === q.target, `${where}: photo does not circle ${q.target}`);
+      assert.ok(keys.length >= 3, `${where}: too few options`);
+      for (const k of keys) assert.ok(k === q.answer || mark.others.includes(k), `${where}: ${k} is not a listed wrong answer`);
     }
     return;
   }
@@ -244,13 +293,18 @@ test("drilling one species asks five questions about it", () => {
 });
 
 test("term rounds cover different terms", () => {
+  const types = {};
   for (let seed = 0; seed < 50; seed++) {
     const Q = quiz(seed);
     const rd = Q.makeRound({ deck: K.buildDeck(11, "idf", ""), mode: "terms" });
     assert.equal(rd.questions.length, 10);
     assert.equal(new Set(rd.questions.map((q) => q.target)).size, 10, "repeated term");
-    rd.questions.forEach((q, j) => checkQuestion(Q, q, `terms seed ${seed} #${j + 1} ${q.type}`));
+    rd.questions.forEach((q, j) => {
+      checkQuestion(Q, q, `terms seed ${seed} #${j + 1} ${q.type}`);
+      types[q.type] = (types[q.type] || 0) + 1;
+    });
   }
+  for (const type of ["part", "photopart", "term2def", "def2term"]) assert.ok(types[type] > 0, `no ${type} questions`);
 });
 
 test("every part question can be asked without giving the answer away", () => {
@@ -260,6 +314,31 @@ test("every part question can be asked without giving the answer away", () => {
     assert.ok(!spec.others.includes(spec.answer), `${spec.answer} listed as its own distractor`);
     assert.ok(!G.svg(spec.diagram, { labels: false, highlight: spec.part }).includes(spec.answer), `${spec.diagram}/${spec.part} shows ${spec.answer}`);
   }
+});
+
+test("photo questions only offer words that are clearly wrong on that photo", () => {
+  const Q = quiz(7);
+  const related = {};
+  for (const group of Quiz.RELATED_TERMS) for (const id of group) related[id] = group;
+  let asked = 0;
+  for (const p of PHOTOS) {
+    const marks = p.marks.filter((m) => m.others);
+    for (const m of marks) {
+      const where = `photo ${p.id} ${m.term}`;
+      assert.ok(!G.NO_QUIZ.has(G.BY_ID[m.term].group), `${where}: term is not quizzed`);
+      assert.ok(m.others.length >= 2, `${where}: too few wrong answers`);
+      for (const o of m.others) {
+        assert.ok(G.BY_ID[o] && !G.NO_QUIZ.has(G.BY_ID[o].group), `${where}: ${o} is not a quiz term`);
+        assert.ok(o !== m.term && !(related[m.term] || []).includes(o), `${where}: ${o} means nearly the same`);
+        for (const x of p.marks) if (x.term === o) assert.ok(!overlap(m.at, x.at), `${where}: ${o} is circled at the same spot`);
+      }
+      for (const x of marks) if (x !== m) assert.ok(!overlap(m.at, x.at), `${where}: ${x.term} is asked at the same spot`);
+      checkQuestion(Q, Q.photoPartQuestion({ photo: p, mark: m }), where);
+      asked++;
+    }
+  }
+  assert.ok(asked >= 20, `only ${asked} photo questions`);
+  assert.equal(Object.values(Q.PHOTO_MARKS).flat().length, asked);
 });
 
 // ---- scoring (plan §6.2) ----
