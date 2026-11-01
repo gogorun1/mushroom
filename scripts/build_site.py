@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Build the static site from web/, data/seasonal_edibles.json and data/term_photos.json.
+"""Build the static site from web/ and data/ (seasonal_edibles.json, term_photos.json, models_3d.json).
 
 Usage:
   python3 scripts/build_site.py
 
 Output: site/ (index.html, style.css, data.js and the page scripts); deploy the directory as-is.
 Asset URLs carry a content hash (?v=...) so browsers drop stale copies after a deploy.
-Run after scripts/seasonal_edibles.py or scripts/term_photos.py whenever the data changes.
+Run after scripts/seasonal_edibles.py, term_photos.py or models_3d.py whenever the data changes.
 """
 
 import hashlib
@@ -18,17 +18,22 @@ import seasonal_edibles as se
 
 WEB = se.ROOT / "web"
 OUT = se.ROOT / "site"
-TERM_PHOTOS = se.ROOT / "data" / "term_photos.json"
 ASSETS = ["style.css", "glossary.js", "deck.js", "quiz.js", "app.js"]
+
+
+def load_extra(name, key, script):
+    path = se.ROOT / "data" / name
+    if not path.exists():
+        sys.exit(f"data/{name} is missing; run scripts/{script}")
+    return json.loads(path.read_text())[key]
 
 
 def main():
     data = json.loads(se.OUT_JSON.read_text())
     if "species" not in data:
         sys.exit("data/seasonal_edibles.json has no species section; rerun scripts/seasonal_edibles.py")
-    if not TERM_PHOTOS.exists():
-        sys.exit("data/term_photos.json is missing; run scripts/term_photos.py")
-    data["term_photos"] = json.loads(TERM_PHOTOS.read_text())["photos"]
+    data["term_photos"] = load_extra("term_photos.json", "photos", "term_photos.py")
+    data["models_3d"] = load_extra("models_3d.json", "models", "models_3d.py")
     data["meta"] = {
         "seasons": [{"key": key, "label": label, "months": list(months)} for key, label, months in se.SEASONS],
         "edibility_label": se.EDIBILITY_LABEL,
