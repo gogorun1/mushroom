@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pièces — Atelier du Faubourg</title>
+  <style>
+    :root { --ink: #1c1917; --muted: #57534e; --line: #d6d3d1; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #e7e5e4;
+      color: var(--ink);
+      font: 14px/1.45 "Liberation Serif", "Times New Roman", serif;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: #1e3a5f;
+      color: #fff;
+      padding: 10px 16px;
+      font-family: "Liberation Sans", sans-serif;
+      font-size: 13px;
+    }
+    .page { scroll-margin-top: 52px; }
+    nav a { color: #fff; margin-right: 14px; }
+    .page {
+      max-width: 720px;
+      margin: 18px auto;
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 28px 32px 36px;
+    }
+    header { display: flex; justify-content: space-between; gap: 16px; }
+    h1 { margin: 0; font-size: 20px; }
+    .muted { color: var(--muted); }
+    table { width: 100%; border-collapse: collapse; margin-top: 18px; }
+    th, td { border-bottom: 1px solid var(--line); padding: 6px 0; text-align: left; }
+    td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .totals { margin-top: 12px; text-align: right; }
+    .note { margin-top: 18px; font-size: 13px; color: var(--muted); }
+    @media print {
+      nav { display: none; }
+      .page { border: 0; margin: 0; page-break-after: always; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    Input pack · <a href="#edf">EDF</a><a href="#moulin">Moulin de Seine</a><a href="#sci">SCI du Faubourg</a>
+    · <a href="index.html">Back to Témoin</a>
+  </nav>
+
+  <article class="page" id="edf">
+    <header>
+      <div>
+        <h1>EDF</h1>
+        <p class="muted">2 boulevard de Vaugirard, 75015 Paris</p>
+      </div>
+      <div>
+        <strong>Facture F-2026-10482</strong><br>
+        Date : 28/10/2026
+      </div>
+    </header>
+    <p>Client : Atelier du Faubourg · 11 rue du Faubourg Saint-Antoine, 75011 Paris<br>
+    Compte : 524 193 882</p>
+    <table>
+      <thead><tr><th>Désignation</th><th class="num">HT</th></tr></thead>
+      <tbody>
+        <tr><td>Fourniture électricité — 01/10/2026 à 27/10/2026</td><td class="num">72,83 €</td></tr>
+      </tbody>
+    </table>
+    <p class="totals">TVA 20 % : 14,57 €<br><strong>Total TTC : 87,40 €</strong></p>
+    <p class="note">Facture d'énergie. À enregistrer en catégorie Énergie.</p>
+  </article>
+
+  <article class="page" id="moulin">
+    <header>
+      <div>
+        <h1>Moulin de Seine</h1>
+        <p class="muted">14 quai de la Loire, 93210 Saint-Denis</p>
+      </div>
+      <div>
+        <strong>Facture FA-4417</strong><br>
+        Date : 31/10/2026
+      </div>
+    </header>
+    <p>Livraison : Atelier du Faubourg, 11 rue du Faubourg Saint-Antoine.</p>
+    <table>
+      <thead><tr><th>Désignation</th><th class="num">HT</th></tr></thead>
+      <tbody>
+        <tr><td>Farine T55 bio, 10 sacs de 25 kg</td><td class="num">119,00 €</td></tr>
+      </tbody>
+    </table>
+    <p class="totals">TVA 20 % : 23,80 €<br><strong>Total TTC : 142,80 €</strong></p>
+    <p class="note">Fournitures de production.</p>
+  </article>
+
+  <article class="page" id="sci">
+    <header>
+      <div>
+        <h1>SCI du Faubourg</h1>
+        <p class="muted">11 rue du Faubourg Saint-Antoine, 75011 Paris</p>
+      </div>
+      <div>
+        <strong>Appel de fonds AF-2026-11</strong><br>
+        Date du document : 20/10/2026
+      </div>
+    </header>
+    <p>Occupation des locaux — Atelier du Faubourg.</p>
+    <table>
+      <thead><tr><th>Désignation</th><th class="num">HT</th></tr></thead>
+      <tbody>
+        <tr><td>Loyer commercial — octobre 2026</td><td class="num">1 000,00 €</td></tr>
+      </tbody>
+    </table>
+    <p class="totals">TVA 20 % : 200,00 €<br><strong>Total TTC : 1 200,00 €</strong></p>
+    <p class="note">
+      Période : 1er octobre – 31 octobre 2026.<br>
+      Échéance de paiement : 05/11/2026.<br>
+      Appel de fonds hors provisions. Ne pas confondre l'échéance avec la date d'écriture.
+    </p>
+  </article>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Livre de recettes — Atelier du Faubourg</title>
+  <link rel="stylesheet" href="ledger.css">
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <div class="brand">
+        Gestion commerciale
+        <strong>Atelier du Faubourg</strong>
+      </div>
+      <div class="session">
+        Connecté : Marie Chen · Gérante<br>
+        Exercice 2026 · session déjà ouverte
+      </div>
+    </header>
+    <nav class="tabs" aria-label="Journaux">
+      <button type="button" id="tab-drafts" aria-selected="true">Brouillons</button>
+      <button type="button" id="tab-posted" aria-selected="false">Comptabilisées</button>
+      <button type="button" id="tab-all" aria-selected="false">Toutes</button>
+    </nav>
+    <main class="main">
+      <div class="toolbar">
+        <h1>Livre de recettes</h1>
+        <p class="hint" id="filter-hint">Pièces en brouillon — non transmises à la comptabilité.</p>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Tiers</th>
+            <th>Catégorie</th>
+            <th class="num">HT</th>
+            <th class="num">TVA</th>
+            <th class="num">TTC</th>
+            <th>État</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <p class="totals" id="totals"></p>
+      <form class="form" id="entry-form">
+        <h2>Nouvelle écriture</h2>
+        <div class="grid">
+          <label>Date
+            <input id="f-date" name="date" type="date" required>
+          </label>
+          <label>Tiers
+            <input id="f-vendor" name="vendor" required maxlength="80">
+          </label>
+          <label>Catégorie
+            <select id="f-category" name="category" required>
+              <option value="">—</option>
+              <option>Énergie</option>
+              <option>Fournitures</option>
+              <option>Loyer</option>
+              <option>Charges</option>
+              <option>Télécom</option>
+            </select>
+          </label>
+          <label>État
+            <select id="f-status" name="status">
+              <option>Brouillon</option>
+              <option>Comptabilisée</option>
+            </select>
+          </label>
+          <label>HT (€)
+            <input id="f-ht" name="ht" inputmode="decimal" required>
+          </label>
+          <label>TVA (€)
+            <input id="f-tva" name="tva" inputmode="decimal" required>
+          </label>
+          <label>TTC (€)
+            <input id="f-ttc" name="ttc" inputmode="decimal" required>
+          </label>
+          <label>Réf. pièce
+            <input id="f-invoice" name="invoiceId" maxlength="32" placeholder="optionnel">
+          </label>
+          <input id="f-source" name="source" type="hidden" value="form">
+        </div>
+        <div class="actions">
+          <button class="primary" id="f-save" type="submit">Enregistrer</button>
+          <button class="ghost" id="f-clear" type="reset">Effacer</button>
+          <button class="danger" id="f-reset" type="button">Réinitialiser le journal</button>
+        </div>
+      </form>
+    </main>
+  </div>
+  <script src="invoices.js"></script>
+  <script src="verify.js"></script>
+  <script src="ledger.js"></script>
+  <script src="ledger-ui.js"></script>
+</body>
+</html>

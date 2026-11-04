@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Témoin — witnessed operator</title>
+  <link rel="stylesheet" href="operator.css">
+</head>
+<body>
+  <div class="shell">
+    <section class="panel">
+      <header>
+        <p class="kicker">Hackathon demo · H Company × 42AI</p>
+        <h1>Témoin</h1>
+        <p class="lead">The agent writes into the existing ledger. A second read checks each field. You correct one field, not the whole run.</p>
+      </header>
+      <div class="scroll">
+        <div class="goal">
+          <strong>Marie Chen, Atelier du Faubourg.</strong>
+          Month-end: put these three invoices into the livre de recettes as drafts. Do not post.
+        </div>
+        <div class="row">
+          <button class="primary" id="run" type="button">1. Enter the three drafts</button>
+          <button id="reset" type="button">Reset ledger</button>
+        </div>
+        <div class="inv" id="invoice-list">
+          <a href="invoices.html#edf" target="_blank" rel="noopener">
+            <div class="who">EDF · F-2026-10482</div>
+            <div class="meta">28/10/2026 · Énergie · 87,40 €</div>
+          </a>
+          <a href="invoices.html#moulin" target="_blank" rel="noopener">
+            <div class="who">Moulin de Seine · FA-4417</div>
+            <div class="meta">31/10/2026 · Fournitures · 142,80 €</div>
+          </a>
+          <a href="invoices.html#sci" target="_blank" rel="noopener">
+            <div class="who">SCI du Faubourg · AF-2026-11</div>
+            <div class="meta">Two dates on the page · looks like Charges · 1 200,00 €</div>
+          </a>
+        </div>
+        <div class="log" id="log">Load the ledger, then run the first pass.</div>
+        <div class="cards" id="cards"></div>
+        <div class="correct">
+          <label for="correction">2. Field correction (SCI only)</label>
+          <textarea id="correction" autocomplete="off" placeholder="第三张是房租，入账日期用十月三十一日。"></textarea>
+          <div class="row">
+            <button class="primary" id="apply-correction" type="button" disabled>Apply correction</button>
+          </div>
+        </div>
+        <div class="summary no" id="summary">No drafts yet.</div>
+      </div>
+    </section>
+    <section class="stage">
+      <header>Existing software — already logged in. This is what the jury should inspect at the end.</header>
+      <iframe id="ledger-frame" title="Livre de recettes" src="ledger.html"></iframe>
+    </section>
+  </div>
+  <script src="invoices.js"></script>
+  <script src="verify.js"></script>
+  <script src="operator.js"></script>
+</body>
+</html>
