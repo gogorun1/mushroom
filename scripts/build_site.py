@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Build the static site from web/ and data/ (seasonal_edibles.json, term_photos.json, models_3d.json).
+"""Build the static site from web/ and data/ (seasonal JSON, term photos, 3D models, species views).
 
 Usage:
   python3 scripts/build_site.py
 
 Output: site/ (index.html, style.css, data.js and the page scripts); deploy the directory as-is.
 Asset URLs carry a content hash (?v=...) so browsers drop stale copies after a deploy.
-Run after scripts/seasonal_edibles.py, term_photos.py or models_3d.py whenever the data changes.
+Run after scripts/seasonal_edibles.py, term_photos.py, models_3d.py or species_views.py whenever the data changes.
 """
 
 import hashlib
@@ -34,6 +34,7 @@ def main():
         sys.exit("data/seasonal_edibles.json has no species section; rerun scripts/seasonal_edibles.py")
     data["term_photos"] = load_extra("term_photos.json", "photos", "term_photos.py")
     data["models_3d"] = load_extra("models_3d.json", "models", "models_3d.py")
+    data["species_views"] = load_extra("species_views.json", "species", "species_views.py")
     data["meta"] = {
         "seasons": [{"key": key, "label": label, "months": list(months)} for key, label, months in se.SEASONS],
         "edibility_label": se.EDIBILITY_LABEL,
