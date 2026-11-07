@@ -10,6 +10,9 @@
   const TP = G.photoIndex(D.term_photos);
   const PHOTO_BY_ID = Object.fromEntries((D.term_photos || []).map((p) => [p.id, p]));
   const MODELS = Object.fromEntries((D.models_3d || []).map((m) => [m.species, m]));
+  const VIEWS = Object.fromEntries((D.species_views || []).map((v) => [v.species, v.views]));
+  const VIEW_LABEL = { top: "顶面", underside: "下面", base: "基部" };
+  const VIEW_ORDER = ["top", "underside", "base"];
 
   const SETTINGS_KEY = "mushroom.settings.v1", STATS_KEY = "mushroom.stats.v1";
   const store = {
@@ -215,6 +218,39 @@
     return dk.preview.some((x) => x.name === n) ? `${dk.next} 月进入高峰` : "";
   }
 
+  function viewsSection(n, s) {
+    const views = VIEWS[n];
+    if (!views) return "";
+    const cards = VIEW_ORDER.map((key, i) => {
+      const p = views[key];
+      const label = VIEW_LABEL[key];
+      return `<figure class="view">
+        <button type="button" class="view-pic" data-act="zoom" data-src="${esc(photoAt(p, "large"))}" aria-label="放大${label}">
+          <img src="${esc(photoAt(p, "medium"))}" srcset="${esc(photoAt(p, "medium"))} 500w, ${esc(photoAt(p, "large"))} 1024w"
+            sizes="(min-width: 760px) 220px, 30vw" alt="${esc(s.zh)}，${label}"${i ? ' loading="lazy"' : ""}>
+        </button>
+        <figcaption><span class="view-label">${label}</span>${esc(p.note)}</figcaption>
+        <p class="credit">${esc(p.attribution)} · <a href="${esc(p.observation)}" target="_blank" rel="noopener">iNat</a></p>
+      </figure>`;
+    }).join("");
+    return `<section class="views"><h2 class="views-title">三视图</h2><div class="view-grid">${cards}</div></section>`;
+  }
+
+  function photoCarousel(photos, zh) {
+    if (!photos.length) return "";
+    const slides = photos.map((p, i) => `<button type="button" class="slide" data-act="zoom" data-src="${esc(photoAt(p, "large"))}" aria-label="放大第 ${i + 1} 张">
+        <img src="${esc(photoAt(p, "medium"))}" srcset="${esc(photoAt(p, "medium"))} 500w, ${esc(photoAt(p, "large"))} 1024w"
+          sizes="(min-width: 760px) 720px, 100vw" alt="${esc(zh)}，第 ${i + 1} 张"${i ? ' loading="lazy"' : ""}></button>`).join("");
+    return `
+      <div class="carousel">
+        <div class="slides" id="slides">${slides}</div>
+        ${photos.length > 1 ? `<div class="dots" id="dots">${photos.map((_, i) => `<span${i ? "" : ' class="on"'}></span>`).join("")}</div>
+          <button type="button" class="car-nav prev" data-act="slide" data-dir="-1" aria-label="上一张">‹</button>
+          <button type="button" class="car-nav next" data-act="slide" data-dir="1" aria-label="下一张">›</button>` : ""}
+      </div>
+      <p class="credit" id="photo-credit">${creditHtml(photos[0], 1, photos.length)}</p>`;
+  }
+
   function renderSpecies(n) {
     const s = S[n];
     if (!s) {
@@ -222,26 +258,20 @@
       return;
     }
     const photos = s.photos || [];
-    const slides = photos.map((p, i) => `<button type="button" class="slide" data-act="zoom" data-src="${esc(photoAt(p, "large"))}" aria-label="放大第 ${i + 1} 张">
-        <img src="${esc(photoAt(p, "medium"))}" srcset="${esc(photoAt(p, "medium"))} 500w, ${esc(photoAt(p, "large"))} 1024w"
-          sizes="(min-width: 760px) 720px, 100vw" alt="${esc(s.zh)}，第 ${i + 1} 张"${i ? ' loading="lazy"' : ""}></button>`).join("");
-    const carousel = photos.length ? `
-      <div class="carousel">
-        <div class="slides" id="slides">${slides}</div>
-        ${photos.length > 1 ? `<div class="dots" id="dots">${photos.map((_, i) => `<span${i ? "" : ' class="on"'}></span>`).join("")}</div>
-          <button type="button" class="car-nav prev" data-act="slide" data-dir="-1" aria-label="上一张">‹</button>
-          <button type="button" class="car-nav next" data-act="slide" data-dir="1" aria-label="下一张">›</button>` : ""}
-      </div>
-      <p class="credit" id="photo-credit">${creditHtml(photos[0], 1, photos.length)}</p>` : "";
+    const hasViews = !!VIEWS[n];
+    const hero = hasViews ? viewsSection(n, s) : photoCarousel(photos, s.zh);
     const reason = deckReason(n);
     const looks = (s.lookalikes || []).filter((l) => S[l]);
     const reverse = K.EDIBLE.has(s.edibility) ? [] : (K.lookalikeOf[n] || []);
     const inat = s.taxon_id ? ` · <a href="https://www.inaturalist.org/observations?place_id=10577&taxon_id=${s.taxon_id}&quality_grade=research&photos=true" target="_blank" rel="noopener">iNat 上的法兰西岛照片</a>` : "";
+    const creditList = hasViews
+      ? VIEW_ORDER.map((key) => esc(VIEWS[n][key].attribution)).join("；")
+      : photos.map((p) => esc(p.attribution)).join("；");
 
     view.innerHTML = `
       <article class="sp">
         <button type="button" class="back" data-act="back">‹ 返回</button>
-        ${carousel}
+        ${hero}
         <header class="sp-head">
           <h1>${esc(K.zh(n))}</h1> ${badge(n, true)}
           <p class="names"><i>${esc(n)}</i> · ${esc(s.fr)} · ${esc(s.en)}</p>
@@ -259,11 +289,11 @@
         ${looks.length ? `<section><h2>${termButton("lookalike", "危险易混种")}</h2><div class="list">${looks.map((l) => row(l)).join("")}</div></section>` : ""}
         ${reverse.length ? `<section><h2>会被误认成</h2><div class="list">${reverse.map((l) => row(l)).join("")}</div></section>` : ""}
         <div class="stack"><button type="button" class="btn primary big" data-act="drill" data-name="${esc(n)}">练这个种（5 题）</button></div>
-        <p class="credit">照片：${photos.map((p) => esc(p.attribution)).join("；")}${inat}</p>
+        <p class="credit">照片：${creditList}${inat}</p>
       </article>`;
 
     const el = $("#slides");
-    if (el && photos.length > 1) {
+    if (el && photos.length > 1 && !hasViews) {
       let idx = 0;
       el.addEventListener("scroll", () => {
         const i = Math.min(photos.length - 1, Math.max(0, Math.round(el.scrollLeft / el.clientWidth)));

@@ -159,6 +159,24 @@ button.badge { text-decoration: underline dotted rgba(255, 255, 255, 0.8); text-
 .car-nav.prev { left: 10px; } .car-nav.next { right: 10px; }
 @media (hover: none) { .car-nav { display: none; } }
 .carousel + .credit { margin-bottom: 4px; }
+.views { margin: 0 calc(-1 * var(--gutter)) 8px; }
+.views-title { font-size: 15px; margin: 0 var(--gutter) 8px; color: var(--muted); font-weight: 600; }
+.view-grid { display: grid; gap: 14px; }
+.view { margin: 0; }
+.view-pic {
+  display: block; width: 100%; padding: 0; border: 0; background: var(--soft); cursor: zoom-in;
+}
+.view-pic img {
+  display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--soft);
+}
+.view figcaption {
+  margin: 6px var(--gutter) 0; font-size: 14px; line-height: 1.45; color: var(--ink);
+}
+.view-label {
+  display: inline-block; margin-right: 8px; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.04em; color: var(--accent, #8a4b2a);
+}
+.view .credit { margin: 2px var(--gutter) 0; }
 .sp-head { margin: 14px 0 6px; }
 .sp-head h1 { display: inline; font-size: 24px; margin: 0 6px 0 0; vertical-align: middle; }
 .sp-head .badge { vertical-align: middle; font-size: 13px; }
@@ -399,6 +417,11 @@ button.badge { text-decoration: underline dotted rgba(255, 255, 255, 0.8); text-
   .list.two { grid-template-columns: 1fr 1fr; }
   .figs { grid-template-columns: 1fr 1fr; }
   .figs h2 { grid-column: 1 / -1; }
+  .views { margin: 0 0 8px; }
+  .views-title { margin-left: 0; margin-right: 0; }
+  .view-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .view figcaption, .view .credit { margin-left: 0; margin-right: 0; }
+  .view-pic { border-radius: 10px; overflow: hidden; }
   .pm-list.multi { grid-template-columns: 1fr 1fr; align-items: start; }
   .q-next { flex-direction: row; justify-content: flex-end; }
   .q-next .btn { min-width: 220px; }

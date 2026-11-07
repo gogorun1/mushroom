@@ -1,0 +1,423 @@
+# 物种页的三视图（人工维护）
+#
+# 每种蘑菇固定三张辨认用照片：顶面、下面、基部。物种页只靠这三张把外形说清楚；
+# 自测题仍用 seasonal_edibles.json 里按票数取的照片池。3D 模型是加分项，不是标配。
+#
+# 三张分别是：
+#   top        顶面——菌盖上面（架状菌看上表面，马勃看外形）
+#   underside  下面——菌褶 / 菌孔 / 菌刺 / 孔面；马勃、羊肚菌等看竖切面
+#   base       基部——菌柄基部、菌托、着生处；没有柄的看贴在木头或地上的那一头
+#
+# species  物种页学名（content/species.toml 里的条目）
+# *.id     iNat 照片 id
+# *.obs    这张照片所在的 iNat 观察 id
+# *.taxon  观察现在的学名，拉取时核对
+# *.note   照片下面一句：这张上看什么
+
+[[species]]
+species = "Agaricus arvensis"
+top = { id = 238493460, obs = 139439542, taxon = "Agaricus arvensis", note = "光滑乳白菌盖，有时微微发黄" }
+underside = { id = 342913213, obs = 194986509, taxon = "Agaricus arvensis", note = "成熟后菌褶深巧克力褐，柄上有菌环" }
+base = { id = 229913221, obs = 134843390, taxon = "Agaricus arvensis", note = "白而粗的柄基，带土，有裙状菌环" }
+
+[[species]]
+species = "Agaricus campestris"
+top = { id = 48367783, obs = 30937113, taxon = "Agaricus campestris", note = "光滑乳白色菌盖，长在草地上" }
+underside = { id = 223961707, obs = 131591894, taxon = "Agaricus campestris", note = "幼时粉红菌褶，柄上有薄菌环" }
+base = { id = 99638989, obs = 62206297, taxon = "Agaricus campestris", note = "白柄基略尖，常带泥土" }
+
+[[species]]
+species = "Agaricus xanthodermus"
+top = { id = 593127915, obs = 327398123, taxon = "Agaricus xanthodermus", note = "光滑洁白的菌盖" }
+underside = { id = 444171803, obs = 248570010, taxon = "Agaricus xanthodermus", note = "粉红菌褶，柄上有裙状菌环" }
+base = { id = 452166786, obs = 252574761, taxon = "Agaricus xanthodermus", note = "柄基切断或碰伤后立刻变成铬黄色" }
+
+[[species]]
+species = "Amanita caesarea"
+top = { id = 570619045, obs = 315851426, taxon = "Amanita caesarea", note = "橙红色扁平菌盖，边缘有细条纹" }
+underside = { id = 549317887, obs = 304697292, taxon = "Amanita caesarea", note = "鲜黄色菌褶、黄柄和黄菌环" }
+base = { id = 164566798, obs = 98794359, taxon = "Amanita caesarea", note = "茎基厚实的白色袋状菌托，像蛋壳" }
+
+[[species]]
+species = "Amanita muscaria"
+top = { id = 165924378, obs = 99522582, taxon = "Amanita muscaria", note = "鲜红扁平的菌盖，上面密布白色疣点" }
+underside = { id = 442068441, obs = 247510099, taxon = "Amanita muscaria", note = "仰视白色菌褶和菌柄着生处" }
+base = { id = 581206966, obs = 321377106, taxon = "Amanita muscaria", note = "球茎状、带鳞片的基部，旁边还有幼蕾" }
+
+[[species]]
+species = "Amanita pantherina"
+top = { id = 165670015, obs = 99389943, taxon = "Amanita pantherina", note = "褐黄色菌盖上满是白色小疣，像豹斑" }
+underside = { id = 601724008, obs = 331666789, taxon = "Amanita pantherina", note = "白色密菌褶" }
+base = { id = 312125926, obs = 179298054, taxon = "Amanita pantherina", note = "球茎状茎基，菌托边缘像一圈领口" }
+
+[[species]]
+species = "Amanita phalloides"
+top = { id = 447014975, obs = 250002485, taxon = "Amanita phalloides", note = "橄榄黄到褐绿色的菌盖，表面光滑，隐约有放射状纤丝" }
+underside = { id = 439017256, obs = 245968976, taxon = "Amanita phalloides phalloides", note = "白色菌褶，柄上有裙子一样的菌环" }
+base = { id = 343246470, obs = 195154194, taxon = "Amanita phalloides", note = "幼菇从白色袋状菌托里钻出来，菌托常埋在土里" }
+
+[[species]]
+species = "Amanita rubescens"
+top = { id = 286112509, obs = 165292982, taxon = "Amanita rubescens", note = "褐黄色菌盖，上面有细碎的浅色疣" }
+underside = { id = 95058124, obs = 59494827, taxon = "Amanita rubescens", note = "白色菌褶，柄上有明显的菌环" }
+base = { id = 454885784, obs = 254006104, taxon = "Amanita rubescens", note = "球茎状茎基，伤处带红褐色" }
+
+[[species]]
+species = "Amanita verna"
+top = { id = 648682184, obs = 355706874, taxon = "Amanita verna", note = "纯白光滑的半球形菌盖，没有疣或斑块" }
+underside = { id = 270843727, obs = 156623203, taxon = "Amanita verna", note = "白色菌褶，柄上部有裙状菌环" }
+base = { id = 34384538, obs = 22185380, taxon = "Amanita verna", note = "茎基白色袋状菌托，带着土" }
+
+[[species]]
+species = "Amanita virosa"
+top = { id = 311211488, obs = 178810092, taxon = "Amanita virosa", note = "纯白光滑、卵圆到圆锥形的菌盖" }
+underside = { id = 358878619, obs = 203148130, taxon = "Amanita virosa", note = "白色菌褶，柄上有悬垂的菌环" }
+base = { id = 336524073, obs = 191780289, taxon = "Amanita virosa", note = "整朵挖出：茎基白色袋状菌托很清楚" }
+
+[[species]]
+species = "Armillaria"
+top = { id = 170582781, obs = 102084668, taxon = "Armillaria ostoyae", note = "蜜褐色菌盖，中央鳞片较密" }
+underside = { id = 103125058, obs = 64176585, taxon = "Armillaria mellea", note = "乳白菌褶，柄上有菌环" }
+base = { id = 440392217, obs = 246663964, taxon = "Armillaria ostoyae", note = "纤维质柄丛生，基部扎进苔藓朽木" }
+
+[[species]]
+species = "Auricularia auricula-judae"
+top = { id = 112714145, obs = 69463702, taxon = "Auricularia auricula-judae", note = "红褐耳状外表面，微微有绒毛" }
+underside = { id = 597988981, obs = 329845457, taxon = "Auricularia auricula-judae", note = "光滑凹进去的内面，半透明" }
+base = { id = 357187830, obs = 202260476, taxon = "Auricularia auricula-judae", note = "没有柄，直接贴生在树皮上" }
+
+[[species]]
+species = "Boletus aereus"
+top = { id = 310614478, obs = 178496346, taxon = "Boletus aereus", note = "深青铜到近黑褐色的菌盖" }
+underside = { id = 567649542, obs = 314286025, taxon = "Boletus aereus", note = "浅黄菌孔；切开菌肉洁白" }
+base = { id = 576305427, obs = 318847321, taxon = "Boletus aereus", note = "粗壮球茎状柄基，带土" }
+
+[[species]]
+species = "Boletus edulis"
+top = { id = 93541229, obs = 58582656, taxon = "Boletus edulis", note = "栗褐色菌盖上表面，光滑微亮" }
+underside = { id = 109725180, obs = 67848962, taxon = "Boletus edulis", note = "黄绿色海绵状菌孔；柄顶附近有白网纹" }
+base = { id = 121168694, obs = 74158302, taxon = "Boletus edulis", note = "粗壮棒状柄基，带着泥土和菌丝" }
+
+[[species]]
+species = "Boletus pinophilus"
+top = { id = 438169293, obs = 245535448, taxon = "Boletus pinophilus", note = "酒红到深红褐色的菌盖" }
+underside = { id = 570074173, obs = 315567334, taxon = "Boletus pinophilus", note = "黄到黄绿色的菌孔面" }
+base = { id = 408546812, obs = 230111980, taxon = "Boletus pinophilus", note = "粗壮柄基，带着土和松针" }
+
+[[species]]
+species = "Boletus reticulatus"
+top = { id = 242709789, obs = 141645476, taxon = "Boletus reticulatus", note = "浅褐到茶褐色菌盖，干燥偏绒" }
+underside = { id = 754315167, obs = 410174004, taxon = "Boletus reticulatus", note = "黄绿菌孔面，柄上有细网纹" }
+base = { id = 295349029, obs = 170299862, taxon = "Boletus reticulatus", note = "粗壮膨大的柄基，带土" }
+
+[[species]]
+species = "Calocybe gambosa"
+top = { id = 488649750, obs = 271643155, taxon = "Calocybe gambosa", note = "奶油色厚肉菌盖，表面平滑" }
+underside = { id = 362854820, obs = 205230238, taxon = "Calocybe gambosa", note = "密生白色菌褶" }
+base = { id = 487458103, obs = 271014956, taxon = "Calocybe gambosa", note = "粗壮白色茎基，带土和菌丝" }
+
+[[species]]
+species = "Calvatia gigantea"
+top = { id = 346650403, obs = 196898607, taxon = "Calvatia gigantea", note = "草地上光滑的大白球" }
+underside = { id = 249670074, obs = 145364733, taxon = "Calvatia gigantea", note = "切开：内部已是黄褐海绵质（过熟；幼时应纯白均匀）" }
+base = { id = 238635472, obs = 139512939, taxon = "Calvatia gigantea", note = "底部带土，菌丝着生处" }
+
+[[species]]
+species = "Cantharellus"
+top = { id = 453308205, obs = 253192659, taxon = "Cantharellus pallens", note = "橙黄色盖面，边缘波状起伏" }
+underside = { id = 541288717, obs = 300416703, taxon = "Cantharellus pallens", note = "钝褶棱分叉下延，不是真菌褶" }
+base = { id = 231480601, obs = 135696891, taxon = "Cantharellus friesii", note = "柄基粗实偏白，连底挖出带土" }
+
+[[species]]
+species = "Cantharellus cibarius"
+top = { id = 441004534, obs = 246974449, taxon = "Cantharellus cibarius", note = "鲜黄菌盖，边缘波状" }
+underside = { id = 170211287, obs = 101884745, taxon = "Cantharellus cibarius", note = "钝厚、分叉的褶棱，延生到柄上——不是真的菌褶" }
+base = { id = 149838201, obs = 90651516, taxon = "Cantharellus cibarius", note = "淡黄色实心柄基，带土" }
+
+[[species]]
+species = "Cerioporus squamosus"
+top = { id = 227850037, obs = 133738576, taxon = "Cerioporus squamosus", note = "扇形盖面，深褐鳞片像雉鸡背" }
+underside = { id = 430346277, obs = 241461060, taxon = "Cerioporus squamosus", note = "乳白多角形菌孔——不是菌褶" }
+base = { id = 518183079, obs = 288158743, taxon = "Cerioporus squamosus", note = "树干侧生，短粗暗色的着生处" }
+
+[[species]]
+species = "Chlorophyllum rachodes"
+top = { id = 439033500, obs = 245978948, taxon = "Chlorophyllum rhacodes", note = "粗鳞排成同心环，中央有深褐盘" }
+underside = { id = 562715950, obs = 311709857, taxon = "Chlorophyllum rhacodes", note = "密生白色离生菌褶，柄上有菌环" }
+base = { id = 237852185, obs = 139101161, taxon = "Chlorophyllum rhacodes", note = "球茎状柄基，着生在落叶层上" }
+
+[[species]]
+species = "Clitocybe nebularis"
+top = { id = 168801274, obs = 101099207, taxon = "Clitocybe nebularis", note = "烟灰色、像云雾一样的菌盖" }
+underside = { id = 241964332, obs = 141263431, taxon = "Clitocybe nebularis", note = "乳白密菌褶，略微延生" }
+base = { id = 443873383, obs = 248420612, taxon = "Clitocybe nebularis", note = "粗壮柄基膨大，带土和菌丝" }
+
+[[species]]
+species = "Clitocybe rivulosa"
+top = { id = 753049562, obs = 409550403, taxon = "Collybia rivulosa", note = "浅白到肉色平滑菌盖，中心略凹" }
+underside = { id = 598781882, obs = 330235282, taxon = "Collybia rivulosa", note = "密生白色延生菌褶" }
+base = { id = 440636318, obs = 246785973, taxon = "Collybia rivulosa", note = "全柄和带土的柄基" }
+
+[[species]]
+species = "Clitopilus prunulus"
+top = { id = 330260653, obs = 188657196, taxon = "Clitopilus prunulus", note = "乳白平滑的厚肉菌盖，边缘略波状" }
+underside = { id = 240365281, obs = 140420824, taxon = "Clitopilus prunulus", note = "密生白色延生菌褶" }
+base = { id = 434481366, obs = 243644503, taxon = "Clitopilus prunulus", note = "带土的柄基和白色菌丝" }
+
+[[species]]
+species = "Coprinopsis atramentaria"
+top = { id = 100526049, obs = 62711938, taxon = "Coprinopsis atramentaria", note = "银灰钟形盖，有纵沟，边缘开始液化" }
+underside = { id = 479351502, obs = 266783637, taxon = "Coprinopsis atramentaria", note = "极密、近黑色的菌褶" }
+base = { id = 60920997, obs = 38340680, taxon = "Coprinopsis atramentaria", note = "白柄从土里丛生伸出" }
+
+[[species]]
+species = "Coprinus comatus"
+top = { id = 244784131, obs = 142746436, taxon = "Coprinus comatus", note = "白色鳞片菌盖，中央浅褐" }
+underside = { id = 480125799, obs = 267183948, taxon = "Coprinus comatus", note = "极密的菌褶，边缘开始变黑液化" }
+base = { id = 385042151, obs = 217638021, taxon = "Coprinus comatus", note = "白柄基部埋在草里，近顶可见残环" }
+
+[[species]]
+species = "Cortinarius"
+top = { id = 436152922, obs = 244508425, taxon = "Cortinarius violaceus", note = "鲜艳紫色的凸镜状菌盖" }
+underside = { id = 448133991, obs = 250554013, taxon = "Cortinarius semisanguineus", note = "深红褐到紫红的菌褶" }
+base = { id = 606379559, obs = 333967477, taxon = "Cortinarius salor", note = "球茎状茎基，还留着褐色丝膜残迹" }
+
+[[species]]
+species = "Craterellus cornucopioides"
+top = { id = 102534481, obs = 63843601, taxon = "Craterellus cornucopioides", note = "俯视漏斗口：深灰近黑，边缘波状" }
+underside = { id = 443912497, obs = 248440417, taxon = "Craterellus cornucopioides", note = "外侧灰蓝、平滑微皱，没有菌褶" }
+base = { id = 566270435, obs = 313564463, taxon = "Craterellus cornucopioides", note = "柄基细长中空，埋在落叶里" }
+
+[[species]]
+species = "Craterellus tubaeformis"
+top = { id = 53294822, obs = 33901361, taxon = "Craterellus tubaeformis", note = "褐灰漏斗形菌盖，中央下凹" }
+underside = { id = 465691693, obs = 259424156, taxon = "Craterellus tubaeformis", note = "浅色钝褶棱下延到黄柄上" }
+base = { id = 335954892, obs = 191495514, taxon = "Craterellus tubaeformis", note = "柄鲜黄中空，基部略淡、沾土" }
+
+[[species]]
+species = "Entoloma sinuatum"
+top = { id = 595108420, obs = 328417943, taxon = "Entoloma sinuatum", note = "光滑乳白到灰白的菌盖，没有鳞片" }
+underside = { id = 755484201, obs = 410742921, taxon = "Entoloma sinuatum", note = "粉肉色菌褶，是粉褶菌属的关键颜色" }
+base = { id = 233508108, obs = 136786739, taxon = "Entoloma sinuatum", note = "茎基略膨大，带土和菌丝" }
+
+[[species]]
+species = "Fistulina hepatica"
+top = { id = 322228815, obs = 184586623, taxon = "Fistulina hepatica", note = "肝红色舌状盖面，湿润有光" }
+underside = { id = 461981065, obs = 257520387, taxon = "Fistulina hepatica", note = "淡奶油色孔层，和红盖对比明显" }
+base = { id = 5179379, obs = 4311069, taxon = "Fistulina hepatica", note = "没有柄，侧生贴在长苔藓的树干上" }
+
+[[species]]
+species = "Flammulina"
+top = { id = 539275846, obs = 299334813, taxon = "Flammulina", note = "橙盖湿黏发亮，丛生在木头上" }
+underside = { id = 591882108, obs = 326771394, taxon = "Flammulina", note = "乳白菌褶；柄上浅下深" }
+base = { id = 264506263, obs = 153164367, taxon = "Flammulina", note = "柄基深褐，密被绒毛" }
+
+[[species]]
+species = "Galerina marginata"
+top = { id = 281587291, obs = 162832705, taxon = "Galerina marginata", note = "平滑黄褐色的小菌盖，长在苔藓腐木上" }
+underside = { id = 614290117, obs = 337863460, taxon = "Galerina marginata", note = "褐色菌褶，柄上部有细小菌环" }
+base = { id = 584471030, obs = 323034157, taxon = "Galerina marginata", note = "着生在朽木上，柄基贴着木头" }
+
+[[species]]
+species = "Grifola frondosa"
+top = { id = 566711829, obs = 313797969, taxon = "Grifola frondosa", note = "灰褐扇形瓣片，层层叠生" }
+underside = { id = 453567516, obs = 253329301, taxon = "Grifola frondosa", note = "乳白分枝的肉质，能看到孔面" }
+base = { id = 237606998, obs = 138971177, taxon = "Grifola frondosa", note = "丛生在长苔藓的树桩基部" }
+
+[[species]]
+species = "Gyromitra esculenta"
+top = { id = 389490057, obs = 220015852, taxon = "Gyromitra esculenta", note = "红褐色、像脑子一样褶皱的菌盖" }
+underside = { id = 412572503, obs = 232241503, taxon = "Gyromitra esculenta", note = "纵切：盖和柄里面是多腔的中空结构" }
+base = { id = 590692500, obs = 326172276, taxon = "Gyromitra esculenta", note = "粗壮浅色菌柄着生在苔藓地面上" }
+
+[[species]]
+species = "Hericium erinaceus"
+top = { id = 760679784, obs = 413314269, taxon = "Hericium erinaceus", note = "整朵洁白长刺，像狮鬃球" }
+underside = { id = 121829481, obs = 74536102, taxon = "Hericium erinaceus", note = "近看下垂的白色到橙黄菌刺" }
+base = { id = 239344455, obs = 139883113, taxon = "Hericium erinaceus", note = "侧面：贴生在树皮上的着生处" }
+
+[[species]]
+species = "Hydnum"
+top = { id = 175271232, obs = 104583266, taxon = "Hydnum repandum", note = "乳白到浅黄的菌盖，边缘略波" }
+underside = { id = 432269554, obs = 242472511, taxon = "Hydnum rufescens", note = "盖下面是密密的肉刺，不是菌褶" }
+base = { id = 153675159, obs = 92780437, taxon = "Hydnum repandum", note = "粗白的柄，从苔藓里冒出来" }
+
+[[species]]
+species = "Hygrophoropsis aurantiaca"
+top = { id = 442327099, obs = 247638495, taxon = "Hygrophoropsis aurantiaca", note = "橙黄菌盖，边缘略波状" }
+underside = { id = 190007007, obs = 112490098, taxon = "Hygrophoropsis aurantiaca", note = "鲜橙密褶，多次分叉、延生——假鸡油菌的关键" }
+base = { id = 597952926, obs = 329828073, taxon = "Hygrophoropsis aurantiaca", note = "橙褐菌柄，柄基带土" }
+
+[[species]]
+species = "Hypholoma fasciculare"
+top = { id = 335209163, obs = 191123507, taxon = "Hypholoma fasciculare", note = "丛生：边缘硫黄色、中央橙褐的光滑菌盖" }
+underside = { id = 332320236, obs = 189667274, taxon = "Hypholoma fasciculare", note = "密菌褶，成熟后偏灰褐" }
+base = { id = 321642516, obs = 184279554, taxon = "Hypholoma fasciculare", note = "细柄丛生，贴生在朽木上" }
+
+[[species]]
+species = "Imleria badia"
+top = { id = 573379627, obs = 317320383, taxon = "Imleria badia", note = "栗褐色菌盖，略带绒感" }
+underside = { id = 440862726, obs = 246899556, taxon = "Imleria badia", note = "淡黄菌孔，触碰处容易变蓝" }
+base = { id = 170857418, obs = 102236765, taxon = "Imleria badia", note = "柄基埋进苔藓里" }
+
+[[species]]
+species = "Inocybe"
+top = { id = 433340957, obs = 243043440, taxon = "Inocybe asterospora", note = "圆锥到钟形菌盖，放射纤维和中央凸起清楚" }
+underside = { id = 600769416, obs = 331200754, taxon = "Inocybe queletii", note = "白色到奶油色的密菌褶" }
+base = { id = 600772692, obs = 331202273, taxon = "Inocybe queletii", note = "柄基球茎状并沾土" }
+
+[[species]]
+species = "Inosperma erubescens"
+top = { id = 684386893, obs = 374430580, taxon = "Inosperma erubescens", note = "乳白菌盖带砖红放射条纹，会变红" }
+underside = { id = 507734128, obs = 282597512, taxon = "Inosperma erubescens", note = "密生浅褐菌褶，柄上也有变红痕迹" }
+base = { id = 369625657, obs = 208885610, taxon = "Inosperma erubescens", note = "柄身有砖红条斑，柄基带土、没有菌托" }
+
+[[species]]
+species = "Kuehneromyces mutabilis"
+top = { id = 421231348, obs = 236748206, taxon = "Kuehneromyces mutabilis", note = "腐木上丛生：蜜黄到橙褐的盖面，外缘更深" }
+underside = { id = 590339765, obs = 325996641, taxon = "Kuehneromyces mutabilis", note = "密生褐色菌褶" }
+base = { id = 348481530, obs = 197805799, taxon = "Kuehneromyces mutabilis", note = "菌环下面的柄有深褐鳞片，柄基带土" }
+
+[[species]]
+species = "Lactarius deliciosus"
+top = { id = 587323677, obs = 324488850, taxon = "Lactarius deliciosus", note = "橙色菌盖有同心环，中央常有绿变" }
+underside = { id = 168617787, obs = 100993123, taxon = "Lactarius deliciosus", note = "橙黄密褶，伤处有橙红乳汁斑" }
+base = { id = 326656253, obs = 186866155, taxon = "Lactarius deliciosus", note = "橙柄上有凹坑，基部带土" }
+
+[[species]]
+species = "Lactarius torminosus"
+top = { id = 579711919, obs = 320615617, taxon = "Lactarius torminosus", note = "粉橙盖面有环带，边缘有毛、内卷" }
+underside = { id = 344141799, obs = 195593875, taxon = "Lactarius torminosus", note = "淡粉白密褶" }
+base = { id = 573743800, obs = 317507753, taxon = "Lactarius torminosus", note = "粉白菌柄，着生在苔藓落叶上" }
+
+[[species]]
+species = "Lactarius volemus"
+top = { id = 22783887, obs = 15226789, taxon = "Lactifluus volemus", note = "橙褐盖面，挂着白色乳汁珠" }
+underside = { id = 322499928, obs = 184732056, taxon = "Lactifluus volemus", note = "乳白菌褶，乳汁成滴" }
+base = { id = 342899448, obs = 194983534, taxon = "Lactifluus volemus", note = "粗柄同色，基部完整带土" }
+
+[[species]]
+species = "Laetiporus sulphureus"
+top = { id = 90131468, obs = 56554056, taxon = "Laetiporus sulphureus", note = "橙黄叠生的盖面，环带分明" }
+underside = { id = 196037338, obs = 116151467, taxon = "Laetiporus sulphureus", note = "硫黄色的管孔面" }
+base = { id = 111342712, obs = 68718378, taxon = "Laetiporus sulphureus", note = "没有柄，宽基侧生贴在树皮上" }
+
+[[species]]
+species = "Leccinum"
+top = { id = 584076024, obs = 322831933, taxon = "Leccinum aurantiacum", note = "橙红到砖红色的菌盖" }
+underside = { id = 570397959, obs = 315732543, taxon = "Leccinum scabrum", note = "灰白菌孔；柄上密布黑褐色鳞点" }
+base = { id = 751338328, obs = 408709088, taxon = "Leccinum variicolor", note = "柄基鳞点清楚，断面常带蓝绿变色" }
+
+[[species]]
+species = "Lepiota"
+top = { id = 334556829, obs = 190795765, taxon = "Lepiota subincarnata", note = "深褐中央凸起，周围同心环状褐色鳞片" }
+underside = { id = 586636058, obs = 324142985, taxon = "Lepiota cristata", note = "白色密菌褶" }
+base = { id = 311810433, obs = 179124523, taxon = "Lepiota elaiophylla", note = "细长菌柄，基部略膨大、带土" }
+
+[[species]]
+species = "Lepista nuda"
+top = { id = 455303861, obs = 254220572, taxon = "Collybia nuda", note = "淡丁香紫色的菌盖，略带褐斑" }
+underside = { id = 334366350, obs = 190701399, taxon = "Collybia nuda", note = "密而亮紫的菌褶" }
+base = { id = 236236517, obs = 138234560, taxon = "Collybia nuda", note = "淡紫柄基，常带土和白菌丝" }
+
+[[species]]
+species = "Lycoperdon perlatum"
+top = { id = 332330874, obs = 189672619, taxon = "Lycoperdon perlatum", note = "白色表面密布锥状小刺，像珍珠" }
+underside = { id = 245279092, obs = 143026831, taxon = "Lycoperdon perlatum", note = "断面：幼时内部纯白均匀，看不到伞和菌褶的轮廓" }
+base = { id = 440901700, obs = 246919549, taxon = "Lycoperdon perlatum", note = "梨形不育的基部，带土的那一头" }
+
+[[species]]
+species = "Macrolepiota procera"
+top = { id = 93950315, obs = 58828954, taxon = "Macrolepiota procera", note = "放射状褐鳞，中央深褐平滑" }
+underside = { id = 235127873, obs = 137648795, taxon = "Macrolepiota procera", note = "白色密菌褶；柄上有能上下滑动的双层菌环" }
+base = { id = 243839501, obs = 142247048, taxon = "Macrolepiota procera", note = "细长柄有蛇皮纹，基部略膨大" }
+
+[[species]]
+species = "Marasmius oreades"
+top = { id = 551389534, obs = 305794760, taxon = "Marasmius oreades", note = "浅黄褐菌盖，中央有明显乳突" }
+underside = { id = 591888640, obs = 326773408, taxon = "Marasmius oreades", note = "稀疏、间距宽的乳白菌褶" }
+base = { id = 442838604, obs = 247896704, taxon = "Marasmius oreades", note = "细长坚韧的菌柄，柄基带土" }
+
+[[species]]
+species = "Morchella"
+top = { id = 188250364, obs = 111508980, taxon = "Morchella vulgaris", note = "蜂窝状深坑和脊棱，羊肚菌盖面典型样子" }
+underside = { id = 5418123, obs = 4486666, taxon = "Morchella esculenta", note = "柄基开口能看到盖和柄连通的中空内腔" }
+base = { id = 196344092, obs = 116323277, taxon = "Morchella semilibera", note = "浅色长柄和柄基的纹理" }
+
+[[species]]
+species = "Neoboletus erythropus"
+top = { id = 240806279, obs = 140658893, taxon = "Neoboletus erythropus", note = "深褐绒质的菌盖" }
+underside = { id = 239322591, obs = 139871342, taxon = "Neoboletus erythropus", note = "橙红色菌孔；切开会变蓝" }
+base = { id = 448141961, obs = 250558242, taxon = "Neoboletus erythropus", note = "柄上有红点，柄基带土" }
+
+[[species]]
+species = "Omphalotus olearius"
+top = { id = 447943299, obs = 250461397, taxon = "Omphalotus olearius", note = "橙褐漏斗状菌盖，中心凹陷" }
+underside = { id = 609445468, obs = 335475459, taxon = "Omphalotus olearius", note = "鲜橙色、下延的菌褶" }
+base = { id = 237387411, obs = 138856538, taxon = "Omphalotus olearius", note = "树干基部丛生，柄橙黄粗壮" }
+
+[[species]]
+species = "Paxillus involutus"
+top = { id = 387876751, obs = 219155723, taxon = "Paxillus involutus", note = "褐色菌盖，边缘强烈内卷" }
+underside = { id = 598046440, obs = 329874409, taxon = "Paxillus involutus", note = "密生浅褐菌褶，缘仍然内卷" }
+base = { id = 162974169, obs = 97943963, taxon = "Paxillus involutus", note = "苔藓上的全柄到着生点" }
+
+[[species]]
+species = "Pleurotus ostreatus"
+top = { id = 167097962, obs = 100140062, taxon = "Pleurotus ostreatus", note = "灰褐色扇形菌盖，表面平滑" }
+underside = { id = 311728755, obs = 179081957, taxon = "Pleurotus pulmonarius", note = "白色密褶，延生到着生处" }
+base = { id = 344466835, obs = 195754758, taxon = "Pleurotus ostreatus", note = "侧生短柄，贴在树皮裂缝上" }
+
+[[species]]
+species = "Rubroboletus satanas"
+top = { id = 732682502, obs = 399355131, taxon = "Rubroboletus satanas", note = "灰白到浅米色的菌盖" }
+underside = { id = 755546608, obs = 410774100, taxon = "Rubroboletus satanas", note = "血红到橙红的菌孔面" }
+base = { id = 449485024, obs = 251230337, taxon = "Rubroboletus satanas", note = "鲜红、球茎状的粗柄基" }
+
+[[species]]
+species = "Russula cyanoxantha"
+top = { id = 170209672, obs = 101884017, taxon = "Russula cyanoxantha", note = "深紫到酒红色的光滑菌盖" }
+underside = { id = 169403610, obs = 101435229, taxon = "Russula cyanoxantha", note = "纯白密菌褶，质地偏软" }
+base = { id = 440391618, obs = 246663688, taxon = "Russula cyanoxantha", note = "白粗圆柱柄，基部圆钝带土" }
+
+[[species]]
+species = "Russula virescens"
+top = { id = 327604471, obs = 187342824, taxon = "Russula virescens", note = "浅绿色菌盖，表皮龟裂成小块" }
+underside = { id = 546921604, obs = 303440660, taxon = "Russula virescens", note = "白色、较密的菌褶" }
+base = { id = 323286899, obs = 185136183, taxon = "Russula virescens", note = "粗白菌柄，没有菌环，直接长在土里" }
+
+[[species]]
+species = "Scleroderma citrinum"
+top = { id = 445046913, obs = 249007485, taxon = "Scleroderma citrinum", note = "粗疣鳞外皮，像豹皮一样开裂" }
+underside = { id = 56543930, obs = 35826994, taxon = "Scleroderma citrinum", note = "破裂处：厚黄皮壳，里面近黑" }
+base = { id = 173393831, obs = 103580605, taxon = "Scleroderma citrinum", note = "收缩的假柄和菌丝索着生处" }
+
+[[species]]
+species = "Sparassis crispa"
+top = { id = 154344405, obs = 93149150, taxon = "Sparassis crispa", note = "乳白绣球状，波瓣一层层" }
+underside = { id = 330488102, obs = 188767367, taxon = "Sparassis crispa", note = "瓣片两面光滑，没有褶也没有孔" }
+base = { id = 449896753, obs = 251436784, taxon = "Sparassis crispa", note = "粗肉质基部，贴在树脚的松针上" }
+
+[[species]]
+species = "Suillus"
+top = { id = 408121555, obs = 229888491, taxon = "Suillus granulatus", note = "橙褐色光滑菌盖" }
+underside = { id = 584466210, obs = 323031777, taxon = "Suillus cavipes", note = "大型多角形的黄菌孔" }
+base = { id = 566337772, obs = 313155131, taxon = "Suillus flavidus", note = "柄上有环迹，柄基长在松针层里" }
+
+[[species]]
+species = "Tylopilus felleus"
+top = { id = 142864911, obs = 86695153, taxon = "Tylopilus felleus", note = "浅褐色光滑菌盖" }
+underside = { id = 149435629, obs = 90418488, taxon = "Tylopilus felleus", note = "近白偏粉的菌孔面" }
+base = { id = 431489437, obs = 242056898, taxon = "Tylopilus felleus", note = "粗柄基，上面深色粗网纹很明显" }
+
+[[species]]
+species = "Volvopluteus gloiocephalus"
+top = { id = 105025804, obs = 65272221, taxon = "Volvopluteus gloiocephalus", note = "浅灰白光滑菌盖" }
+underside = { id = 385057379, obs = 217646138, taxon = "Volvopluteus gloiocephalus", note = "密生粉肉色菌褶" }
+base = { id = 442891543, obs = 247925916, taxon = "Volvopluteus gloiocephalus", note = "茎基白色袋状菌托" }
+
+[[species]]
+species = "Xerocomellus chrysenteron"
+top = { id = 238111404, obs = 139237007, taxon = "Xerocomellus chrysenteron", note = "菌盖龟裂，裂纹里露出浅红的肉" }
+underside = { id = 311316874, obs = 178866423, taxon = "Xerocomellus chrysenteron", note = "多角形的柠檬黄菌孔" }
+base = { id = 335541183, obs = 191293680, taxon = "Xerocomellus chrysenteron", note = "柄下半段转红，柄基带土" }

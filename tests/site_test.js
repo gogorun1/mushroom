@@ -159,6 +159,31 @@ test("every common tree has a photo, and tree photos are not quiz material", () 
   }
 });
 
+// ---- species three-views ----
+
+test("every species page has credited top, underside and base views", () => {
+  const rows = D.species_views || [];
+  assert.ok(Array.isArray(rows), "species_views missing");
+  const bySpecies = Object.fromEntries(rows.map((r) => [r.species, r]));
+  const photoIds = new Set();
+  for (const name of Object.keys(S)) {
+    const row = bySpecies[name];
+    assert.ok(row, `${name}: no three-views`);
+    for (const key of ["top", "underside", "base"]) {
+      const p = row.views[key];
+      const w = `${name}.${key}`;
+      assert.ok(p, `${w}: missing`);
+      assert.ok(["cc0", "cc-by", "cc-by-sa", "cc-by-nc", "cc-by-nc-sa"].includes(p.license), `${w}: licence ${p.license}`);
+      assert.ok(p.attribution && p.note && p.taxon && p.w > 0 && p.h > 0, `${w}: missing credit, note or size`);
+      assert.match(p.observation, /^https:\/\/www\.inaturalist\.org\/observations\/\d+$/, w);
+      assert.match(p.url, /^https:\/\/[^/]+\/photos\/\d+\/small\.(jpe?g|png)$/i, w);
+      assert.ok(!photoIds.has(p.id), `${w}: photo ${p.id} reused`);
+      photoIds.add(p.id);
+    }
+  }
+  assert.equal(rows.length, Object.keys(S).length);
+});
+
 // ---- 3D models ----
 
 test("3D models are credited Sketchfab scans on species pages, small enough to load on a phone", () => {
